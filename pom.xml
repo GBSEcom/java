@@ -6,12 +6,12 @@
     <packaging>jar</packaging>
     <name>GlobalAPIClient</name>
     <version>1.0.0</version>
-    <url>https://github.com/swagger-api/swagger-codegen</url>
+    <url>https://github.com/GBSEcom/java</url>
     <description>Client library for First Data Corporation APIs</description>
     <scm>
-        <connection>scm:git:git@github.com:swagger-api/swagger-codegen.git</connection>
-        <developerConnection>scm:git:git@github.com:swagger-api/swagger-codegen.git</developerConnection>
-        <url>https://github.com/swagger-api/swagger-codegen</url>
+        <connection>scm:git:git@github.com:GBSEcom/java.git</connection>
+        <developerConnection>scm:git:git@github.com:GBSEcom/java.git</developerConnection>
+        <url>https://github.com/GBSEcom/java</url>
     </scm>
 
     <licenses>
