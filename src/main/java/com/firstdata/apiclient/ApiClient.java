@@ -53,7 +53,7 @@ public class ApiClient {
 
     @Getter
     @Setter
-    private String basePath = "https://localhost";
+    private String basePath = "https://api.payeezy.com/globalApi/v1";
 
     @Getter
     private boolean debugging = false;

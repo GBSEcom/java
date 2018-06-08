@@ -108,7 +108,7 @@ public class PaymentApiExample {
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *https://localhost*
+All URIs are relative to *https://api.payeezy.com/globalApi/v1*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------

@@ -1,6 +1,6 @@
 # PaymentApi
 
-All URIs are relative to *https://localhost*
+All URIs are relative to *https://api.payeezy.com/globalApi/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
