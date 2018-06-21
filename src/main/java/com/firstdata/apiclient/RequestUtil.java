@@ -18,7 +18,7 @@ public final class RequestUtil {
 
     public static String messageSignature(final String apiSecret, final String apiKey, final String clientRequestId, final Long timestamp) {
         final String msg = apiKey + clientRequestId + timestamp;
-        final byte[] digest = hmac("", apiSecret.getBytes(), msg.getBytes());
+        final byte[] digest = hmac("HmacSHA256", apiSecret.getBytes(), msg.getBytes());
         return Base64
                 .getEncoder()
                 .encodeToString(digest);
