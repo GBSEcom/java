@@ -36,7 +36,7 @@ public final class RequestUtil {
             digest = Mac.getInstance(algorithm);
             digest.init(signingKey);
         } catch (NoSuchAlgorithmException | InvalidKeyException e) {
-            throw new IllegalStateException("algorithm " + algorithm + " not supported by underlying implementation.");
+            throw new IllegalStateException("algorithm \"" + algorithm + "\" not supported by underlying implementation.");
         }
 
         return digest.doFinal(msg);
