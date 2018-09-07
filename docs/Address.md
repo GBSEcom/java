@@ -4,13 +4,13 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**company** | **String** |  |  [optional]
-**address1** | **String** |  |  [optional]
-**address2** | **String** |  |  [optional]
-**locality** | **String** | City or locality |  [optional]
-**region** | **String** | State or province |  [optional]
-**postalCode** | **String** | ZIP Code or postal code |  [optional]
-**country** | **String** | ISO-3166-1  ALPHA-2, ALPHA-3 or numeric |  [optional]
+**company** | **String** | If it&#39;s a business, enter the name here. |  [optional]
+**address1** | **String** | street address or P.O.Box number |  [optional]
+**address2** | **String** | additional address information |  [optional]
+**city** | **String** | City or Locality |  [optional]
+**region** | **String** | State or Province |  [optional]
+**postalCode** | **String** | ZIP code or postal code |  [optional]
+**country** | **String** | Country name |  [optional]
 
 
 

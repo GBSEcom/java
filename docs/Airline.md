@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 **restricted** | **Boolean** |  |  [optional]
 **travelRoute** | [**List&lt;AirlineTravelRoute&gt;**](AirlineTravelRoute.md) |  |  [optional]
 **relatedTicketNumber** | **String** |  |  [optional]
-**ancillaryServiceCategory** | [**List&lt;AirlineAncillaryServiceCategory&gt;**](AirlineAncillaryServiceCategory.md) | Identify purchase of ancillary goods or services with false value. If the element is not given, the transaction is assumed to be a purchase of airline ticket. |  [optional]
+**ancillaryServiceCategory** | [**List&lt;AirlineAncillaryServiceCategory&gt;**](AirlineAncillaryServiceCategory.md) | Identify the purchase of ancillary goods or services with a false value. If this element is not provided, the transaction is assumed to be a purchase of an airline ticket. |  [optional]
 **ticketPurchase** | **Boolean** |  |  [optional]
 
 

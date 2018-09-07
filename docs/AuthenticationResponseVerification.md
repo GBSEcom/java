@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 ## Enum: TypeEnum
 Name | Value
 ---- | -----
-SECURE_3D | &quot;SECURE_3D&quot;
+_3D | &quot;SECURE_3D&quot;
 
 
 
