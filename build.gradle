@@ -1,8 +1,8 @@
 apply plugin: 'idea'
 apply plugin: 'eclipse'
 
-group = 'com.firstdata.api'
-version = '1.0.1'
+group = 'com.firstdata.firstapi.client'
+version = '6.3.0'
 
 buildscript {
     repositories {
@@ -83,7 +83,7 @@ if(hasProperty('target') && target == 'android') {
 
     install {
         repositories.mavenInstaller {
-            pom.artifactId = 'GlobalAPIClient'
+            pom.artifactId = 'FirstApiClient'
         }
     }
 
@@ -94,11 +94,22 @@ if(hasProperty('target') && target == 'android') {
 }
 
 dependencies {
-    compile 'io.swagger:swagger-annotations:1.5.17'
-    compileOnly 'org.projectlombok:lombok:1.16.22'
+    compile 'io.swagger:swagger-annotations:1.5.15'
     compile 'com.squareup.okhttp:okhttp:2.7.5'
     compile 'com.squareup.okhttp:logging-interceptor:2.7.5'
     compile 'com.google.code.gson:gson:2.8.1'
     compile 'io.gsonfire:gson-fire:1.8.0'
     testCompile 'junit:junit:4.12'
+    compileOnly('org.projectlombok:lombok:1.18.2')
+}
+
+jar {
+    manifest {
+      attributes 'Implementation-Title': 'FirstApiClient',
+              'Implementation-Version': version
+    }
+
+    from {
+        configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
+    }
 }

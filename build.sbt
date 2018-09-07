@@ -1,15 +1,15 @@
 lazy val root = (project in file(".")).
   settings(
-    organization := "com.firstdata.api",
-    name := "GlobalAPIClient",
-    version := "1.0.0",
+    organization := "com.firstdata.firstapi.client",
+    name := "FirstApiClient",
+    version := "6.3.0",
     scalaVersion := "2.11.4",
     scalacOptions ++= Seq("-feature"),
     javacOptions in compile ++= Seq("-Xlint:deprecation"),
     publishArtifact in (Compile, packageDoc) := false,
     resolvers += Resolver.mavenLocal,
     libraryDependencies ++= Seq(
-      "io.swagger" % "swagger-annotations" % "1.5.17",
+      "io.swagger" % "swagger-annotations" % "1.5.15",
       "com.squareup.okhttp" % "okhttp" % "2.7.5",
       "com.squareup.okhttp" % "logging-interceptor" % "2.7.5",
       "com.google.code.gson" % "gson" % "2.8.1",

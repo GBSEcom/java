@@ -1,23 +1,23 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.firstdata.api</groupId>
-    <artifactId>GlobalAPIClient</artifactId>
+    <groupId>com.firstdata.firstapi.client</groupId>
+    <artifactId>FirstApiClient</artifactId>
     <packaging>jar</packaging>
-    <name>GlobalAPIClient</name>
-    <version>1.0.1</version>
-    <url>https://github.com/GBSEcom/java</url>
-    <description>Client library for First Data Corporation APIs</description>
+    <name>FirstApiClient</name>
+    <version>6.3.0</version>
+    <url></url>
+    <description>Payment Gateway APIClient SDK for payment processing</description>
     <scm>
-        <connection>scm:git:git@github.com:GBSEcom/java.git</connection>
-        <developerConnection>scm:git:git@github.com:GBSEcom/java.git</developerConnection>
-        <url>https://github.com/GBSEcom/java</url>
+        <connection>scm:git:git@github.com:swagger-api/swagger-codegen.git</connection>
+        <developerConnection>scm:git:git@github.com:swagger-api/swagger-codegen.git</developerConnection>
+        <url>https://github.com/swagger-api/swagger-codegen</url>
     </scm>
 
     <licenses>
         <license>
             <name>MIT</name>
-            <url>https://opensource.org/licenses/MIT</url>
+            <url>http://unlicense.org</url>
             <distribution>repo</distribution>
         </license>
     </licenses>
@@ -27,7 +27,7 @@
             <name>Brandon Garcia</name>
             <email>brandon.garcia@firstdata.com</email>
             <organization>First Data Corporation</organization>
-            <organizationUrl>https://developer.firstdata.com</organizationUrl>
+            <organizationUrl>https://www.firstdata.com</organizationUrl>
         </developer>
     </developers>
 
@@ -188,14 +188,6 @@
     </profiles>
 
     <dependencies>
-        <!-- Lombok -->
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <version>1.16.22</version>
-            <scope>provided</scope>
-        </dependency>
-
         <dependency>
             <groupId>io.swagger</groupId>
             <artifactId>swagger-annotations</artifactId>
@@ -221,6 +213,12 @@
             <artifactId>gson-fire</artifactId>
             <version>${gson-fire-version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.2</version>
+            <scope>provided</scope>
+        </dependency>
         <!-- test dependencies -->
         <dependency>
             <groupId>junit</groupId>
@@ -234,7 +232,7 @@
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
         <gson-fire-version>1.8.0</gson-fire-version>
-        <swagger-core-version>1.5.18</swagger-core-version>
+        <swagger-core-version>1.5.15</swagger-core-version>
         <okhttp-version>2.7.5</okhttp-version>
         <gson-version>2.8.1</gson-version>
         <maven-plugin-version>1.0.0</maven-plugin-version>
