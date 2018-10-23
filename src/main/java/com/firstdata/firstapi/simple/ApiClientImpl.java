@@ -8,11 +8,6 @@ import com.firstdata.firstapi.model.AccessTokenResponse;
 import com.firstdata.firstapi.model.PrimaryTransaction;
 import com.firstdata.firstapi.model.SecondaryTransaction;
 import com.firstdata.firstapi.model.TransactionResponse;
-import com.firstdata.firstapi.util.MessageSignature;
-
-import java.time.ZoneId;
-import java.time.ZonedDateTime;
-import java.util.UUID;
 
 public class ApiClientImpl implements ApiClient {
 
@@ -21,21 +16,24 @@ public class ApiClientImpl implements ApiClient {
 		return new ApiClientImpl(new AuthenticationApi(client), new PaymentApi(client), new OrderApi(client), creds);
 	}
 
-	private static final String CONTENT_TYPE = "application/json";
+	static final String CONTENT_TYPE = "application/json";
 
 	private final AuthenticationApi authenticationApi;
 	private final PaymentApi paymentApi;
 	private final OrderApi orderApi;
 
-	private final String apiSecret;
-	private final String apiKey;
+	private final MerchantCredentials creds;
 
-	private ApiClientImpl (final AuthenticationApi authApi, final PaymentApi paymentApi, final OrderApi orderApi, final MerchantCredentials creds) {
+	private ApiClientImpl (
+		final AuthenticationApi authApi,
+		final PaymentApi paymentApi,
+		final OrderApi orderApi,
+		final MerchantCredentials creds
+	) {
 		authenticationApi = authApi;
 		this.paymentApi = paymentApi;
 		this.orderApi = orderApi;
-		apiSecret = creds.getApiSecret();
-		apiKey = creds.getApiKey();
+		this.creds = creds;
 	}
 
 	public ApiClientImpl(final ClientContext context) {
@@ -49,10 +47,14 @@ public class ApiClientImpl implements ApiClient {
 
 	@Override
 	public AccessTokenResponse requestAccessToken () {
-		final Long timestamp = ApiClientImpl.timestamp();
-		final String clientRequestId = ApiClientImpl.clientRequestId();
-		final String messageSignature = messageSignature(clientRequestId, timestamp);
-		return authenticationApi.v1AuthenticationAccessTokensPost(ApiClientImpl.CONTENT_TYPE, clientRequestId, apiKey, timestamp, messageSignature);
+		final Headers headers = headers();
+		return authenticationApi.v1AuthenticationAccessTokensPost(
+			headers.getContentType(),
+			headers.getClientRequestId(),
+			headers.getApiKey(),
+			headers.getTimestamp(),
+			headers.getMessageSignature()
+		);
 	}
 
 	@Override
@@ -62,18 +64,30 @@ public class ApiClientImpl implements ApiClient {
 
 	@Override
 	public TransactionResponse performPaymentPostAuthorizationByTransaction (final String transactionId, final SecondaryTransaction payload, final String storeId) {
-		final Long timestamp = ApiClientImpl.timestamp();
-		final String clientRequestId = ApiClientImpl.clientRequestId();
-		final String messageSignature = messageSignature(clientRequestId, timestamp, payload);
-		return paymentApi.performPaymentPostAuthorisation(ApiClientImpl.CONTENT_TYPE, clientRequestId, apiKey, timestamp, messageSignature, transactionId, payload, storeId);
+		final Headers headers = headers(payload);
+		return paymentApi.performPaymentPostAuthorisation(
+			ApiClientImpl.CONTENT_TYPE,
+			headers.getClientRequestId(),
+			headers.getApiKey(),
+			headers.getTimestamp(),
+			headers.getMessageSignature(),
+			transactionId,
+			payload,
+			storeId
+		);
 	}
 
 	@Override
 	public TransactionResponse primaryPaymentTransaction (final PrimaryTransaction payload) {
-		final Long timestamp = ApiClientImpl.timestamp();
-		final String clientRequestId = ApiClientImpl.clientRequestId();
-		final String messageSignature = messageSignature(clientRequestId, timestamp, payload);
-		return paymentApi.primaryPaymentTransaction(ApiClientImpl.CONTENT_TYPE, clientRequestId, apiKey, timestamp, messageSignature, payload);
+		final Headers headers = headers(payload);
+		return paymentApi.primaryPaymentTransaction(
+			ApiClientImpl.CONTENT_TYPE,
+			headers.getClientRequestId(),
+			headers.getApiKey(),
+			headers.getTimestamp(),
+			headers.getMessageSignature(),
+			payload
+		);
 	}
 
 	@Override
@@ -83,10 +97,17 @@ public class ApiClientImpl implements ApiClient {
 
 	@Override
 	public TransactionResponse returnTransaction (final String transactionId, final SecondaryTransaction payload, final String storeId) {
-		final Long timestamp = ApiClientImpl.timestamp();
-		final String clientRequestId = ApiClientImpl.clientRequestId();
-		final String messageSignature = messageSignature(clientRequestId, timestamp, payload);
-		return paymentApi.returnTransaction(ApiClientImpl.CONTENT_TYPE, clientRequestId, apiKey, timestamp, messageSignature, transactionId, payload, storeId);
+		final Headers headers = headers(payload);
+		return paymentApi.returnTransaction(
+			ApiClientImpl.CONTENT_TYPE,
+			headers.getClientRequestId(),
+			headers.getApiKey(),
+			headers.getTimestamp(),
+			headers.getMessageSignature(),
+			transactionId,
+			payload,
+			storeId
+		);
 	}
 
 	@Override
@@ -96,10 +117,16 @@ public class ApiClientImpl implements ApiClient {
 
 	@Override
 	public TransactionResponse transactionInquiry (final String transactionId, final String storeId) {
-		final Long timestamp = ApiClientImpl.timestamp();
-		final String clientRequestId = ApiClientImpl.clientRequestId();
-		final String messageSignature = messageSignature(clientRequestId, timestamp);
-		return paymentApi.transactionInquiry(ApiClientImpl.CONTENT_TYPE, clientRequestId, apiKey, timestamp, messageSignature, transactionId, storeId);
+		final Headers headers = headers();
+		return paymentApi.transactionInquiry(
+			ApiClientImpl.CONTENT_TYPE,
+			headers.getClientRequestId(),
+			headers.getApiKey(),
+			headers.getTimestamp(),
+			headers.getMessageSignature(),
+			transactionId,
+			storeId
+		);
 	}
 
 	@Override
@@ -109,10 +136,16 @@ public class ApiClientImpl implements ApiClient {
 
 	@Override
 	public TransactionResponse voidTransaction (final String transactionId, final String storeId) {
-		final Long timestamp = ApiClientImpl.timestamp();
-		final String clientRequestId = ApiClientImpl.clientRequestId();
-		final String messageSignature = messageSignature(clientRequestId, timestamp);
-		return paymentApi.voidTransaction(ApiClientImpl.CONTENT_TYPE, clientRequestId, apiKey, timestamp, messageSignature, transactionId, storeId);
+		final Headers headers = headers();
+		return paymentApi.voidTransaction(
+			ApiClientImpl.CONTENT_TYPE,
+			headers.getClientRequestId(),
+			headers.getApiKey(),
+			headers.getTimestamp(),
+			headers.getMessageSignature(),
+			transactionId,
+			storeId
+		);
 	}
 
 	@Override
@@ -122,10 +155,17 @@ public class ApiClientImpl implements ApiClient {
 
 	@Override
 	public TransactionResponse performPaymentPostAuthorizationByOrder (final String orderId, final SecondaryTransaction payload, final String storeId) {
-		final Long timestamp = ApiClientImpl.timestamp();
-		final String clientRequestId = ApiClientImpl.clientRequestId();
-		final String messageSignature = messageSignature(clientRequestId, timestamp, payload);
-		return orderApi.performPaymentPostAuthorisation(ApiClientImpl.CONTENT_TYPE, clientRequestId, apiKey, timestamp, messageSignature, orderId, payload, storeId);
+		final Headers headers = headers(payload);
+		return orderApi.performPaymentPostAuthorisation(
+			ApiClientImpl.CONTENT_TYPE,
+			headers.getClientRequestId(),
+			headers.getApiKey(),
+			headers.getTimestamp(),
+			headers.getMessageSignature(),
+			orderId,
+			payload,
+			storeId
+		);
 	}
 
 	@Override
@@ -135,39 +175,24 @@ public class ApiClientImpl implements ApiClient {
 
 	@Override
 	public TransactionResponse returnTransactionByOrder (final String orderId, final SecondaryTransaction payload, final String storeId) {
-		final Long timestamp = ApiClientImpl.timestamp();
-		final String clientRequestId = ApiClientImpl.clientRequestId();
-		final String messageSignature = messageSignature(clientRequestId, timestamp, payload);
-		return orderApi.returnTransaction(ApiClientImpl.CONTENT_TYPE, clientRequestId, apiKey, timestamp, messageSignature, orderId, payload, storeId);
+		final Headers headers = headers(payload);
+		return orderApi.returnTransaction(
+			ApiClientImpl.CONTENT_TYPE,
+			headers.getClientRequestId(),
+			headers.getApiKey(),
+			headers.getTimestamp(),
+			headers.getMessageSignature(),
+			orderId,
+			payload,
+			storeId
+		);
 	}
 
-	private static String clientRequestId() {
-		return UUID.randomUUID().toString();
+	private Headers headers() {
+		return Headers.from(creds, "");
 	}
 
-	private static Long timestamp() {
-		return ZonedDateTime.now(ZoneId.of("GMT"))
-			.toEpochSecond() * 1000L;
-	}
-
-	private String messageSignature(final String clientRequestId, final Long timestamp) {
-		return MessageSignature.of(apiKey, clientRequestId, timestamp, "")
-			.hash(apiSecret);
-	}
-
-	private String messageSignature(final String clientRequestId, final Long timestamp, final String payload) {
-		return MessageSignature.of(apiKey, clientRequestId, timestamp, payload)
-			.hash(apiSecret);
-	}
-
-	private String messageSignature(final String clientRequestId, final Long timestamp, final Object payload) {
-		return MessageSignature.of(apiKey, clientRequestId, timestamp, serialize(payload))
-			.hash(apiSecret);
-	}
-
-	private String serialize(final Object payload) {
-		return orderApi.getApiClient()
-			.serialize(payload, ApiClientImpl.CONTENT_TYPE)
-			.toString();
+	private <T> Headers headers(final T payload) {
+		return Headers.from(creds, payload);
 	}
 }
