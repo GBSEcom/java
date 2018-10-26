@@ -4,15 +4,14 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**number** | **String** | Payment card number, including credit/debit card number or digital PAN | 
+**number** | **String** | Payment card number | 
 **expiryDate** | [**Expiration**](Expiration.md) |  |  [optional]
-**cardCodeValue** | **String** | CVV or CCV value |  [optional]
+**securityCode** | **String** | CVV |  [optional]
 **cardFunction** | [**CardFunctionEnum**](#CardFunctionEnum) |  |  [optional]
 **cardholderName** | **String** |  |  [optional]
 **authenticationRequest** | [**PaymentCardAuthenticationRequest**](PaymentCardAuthenticationRequest.md) |  |  [optional]
-**brand** | **String** | Optional, required only if using dual-branded card |  [optional]
-**authenticationResult** | [**AuthenticationResult**](AuthenticationResult.md) |  |  [optional]
-**enableTokenization** | **Boolean** | Whether the Gateway shall tokenize the card while performing payment transaction |  [optional]
+**authenticationResult** | [**PaymentCardAuthenticationResult**](PaymentCardAuthenticationResult.md) |  |  [optional]
+**brand** | **String** | Optional, required only if using dual branded card |  [optional]
 
 
 <a name="CardFunctionEnum"></a>

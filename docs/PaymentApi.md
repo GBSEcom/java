@@ -1,47 +1,45 @@
 # PaymentApi
 
-All URIs are relative to *https://api.payeezy.com/globalApi/v1*
+All URIs are relative to *https://cert.api.firstdata.com/gateway*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**postAuthTransaction**](PaymentApi.md#postAuthTransaction) | **POST** /payments/{transaction-id}/postauth | Postauth transaction
-[**refundTransaction**](PaymentApi.md#refundTransaction) | **POST** /payments/{transaction-id}/return | Return/Refund transaction
-[**voidTransaction**](PaymentApi.md#voidTransaction) | **POST** /payments/{transaction-id}/void | Void transaction
-[**createTransaction**](PaymentApi.md#createTransaction) | **POST** /payments | Primary transaction creation
+[**performPaymentPostAuthorisation**](PaymentApi.md#performPaymentPostAuthorisation) | **POST** /v1/payments/{transaction-id}/postauth | Use this to capture/complete a transaction. Partial postauths are allowed.
+[**primaryPaymentTransaction**](PaymentApi.md#primaryPaymentTransaction) | **POST** /v1/payments | Generate a primary transaction
+[**returnTransaction**](PaymentApi.md#returnTransaction) | **POST** /v1/payments/{transaction-id}/return | Return/refund a transaction.
+[**transactionInquiry**](PaymentApi.md#transactionInquiry) | **GET** /v1/payments/{transaction-id} | Retrieve the state of a transaction
+[**voidTransaction**](PaymentApi.md#voidTransaction) | **POST** /v1/payments/{transaction-id}/void | Reverse a previous action on an existing transaction
 
 
-<a name="postAuthTransaction"></a>
-# **postAuthTransaction**
-> CertificateCreationResponse postAuthTransaction(transactionId, payload)
+<a name="performPaymentPostAuthorisation"></a>
+# **performPaymentPostAuthorisation**
+> TransactionResponse performPaymentPostAuthorisation(contentType, clientRequestId, apiKey, timestamp, messageSignature, transactionId, payload, storeId)
 
-Postauth transaction
+Use this to capture/complete a transaction. Partial postauths are allowed.
 
-Use this to capture/complete a preauth transaction. Partial postauths are allowed.
+This can be used for postauth and partial postauths.
 
 ### Example
 ```java
 // Import classes:
-//import com.firstdata.apiclient.ApiException;
-//import com.firstdata.apiclient.api.PaymentApi;
+//import com.firstdata.firstapi.client.ApiException;
+//import com.firstdata.firstapi.api.PaymentApi;
 
-String apiSecret = "apiSecret_example";
 
-// Developer App API key.
-// This is used for API authentication. Keys are provided at the time of merchant boarding.
-String apiKey = "apiKey_example";
-
-PaymentApi apiInstance = new PaymentApi(apiSecret, apiKey);
-
-// String | Identifies the primary transaction
-String transactionId = "transactionId_example";
-
-SecondaryTransaction payload = new SecondaryTransaction();
-
+PaymentApi apiInstance = new PaymentApi();
+String contentType = "application/json"; // String | content type
+String clientRequestId = "clientRequestId_example"; // String | A client-generated ID for request tracking and signature creation, unique per request.  This is also used for idempotency control. We recommend 128-bit UUID format.
+String apiKey = "apiKey_example"; // String | 
+Long timestamp = 789L; // Long | Epoch timestamp in milliseconds in the request from a client system. Used for Message Signature generation and time limit (5 mins).
+String messageSignature = "messageSignature_example"; // String | Used to ensure the request has not been tampered with during transmission. The Message-Signature is the Base64 encoded HMAC hash (SHA256  algorithm with the API Secret as the key.) For more information, refer to the supporting documentation on the Developer Portal.
+String transactionId = "transactionId_example"; // String | Gateway transaction identifier as returned in the parameter ipgTransactionId
+SecondaryTransaction payload = new SecondaryTransaction(); // SecondaryTransaction | 
+String storeId = "storeId_example"; // String | an optional outlet id for clients that support multiple store in the same developer app
 try {
-    CertificateCreationResponse result = apiInstance.postAuthTransaction(transactionId, payload);
+    TransactionResponse result = apiInstance.performPaymentPostAuthorisation(contentType, clientRequestId, apiKey, timestamp, messageSignature, transactionId, payload, storeId);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling PaymentApi#postAuthTransaction");
+    System.err.println("Exception when calling PaymentApi#performPaymentPostAuthorisation");
     e.printStackTrace();
 }
 ```
@@ -50,50 +48,55 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **transactionId** | **String**| Identifies the primary transaction |
+ **contentType** | **String**| content type | [default to application/json] [enum: application/json]
+ **clientRequestId** | **String**| A client-generated ID for request tracking and signature creation, unique per request.  This is also used for idempotency control. We recommend 128-bit UUID format. |
+ **apiKey** | **String**|  |
+ **timestamp** | **Long**| Epoch timestamp in milliseconds in the request from a client system. Used for Message Signature generation and time limit (5 mins). |
+ **messageSignature** | **String**| Used to ensure the request has not been tampered with during transmission. The Message-Signature is the Base64 encoded HMAC hash (SHA256  algorithm with the API Secret as the key.) For more information, refer to the supporting documentation on the Developer Portal. |
+ **transactionId** | **String**| Gateway transaction identifier as returned in the parameter ipgTransactionId |
  **payload** | [**SecondaryTransaction**](SecondaryTransaction.md)|  |
+ **storeId** | **String**| an optional outlet id for clients that support multiple store in the same developer app | [optional]
 
 ### Return type
 
-[**CertificateCreationResponse**](CertificateCreationResponse.md)
+[**TransactionResponse**](TransactionResponse.md)
+
+### Authorization
+
+No authorization required
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a name="refundTransaction"></a>
-# **refundTransaction**
-> TransactionResponse refundTransaction(transactionId, payload)
+<a name="primaryPaymentTransaction"></a>
+# **primaryPaymentTransaction**
+> TransactionResponse primaryPaymentTransaction(contentType, clientRequestId, apiKey, timestamp, messageSignature, payload)
 
-Return/Refund transaction
+Generate a primary transaction
 
-Use this for returns and partial returns.
+Use this to originate a financial transaction, like a sale, preauthorization, or credit.
 
 ### Example
 ```java
 // Import classes:
-//import com.firstdata.apiclient.ApiException;
-//import com.firstdata.apiclient.api.PaymentApi;
+//import com.firstdata.firstapi.client.ApiException;
+//import com.firstdata.firstapi.api.PaymentApi;
 
-String apiSecret = "apiSecret_example";
 
-// Developer App API key. This is used for API authentication. Keys are provided at the time of merchant boarding.
-String apiKey = "apiKey_example";
-
-PaymentApi apiInstance = new PaymentApi(apiSecret, apiKey);
-
-// Identifies the primary transaction
-String transactionId = "transactionId_example";
-
-// SecondaryTransaction
-SecondaryTransaction payload = new SecondaryTransaction();
-
+PaymentApi apiInstance = new PaymentApi();
+String contentType = "application/json"; // String | content type
+String clientRequestId = "clientRequestId_example"; // String | A client-generated ID for request tracking and signature creation, unique per request.  This is also used for idempotency control. We recommend 128-bit UUID format.
+String apiKey = "apiKey_example"; // String | 
+Long timestamp = 789L; // Long | Epoch timestamp in milliseconds in the request from a client system. Used for Message Signature generation and time limit (5 mins).
+String messageSignature = "messageSignature_example"; // String | Used to ensure the request has not been tampered with during transmission. The Message-Signature is the Base64 encoded HMAC hash (SHA256  algorithm with the API Secret as the key.) For more information, refer to the supporting documentation on the Developer Portal.
+PrimaryTransaction payload = new PrimaryTransaction(); // PrimaryTransaction | Primary Transaction request
 try {
-    TransactionResponse result = apiInstance.refundTransaction(transactionId, payload);
+    TransactionResponse result = apiInstance.primaryPaymentTransaction(contentType, clientRequestId, apiKey, timestamp, messageSignature, payload);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling PaymentApi#refundTransaction");
+    System.err.println("Exception when calling PaymentApi#primaryPaymentTransaction");
     e.printStackTrace();
 }
 ```
@@ -102,12 +105,136 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **transactionId** | **String**| Identifies the primary transaction |
- **payload** | [**SecondaryTransaction**](SecondaryTransaction.md)|  |
+ **contentType** | **String**| content type | [default to application/json] [enum: application/json]
+ **clientRequestId** | **String**| A client-generated ID for request tracking and signature creation, unique per request.  This is also used for idempotency control. We recommend 128-bit UUID format. |
+ **apiKey** | **String**|  |
+ **timestamp** | **Long**| Epoch timestamp in milliseconds in the request from a client system. Used for Message Signature generation and time limit (5 mins). |
+ **messageSignature** | **String**| Used to ensure the request has not been tampered with during transmission. The Message-Signature is the Base64 encoded HMAC hash (SHA256  algorithm with the API Secret as the key.) For more information, refer to the supporting documentation on the Developer Portal. |
+ **payload** | [**PrimaryTransaction**](PrimaryTransaction.md)| Primary Transaction request |
 
 ### Return type
 
 [**TransactionResponse**](TransactionResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="returnTransaction"></a>
+# **returnTransaction**
+> TransactionResponse returnTransaction(contentType, clientRequestId, apiKey, timestamp, messageSignature, transactionId, payload, storeId)
+
+Return/refund a transaction.
+
+Use this to return/refund an existing transaction.  Partial returns are allowed.
+
+### Example
+```java
+// Import classes:
+//import com.firstdata.firstapi.client.ApiException;
+//import com.firstdata.firstapi.api.PaymentApi;
+
+
+PaymentApi apiInstance = new PaymentApi();
+String contentType = "application/json"; // String | content type
+String clientRequestId = "clientRequestId_example"; // String | A client-generated ID for request tracking and signature creation, unique per request.  This is also used for idempotency control. We recommend 128-bit UUID format.
+String apiKey = "apiKey_example"; // String | 
+Long timestamp = 789L; // Long | Epoch timestamp in milliseconds in the request from a client system. Used for Message Signature generation and time limit (5 mins).
+String messageSignature = "messageSignature_example"; // String | Used to ensure the request has not been tampered with during transmission. The Message-Signature is the Base64 encoded HMAC hash (SHA256  algorithm with the API Secret as the key.) For more information, refer to the supporting documentation on the Developer Portal.
+String transactionId = "transactionId_example"; // String | Gateway transaction identifier as returned in the parameter ipgTransactionId
+SecondaryTransaction payload = new SecondaryTransaction(); // SecondaryTransaction | 
+String storeId = "storeId_example"; // String | an optional outlet id for clients that support multiple store in the same developer app
+try {
+    TransactionResponse result = apiInstance.returnTransaction(contentType, clientRequestId, apiKey, timestamp, messageSignature, transactionId, payload, storeId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling PaymentApi#returnTransaction");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **contentType** | **String**| content type | [default to application/json] [enum: application/json]
+ **clientRequestId** | **String**| A client-generated ID for request tracking and signature creation, unique per request.  This is also used for idempotency control. We recommend 128-bit UUID format. |
+ **apiKey** | **String**|  |
+ **timestamp** | **Long**| Epoch timestamp in milliseconds in the request from a client system. Used for Message Signature generation and time limit (5 mins). |
+ **messageSignature** | **String**| Used to ensure the request has not been tampered with during transmission. The Message-Signature is the Base64 encoded HMAC hash (SHA256  algorithm with the API Secret as the key.) For more information, refer to the supporting documentation on the Developer Portal. |
+ **transactionId** | **String**| Gateway transaction identifier as returned in the parameter ipgTransactionId |
+ **payload** | [**SecondaryTransaction**](SecondaryTransaction.md)|  |
+ **storeId** | **String**| an optional outlet id for clients that support multiple store in the same developer app | [optional]
+
+### Return type
+
+[**TransactionResponse**](TransactionResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="transactionInquiry"></a>
+# **transactionInquiry**
+> TransactionResponse transactionInquiry(contentType, clientRequestId, apiKey, timestamp, messageSignature, transactionId, storeId)
+
+Retrieve the state of a transaction
+
+Use this query to get the current state of an existing transaction.
+
+### Example
+```java
+// Import classes:
+//import com.firstdata.firstapi.client.ApiException;
+//import com.firstdata.firstapi.api.PaymentApi;
+
+
+PaymentApi apiInstance = new PaymentApi();
+String contentType = "application/json"; // String | content type
+String clientRequestId = "clientRequestId_example"; // String | A client-generated ID for request tracking and signature creation, unique per request.  This is also used for idempotency control. We recommend 128-bit UUID format.
+String apiKey = "apiKey_example"; // String | 
+Long timestamp = 789L; // Long | Epoch timestamp in milliseconds in the request from a client system. Used for Message Signature generation and time limit (5 mins).
+String messageSignature = "messageSignature_example"; // String | Used to ensure the request has not been tampered with during transmission. The Message-Signature is the Base64 encoded HMAC hash (SHA256  algorithm with the API Secret as the key.) For more information, refer to the supporting documentation on the Developer Portal.
+String transactionId = "transactionId_example"; // String | Gateway transaction identifier as returned in the parameter ipgTransactionId
+String storeId = "storeId_example"; // String | an optional outlet id for clients that support multiple store in the same developer app
+try {
+    TransactionResponse result = apiInstance.transactionInquiry(contentType, clientRequestId, apiKey, timestamp, messageSignature, transactionId, storeId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling PaymentApi#transactionInquiry");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **contentType** | **String**| content type | [default to application/json] [enum: application/json]
+ **clientRequestId** | **String**| A client-generated ID for request tracking and signature creation, unique per request.  This is also used for idempotency control. We recommend 128-bit UUID format. |
+ **apiKey** | **String**|  |
+ **timestamp** | **Long**| Epoch timestamp in milliseconds in the request from a client system. Used for Message Signature generation and time limit (5 mins). |
+ **messageSignature** | **String**| Used to ensure the request has not been tampered with during transmission. The Message-Signature is the Base64 encoded HMAC hash (SHA256  algorithm with the API Secret as the key.) For more information, refer to the supporting documentation on the Developer Portal. |
+ **transactionId** | **String**| Gateway transaction identifier as returned in the parameter ipgTransactionId |
+ **storeId** | **String**| an optional outlet id for clients that support multiple store in the same developer app | [optional]
+
+### Return type
+
+[**TransactionResponse**](TransactionResponse.md)
+
+### Authorization
+
+No authorization required
 
 ### HTTP request headers
 
@@ -116,30 +243,29 @@ Name | Type | Description  | Notes
 
 <a name="voidTransaction"></a>
 # **voidTransaction**
-> TransactionResponse voidTransaction(transactionId)
+> TransactionResponse voidTransaction(contentType, clientRequestId, apiKey, timestamp, messageSignature, transactionId, storeId)
 
-Void transaction
+Reverse a previous action on an existing transaction
 
-This is used to reverse a financial transaction such as Postauth, Return, Preauth, or Sale.
+Use this to reverse a postauth/completion, credit, preauth, or sale.
 
 ### Example
 ```java
 // Import classes:
-//import com.firstdata.apiclient.ApiException;
-//import com.firstdata.apiclient.api.PaymentApi;
+//import com.firstdata.firstapi.client.ApiException;
+//import com.firstdata.firstapi.api.PaymentApi;
 
-String apiSecret = "apiSecret_example";
 
-// Developer App API key. This is used for API authentication. Keys are provided at the time of merchant boarding.
-String apiKey = "apiKey_example";
-
-PaymentApi apiInstance = new PaymentApi(apiSecret, apiKey);
-
-// Identifies the primary transaction
-String transactionId = "transactionId_example";
-
+PaymentApi apiInstance = new PaymentApi();
+String contentType = "application/json"; // String | content type
+String clientRequestId = "clientRequestId_example"; // String | A client-generated ID for request tracking and signature creation, unique per request.  This is also used for idempotency control. We recommend 128-bit UUID format.
+String apiKey = "apiKey_example"; // String | 
+Long timestamp = 789L; // Long | Epoch timestamp in milliseconds in the request from a client system. Used for Message Signature generation and time limit (5 mins).
+String messageSignature = "messageSignature_example"; // String | Used to ensure the request has not been tampered with during transmission. The Message-Signature is the Base64 encoded HMAC hash (SHA256  algorithm with the API Secret as the key.) For more information, refer to the supporting documentation on the Developer Portal.
+String transactionId = "transactionId_example"; // String | Gateway transaction identifier as returned in the parameter ipgTransactionId
+String storeId = "storeId_example"; // String | an optional outlet id for clients that support multiple store in the same developer app
 try {
-    TransactionResponse result = apiInstance.voidTransaction(transactionId);
+    TransactionResponse result = apiInstance.voidTransaction(contentType, clientRequestId, apiKey, timestamp, messageSignature, transactionId, storeId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling PaymentApi#voidTransaction");
@@ -151,59 +277,21 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **transactionId** | **String**| Identifies the primary transaction |
+ **contentType** | **String**| content type | [default to application/json] [enum: application/json]
+ **clientRequestId** | **String**| A client-generated ID for request tracking and signature creation, unique per request.  This is also used for idempotency control. We recommend 128-bit UUID format. |
+ **apiKey** | **String**|  |
+ **timestamp** | **Long**| Epoch timestamp in milliseconds in the request from a client system. Used for Message Signature generation and time limit (5 mins). |
+ **messageSignature** | **String**| Used to ensure the request has not been tampered with during transmission. The Message-Signature is the Base64 encoded HMAC hash (SHA256  algorithm with the API Secret as the key.) For more information, refer to the supporting documentation on the Developer Portal. |
+ **transactionId** | **String**| Gateway transaction identifier as returned in the parameter ipgTransactionId |
+ **storeId** | **String**| an optional outlet id for clients that support multiple store in the same developer app | [optional]
 
 ### Return type
 
 [**TransactionResponse**](TransactionResponse.md)
 
-### HTTP request headers
+### Authorization
 
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-<a name="createTransaction"></a>
-# **createTransaction**
-> TransactionResponse createTransaction(payload)
-
-Primary transaction creation
-
-Use this to originate a financial transaction, like a sale, authorization, or credit.
-
-### Example
-```java
-// Import classes:
-//import com.firstdata.apiclient.ApiException;
-//import com.firstdata.apiclient.api.PaymentApi;
-
-String apiSecret = "apiSecret_example";
-
-// Developer App API key. This is used for API authentication. Keys are provided at the time of merchant boarding.
-String apiKey = "apiKey_example";
-
-PaymentApi apiInstance = new PaymentApi(apiSecret, apiKey);
-
-// PrimaryTransaction | Primary Transaction request
-PrimaryTransaction payload = new PrimaryTransaction();
-
-try {
-    TransactionResponse result = apiInstance.createTransaction(payload);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling PaymentApi#createTransaction");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **payload** | [**PrimaryTransaction**](PrimaryTransaction.md)| Primary Transaction request |
-
-### Return type
-
-[**TransactionResponse**](TransactionResponse.md)
+No authorization required
 
 ### HTTP request headers
 
