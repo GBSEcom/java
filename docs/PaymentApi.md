@@ -1,6 +1,6 @@
 # PaymentApi
 
-All URIs are relative to *https://cert.api.firstdata.com/gateway*
+All URIs are relative to *https://prod.api.firstdata.com/gateway*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -22,8 +22,8 @@ This can be used for postauth and partial postauths.
 ### Example
 ```java
 // Import classes:
-//import com.firstdata.firstapi.client.ApiException;
-//import com.firstdata.firstapi.api.PaymentApi;
+//import com.github.GBSEcom.client.ApiException;
+//import com.github.GBSEcom.api.PaymentApi;
 
 
 PaymentApi apiInstance = new PaymentApi();
@@ -81,8 +81,8 @@ Use this to originate a financial transaction, like a sale, preauthorization, or
 ### Example
 ```java
 // Import classes:
-//import com.firstdata.firstapi.client.ApiException;
-//import com.firstdata.firstapi.api.PaymentApi;
+//import com.github.GBSEcom.client.ApiException;
+//import com.github.GBSEcom.api.PaymentApi;
 
 
 PaymentApi apiInstance = new PaymentApi();
@@ -136,8 +136,8 @@ Use this to return/refund an existing transaction.  Partial returns are allowed.
 ### Example
 ```java
 // Import classes:
-//import com.firstdata.firstapi.client.ApiException;
-//import com.firstdata.firstapi.api.PaymentApi;
+//import com.github.GBSEcom.client.ApiException;
+//import com.github.GBSEcom.api.PaymentApi;
 
 
 PaymentApi apiInstance = new PaymentApi();
@@ -195,8 +195,8 @@ Use this query to get the current state of an existing transaction.
 ### Example
 ```java
 // Import classes:
-//import com.firstdata.firstapi.client.ApiException;
-//import com.firstdata.firstapi.api.PaymentApi;
+//import com.github.GBSEcom.client.ApiException;
+//import com.github.GBSEcom.api.PaymentApi;
 
 
 PaymentApi apiInstance = new PaymentApi();
@@ -252,8 +252,8 @@ Use this to reverse a postauth/completion, credit, preauth, or sale.
 ### Example
 ```java
 // Import classes:
-//import com.firstdata.firstapi.client.ApiException;
-//import com.firstdata.firstapi.api.PaymentApi;
+//import com.github.GBSEcom.client.ApiException;
+//import com.github.GBSEcom.api.PaymentApi;
 
 
 PaymentApi apiInstance = new PaymentApi();

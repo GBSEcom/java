@@ -1,8 +1,8 @@
 lazy val root = (project in file(".")).
   settings(
-    organization := "com.firstdata.firstapi.client",
-    name := "FirstApiClient",
-    version := "6.3.0",
+    organization := "com.github.GBSEcom",
+    name := "first-data-gateway",
+    version := "1.0.0",
     scalaVersion := "2.11.4",
     scalacOptions ++= Seq("-feature"),
     javacOptions in compile ++= Seq("-Xlint:deprecation"),

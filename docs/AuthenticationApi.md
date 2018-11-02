@@ -1,6 +1,6 @@
 # AuthenticationApi
 
-All URIs are relative to *https://cert.api.firstdata.com/gateway*
+All URIs are relative to *https://prod.api.firstdata.com/gateway*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -18,8 +18,8 @@ This is the access token generation call for authorizing subsequent financial tr
 ### Example
 ```java
 // Import classes:
-//import com.firstdata.firstapi.client.ApiException;
-//import com.firstdata.firstapi.api.AuthenticationApi;
+//import com.github.GBSEcom.client.ApiException;
+//import com.github.GBSEcom.api.AuthenticationApi;
 
 
 AuthenticationApi apiInstance = new AuthenticationApi();

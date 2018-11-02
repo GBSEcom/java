@@ -26,9 +26,9 @@ Add this dependency to your project's POM:
 
 ```xml
 <dependency>
-    <groupId>com.firstdata.firstapi.client</groupId>
-    <artifactId>FirstApiClient</artifactId>
-    <version>6.3.0</version>
+    <groupId>com.github.GBSEcom</groupId>
+    <artifactId>first-data-gateway</artifactId>
+    <version>1.0.0</version>
     <scope>compile</scope>
 </dependency>
 ```
@@ -38,7 +38,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "com.firstdata.firstapi.client:FirstApiClient:6.3.0"
+compile "com.github.GBSEcom:first-data-gateway:1.0.0"
 ```
 
 ### Others
@@ -49,7 +49,7 @@ At first generate the JAR by executing:
 
 Then manually install the following JARs:
 
-* target/FirstApiClient-6.3.0.jar
+* target/first-data-gateway-1.0.0.jar
 * target/lib/*.jar
 
 ## Getting Started
@@ -58,13 +58,13 @@ Please follow the [installation](#installation) instruction and execute the foll
 
 ```java
 
-import com.firstdata.firstapi.models.AccessTokenResponse;
-import com.firstdata.firstapi.client.ApiException;
+import com.github.GBSEcom.models.AccessTokenResponse;
+import com.github.GBSEcom.client.ApiException;
 
 // the 'simple' package contains the more user-friendly api (recommended)
-import com.firstdata.firstapi.simple.MerchantCredentials;
-import com.firstdata.firstapi.simple.ApiClientImpl;
-import com.firstdata.firstapi.simple.ApiClient;
+import com.github.GBSEcom.simple.MerchantCredentials;
+import com.github.GBSEcom.simple.ApiClientImpl;
+import com.github.GBSEcom.simple.ApiClient;
 
 import java.io.File;
 import java.util.*;
@@ -89,7 +89,7 @@ public class ApiExample {
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *https://cert.api.firstdata.com/gateway*
+All URIs are relative to *https://prod.api.firstdata.com/gateway*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------

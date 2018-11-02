@@ -1,6 +1,6 @@
 # OrderApi
 
-All URIs are relative to *https://cert.api.firstdata.com/gateway*
+All URIs are relative to *https://prod.api.firstdata.com/gateway*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -19,8 +19,8 @@ This can be used for postauth and partial postauths.
 ### Example
 ```java
 // Import classes:
-//import com.firstdata.firstapi.client.ApiException;
-//import com.firstdata.firstapi.api.OrderApi;
+//import com.github.GBSEcom.client.ApiException;
+//import com.github.GBSEcom.api.OrderApi;
 
 
 OrderApi apiInstance = new OrderApi();
@@ -78,8 +78,8 @@ This can be used for Returns and Partial Returns.
 ### Example
 ```java
 // Import classes:
-//import com.firstdata.firstapi.client.ApiException;
-//import com.firstdata.firstapi.api.OrderApi;
+//import com.github.GBSEcom.client.ApiException;
+//import com.github.GBSEcom.api.OrderApi;
 
 
 OrderApi apiInstance = new OrderApi();

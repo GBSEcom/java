@@ -1,8 +1,8 @@
 apply plugin: 'idea'
 apply plugin: 'eclipse'
 
-group = 'com.firstdata.firstapi.client'
-version = '6.3.0'
+group = 'com.github.GBSEcom'
+version = '1.0.0'
 
 buildscript {
     repositories {
