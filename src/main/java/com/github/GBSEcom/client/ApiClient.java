@@ -52,7 +52,7 @@ import com.github.GBSEcom.client.auth.OAuth;
 
 public class ApiClient {
 
-    private String basePath = "https://prod.api.firstdata.com/gateway";
+    private String basePath = "https://cert.api.firstdata.com/gateway";
     private boolean debugging = false;
     private Map<String, String> defaultHeaderMap = new HashMap<String, String>();
     private String tempFolderPath = null;
@@ -105,7 +105,7 @@ public class ApiClient {
     /**
      * Set base path
      *
-     * @param basePath Base path of the URL (e.g https://prod.api.firstdata.com/gateway
+     * @param basePath Base path of the URL (e.g https://cert.api.firstdata.com/gateway
      * @return An instance of OkHttpClient
      */
     public ApiClient setBasePath(String basePath) {

@@ -89,7 +89,7 @@ public class ApiExample {
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *https://prod.api.firstdata.com/gateway*
+All URIs are relative to *https://cert.api.firstdata.com/gateway*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
