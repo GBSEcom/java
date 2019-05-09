@@ -20,5 +20,7 @@
 
 * `ENDPOINTCOMMUNICATIONERROR` (value: `"EndpointCommunicationError"`)
 
+* `UNSUPPORTEDMEDIATYPE` (value: `"UnsupportedMediaType"`)
+
 
 

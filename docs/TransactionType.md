@@ -18,5 +18,7 @@
 
 * `POSTAUTH` (value: `"POSTAUTH"`)
 
+* `PAYER_AUTH` (value: `"PAYER_AUTH"`)
+
 
 

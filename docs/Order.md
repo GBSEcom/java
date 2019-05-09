@@ -4,7 +4,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**orderId** | **String** |  |  [optional]
+**orderId** | **String** | Client Order ID if supplied by client. |  [optional]
 **billing** | [**Billing**](Billing.md) |  |  [optional]
 **shipping** | [**Shipping**](Shipping.md) |  |  [optional]
 

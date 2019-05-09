@@ -4,11 +4,9 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**clientRequestId** | **String** | Echoes back the value in the Request header for tracking. | 
-**apiTraceId** | **String** | Request identifier in API, can be used to request logs from the support. | 
-**requestStatus** | [**RequestStatusEnum**](#RequestStatusEnum) | Request status. If it&#39;s anything other than &#39;SUCCESS&#39;, please refer to 400s HTTP error codes or decline. See Error object for details. | 
+**requestStatus** | [**RequestStatusEnum**](#RequestStatusEnum) | Request status. If it is anything other than &#39;SUCCESS&#39;, please refer to 400s HTTP error codes or decline. See Error object for details. |  [optional]
 **orderId** | **String** | Client Order ID if supplied by client, otherwise the Order ID. |  [optional]
-**paymentUrl** | **String** |  |  [optional]
+**paymentUrl** | **String** | URL for embedded payment link |  [optional]
 **transactionId** | **String** | ID code from the transaction. |  [optional]
 
 

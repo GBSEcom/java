@@ -4,7 +4,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**serviceCategory** | [**ServiceCategoryEnum**](#ServiceCategoryEnum) |  |  [optional]
+**serviceCategory** | [**ServiceCategoryEnum**](#ServiceCategoryEnum) | Identifies the service purchased in the transaction if not a base ticket |  [optional]
 
 
 <a name="ServiceCategoryEnum"></a>

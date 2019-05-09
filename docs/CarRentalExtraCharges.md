@@ -4,7 +4,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**chargeItem** | [**ChargeItemEnum**](#ChargeItemEnum) |  |  [optional]
+**chargeItem** | [**ChargeItemEnum**](#ChargeItemEnum) | Additional charge item |  [optional]
 
 
 <a name="ChargeItemEnum"></a>

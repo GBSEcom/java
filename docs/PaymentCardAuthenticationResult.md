@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 ## Enum: TypeEnum
 Name | Value
 ---- | -----
-_3D | &quot;SECURE_3D&quot;
+SECURE_3D | &quot;SECURE_3D&quot;
 
 
 <a name="VerificationResponseEnum"></a>

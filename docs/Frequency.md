@@ -4,8 +4,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**every** | **Integer** | Rate of frequency. | 
-**unit** | [**UnitEnum**](#UnitEnum) | Unit which defines the frequency. | 
+**every** | **Integer** | Rate of frequency | 
+**unit** | [**UnitEnum**](#UnitEnum) | Unit which defines the frequency | 
 
 
 <a name="UnitEnum"></a>

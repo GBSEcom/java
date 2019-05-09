@@ -4,10 +4,10 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**phone** | **String** |  |  [optional]
-**mobilePhone** | **String** |  |  [optional]
-**fax** | **String** |  |  [optional]
-**email** | **String** |  |  [optional]
+**phone** | **String** | Primary phone number |  [optional]
+**mobilePhone** | **String** | Mobile phone number |  [optional]
+**fax** | **String** | Fax number |  [optional]
+**email** | **String** | Email address |  [optional]
 
 
 
