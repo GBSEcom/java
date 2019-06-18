@@ -83,7 +83,7 @@ if(hasProperty('target') && target == 'android') {
 
     install {
         repositories.mavenInstaller {
-            pom.artifactId = 'FirstApiClient'
+            pom.artifactId = 'first-data-gateway'
         }
     }
 
@@ -109,7 +109,7 @@ dependencies {
 
 jar {
     manifest {
-      attributes 'Implementation-Title': 'FirstApiClient',
+      attributes 'Implementation-Title': 'first-data-gateway',
               'Implementation-Version': version
     }
 

@@ -1,9 +1,9 @@
-# FirstApiClient
+# First Data Gateway
 
 Payment Gateway API Specification.
 - API version: 6.6.0
 
-Payment Gateway API for payment processing. Version 6.4.0.20181018.001 
+Payment Gateway API for payment processing. Version 6.6.0
 
 ## Requirements
 
@@ -132,7 +132,7 @@ Interface | Method | HTTP request | Description
 ### MerchantCredentials
 
 ```java
-package com.firstdata.firstapi.simple;
+package com.github.GBSEcom.simple;
 
 public class MerchantCredentials {
   public static MerchantCredentials of(String apiSecret, String apiKey);
@@ -143,8 +143,8 @@ public class MerchantCredentials {
 ### ClientContext (implemented by ClientContextImpl)
 
 ```java
-package com.firstdata.firstapi.simple;
-import com.firstdata.firstapi.client.ApiClient;
+package com.github.GBSEcom.simple;
+import com.github.GBSEcom.client.ApiClient;
 
 public interface ClientContext {
   ClientFactory getFactory();
@@ -154,7 +154,7 @@ public interface ClientContext {
 #### ClientContext factory methods
 
 ```java
-package com.firstdata.firstapi.simple;
+package com.github.GBSEcom.simple;
 
 public class ClientContextImpl implements ClientContext {
 
@@ -171,7 +171,7 @@ public class ClientContextImpl implements ClientContext {
 ### ClientFactory
 
 ```java
-package com.firstdata.firstapi.simple;
+package com.github.GBSEcom.simple;
 
 public interface ClientFactory {
   AuthenticationApi getAuthenticationApi();
@@ -191,8 +191,8 @@ public interface ClientFactory {
 ### AuthenticationApi
 
 ```java
-package com.firstdata.firstapi.simple;
-import com.firstdata.firstapi.model.AccessTokenResponse;
+package com.github.GBSEcom.simple;
+import com.github.GBSEcom.model.AccessTokenResponse;
 
 public interface AuthenticationApi {
   AccessTokenResponse getAccessToken();
@@ -203,9 +203,9 @@ public interface AuthenticationApi {
 ### CardInfoLookupApi
 
 ```java
-package com.firstdata.firstapi.simple;
-import com.firstdata.firstapi.model.CardInfoLookupRequest;
-import com.firstdata.firstapi.model.CardInfoLookupResponse;
+package com.github.GBSEcom.simple;
+import com.github.GBSEcom.model.CardInfoLookupRequest;
+import com.github.GBSEcom.model.CardInfoLookupResponse;
 
 public interface CardInfoLookupApi {
   CardInfoLookupResponse cardInfoLookup(CardInfoLookupRequest payload, String region);
@@ -217,9 +217,9 @@ public interface CardInfoLookupApi {
 ### CardVerificationApi
 
 ```java
-package com.firstdata.firstapi.simple;
-import com.firstdata.firstapi.model.CardVerificationRequest;
-import com.firstdata.firstapi.model.TransactionResponse;
+package com.github.GBSEcom.simple;
+import com.github.GBSEcom.model.CardVerificationRequest;
+import com.github.GBSEcom.model.TransactionResponse;
 
 public interface CardVerificationApi {
   TransactionResponse verifyCard(CardVerificationRequest payload, String region);
@@ -231,9 +231,9 @@ public interface CardVerificationApi {
 ### CurrencyConversionApi
 
 ```java
-package com.firstdata.firstapi.simple;
-import com.firstdata.firstapi.model.ExchangeRateRequest;
-import com.firstdata.firstapi.model.ExchangeRateResponse;
+package com.github.GBSEcom.simple;
+import com.github.GBSEcom.model.ExchangeRateRequest;
+import com.github.GBSEcom.model.ExchangeRateResponse;
 
 public interface CurrencyConversionApi {
   ExchangeRateResponse getExchangeRate(ExchangeRateRequest payload, String region);
@@ -245,9 +245,9 @@ public interface CurrencyConversionApi {
 ### FraudDetectApi
 
 ```java
-package com.firstdata.firstapi.simple;
-import com.firstdata.firstapi.model.ScoreOnlyRequest;
-import com.firstdata.firstapi.model.ScoreOnlyResponse;
+package com.github.GBSEcom.simple;
+import com.github.GBSEcom.model.ScoreOnlyRequest;
+import com.github.GBSEcom.model.ScoreOnlyResponse;
 
 public interface FraudDetectApi {
   ScoreOnlyResponse scoreOnly(ScoreOnlyRequest payload, String region);
@@ -259,10 +259,10 @@ public interface FraudDetectApi {
 ### OrderApi
 
 ```java
-package com.firstdata.firstapi.simple;
-import com.firstdata.firstapi.model.OrderResponse;
-import com.firstdata.firstapi.model.SecondaryTransaction;
-import com.firstdata.firstapi.model.TransactionResponse;
+package com.github.GBSEcom.simple;
+import com.github.GBSEcom.model.OrderResponse;
+import com.github.GBSEcom.model.SecondaryTransaction;
+import com.github.GBSEcom.model.TransactionResponse;
 
 public interface OrderApi {
   OrderResponse orderInquiry(String orderId, String region, String storeId);
@@ -280,11 +280,11 @@ public interface OrderApi {
 ### PaymentApi
 
 ```java
-package com.firstdata.firstapi.simple;
-import com.firstdata.firstapi.model.AuthenticationResponseVerificationRequest;
-import com.firstdata.firstapi.model.PrimaryTransaction;
-import com.firstdata.firstapi.model.SecondaryTransaction;
-import com.firstdata.firstapi.model.TransactionResponse;
+package com.github.GBSEcom.simple;
+import com.github.GBSEcom.model.AuthenticationResponseVerificationRequest;
+import com.github.GBSEcom.model.PrimaryTransaction;
+import com.github.GBSEcom.model.SecondaryTransaction;
+import com.github.GBSEcom.model.TransactionResponse;
 
 public interface PaymentApi {
   TransactionResponse finalizeSecureTransaction(String transactionId, AuthenticationResponseVerificationRequest payload, String region);
@@ -311,10 +311,10 @@ public interface PaymentApi {
 ### PaymentSchedulesApi
 
 ```java
-package com.firstdata.firstapi.simple;
-import com.firstdata.firstapi.model.PaymentSchedulesRequest;
-import com.firstdata.firstapi.model.PaymentSchedulesResponse;
-import com.firstdata.firstapi.model.RecurringPaymentDetailsResponse;
+package com.github.GBSEcom.simple;
+import com.github.GBSEcom.model.PaymentSchedulesRequest;
+import com.github.GBSEcom.model.PaymentSchedulesResponse;
+import com.github.GBSEcom.model.RecurringPaymentDetailsResponse;
 
 public interface PaymentSchedulesApi {
   PaymentSchedulesResponse cancelPaymentSchedule(String orderId, String region, String storeId);
@@ -335,9 +335,9 @@ public interface PaymentSchedulesApi {
 ### PaymentTokenApi
 
 ```java
-package com.firstdata.firstapi.simple;
-import com.firstdata.firstapi.model.PaymentTokenizationRequest;
-import com.firstdata.firstapi.model.PaymentTokenizationResponse;
+package com.github.GBSEcom.simple;
+import com.github.GBSEcom.model.PaymentTokenizationRequest;
+import com.github.GBSEcom.model.PaymentTokenizationResponse;
 
 public interface PaymentTokenApi {
   PaymentTokenizationResponse createPaymentToken(PaymentTokenizationRequest payload, String authorization, String region);
@@ -354,9 +354,9 @@ public interface PaymentTokenApi {
 ### PaymentUrlApi
 
 ```java
-package com.firstdata.firstapi.simple;
-import com.firstdata.firstapi.model.PaymentUrlRequest;
-import com.firstdata.firstapi.model.PaymentUrlResponse;
+package com.github.GBSEcom.simple;
+import com.github.GBSEcom.model.PaymentUrlRequest;
+import com.github.GBSEcom.model.PaymentUrlResponse;
 
 public interface PaymentUrlApi {
   PaymentUrlResponse createPaymentUrl(PaymentUrlRequest payload, String region);
