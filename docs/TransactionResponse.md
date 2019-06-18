@@ -4,25 +4,26 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ipgTransactionId** | **String** | The Response Transaction ID |  [optional]
-**orderId** | **String** | Client Order ID if supplied by client, otherwise the Order ID |  [optional]
+**ipgTransactionId** | **String** | The response transaction ID. |  [optional]
+**orderId** | **String** | Client order ID if supplied by client, otherwise the order ID. |  [optional]
 **transactionType** | [**TransactionType**](TransactionType.md) |  |  [optional]
-**paymentToken** | [**PaymentTokenization**](PaymentTokenization.md) |  |  [optional]
+**paymentToken** | [**PaymentTokenDetails**](PaymentTokenDetails.md) |  |  [optional]
 **transactionOrigin** | [**TransactionOrigin**](TransactionOrigin.md) |  |  [optional]
-**paymentMethod** | [**PaymentMethod**](PaymentMethod.md) |  |  [optional]
-**country** | **String** | Country of the card issuer |  [optional]
-**terminalId** | **String** | The terminal that is processing the transaction |  [optional]
-**merchantTransactionId** | **String** | The unique merchant Transaction ID from the Request header, if supplied |  [optional]
-**transactionTime** | **Long** | The transaction time in seconds since Epoch |  [optional]
+**paymentMethodDetails** | [**PaymentMethodDetails**](PaymentMethodDetails.md) |  |  [optional]
+**country** | **String** | Country of the card issuer. |  [optional]
+**terminalId** | **String** | The terminal that is processing the transaction. |  [optional]
+**merchantTransactionId** | **String** | The unique merchant transaction ID from the request header, if supplied. |  [optional]
+**transactionTime** | **Long** | The transaction time in seconds since epoch. |  [optional]
 **approvedAmount** | [**Amount**](Amount.md) |  |  [optional]
 **transactionStatus** | [**TransactionStatusEnum**](#TransactionStatusEnum) | The status of the transaction. APPROVED/WAITING are returned by the endpoints.  VALIDATION_FAILED/DECLINED are errors. See ErrorResponse object for details. |  [optional]
 **transactionState** | [**TransactionStateEnum**](#TransactionStateEnum) | The state of the transaction. |  [optional]
 **secure3dResponse** | [**Secure3dResponse**](Secure3dResponse.md) |  |  [optional]
 **redirectURL** | **String** | The endpoint redirection URL. |  [optional]
-**authenticationRedirect** | **Object** |  |  [optional]
+**authenticationRedirect** | [**AuthenticationRedirect**](AuthenticationRedirect.md) |  |  [optional]
 **schemeTransactionId** | **String** | The transaction ID received from schemes for the initial transaction of card on file flows. |  [optional]
 **processor** | [**ProcessorData**](ProcessorData.md) |  |  [optional]
 **additionalDetails** | [**AdditionalTransactionDetails**](AdditionalTransactionDetails.md) |  |  [optional]
+**accountUpdaterResponse** | [**AccountUpdaterResponse**](AccountUpdaterResponse.md) |  |  [optional]
 
 
 <a name="TransactionStatusEnum"></a>
@@ -44,9 +45,11 @@ AUTHORIZED | &quot;AUTHORIZED&quot;
 CAPTURED | &quot;CAPTURED&quot;
 DECLINED | &quot;DECLINED&quot;
 CHECKED | &quot;CHECKED&quot;
+COMPLETED_GET | &quot;COMPLETED_GET&quot;
 INITIALIZED | &quot;INITIALIZED&quot;
 PENDING | &quot;PENDING&quot;
 READY | &quot;READY&quot;
+TEMPLATE | &quot;TEMPLATE&quot;
 SETTLED | &quot;SETTLED&quot;
 VOIDED | &quot;VOIDED&quot;
 WAITING | &quot;WAITING&quot;

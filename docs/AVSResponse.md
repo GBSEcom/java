@@ -4,8 +4,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**streetMatch** | [**StreetMatchEnum**](#StreetMatchEnum) |  |  [optional]
-**postalCodeMatch** | [**PostalCodeMatchEnum**](#PostalCodeMatchEnum) |  |  [optional]
+**streetMatch** | [**StreetMatchEnum**](#StreetMatchEnum) | Response if street matches that on file. |  [optional]
+**postalCodeMatch** | [**PostalCodeMatchEnum**](#PostalCodeMatchEnum) | Response if postal code matches that on file. |  [optional]
 
 
 <a name="StreetMatchEnum"></a>

@@ -8,7 +8,7 @@ import lombok.Getter;
 @AllArgsConstructor
 public class ClientContextImpl implements ClientContext {
 
-	static final String DEFAULT_BASE_PATH = "https://cert.api.firstdata.com/gateway";
+	static final String DEFAULT_BASE_PATH = "https://cert.api.firstdata.com/gateway/v2";
 
 	public static ClientContext create(final MerchantCredentials creds, final String apiBasePath, final String defaultRegion, final String defaultStoreId) {
 		final ClientFactoryImpl factory = new ClientFactoryImpl(null);

@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **transactionState** | [**TransactionStateEnum**](#TransactionStateEnum) | The state of the transaction. |  [optional]
-**ipgTransactionId** | **String** | The transaction ID |  [optional]
+**ipgTransactionId** | **String** | The transaction ID. |  [optional]
 **orderId** | **String** | Client order ID if supplied by client. |  [optional]
 **transactionType** | [**TransactionType**](TransactionType.md) |  |  [optional]
-**paymentMethod** | [**PaymentMethod**](PaymentMethod.md) |  |  [optional]
-**amount** | [**Amount**](Amount.md) |  |  [optional]
+**paymentMethodDetails** | [**PaymentMethodDetails**](PaymentMethodDetails.md) |  |  [optional]
+**transactionAmount** | [**Amount**](Amount.md) |  |  [optional]
 **submissionComponent** | [**SubmissionComponentEnum**](#SubmissionComponentEnum) | The submission component. |  [optional]
 **payerSecurityLevel** | **String** | The payer security level. |  [optional]
-**transactionTime** | **Long** | The transaction time in seconds since Epoch |  [optional]
+**transactionTime** | **Long** | The transaction time in seconds since epoch. |  [optional]
 **storeId** | **String** | Store ID number. |  [optional]
 **userId** | **String** | The user ID. |  [optional]
 **processor** | [**ProcessorData**](ProcessorData.md) |  |  [optional]

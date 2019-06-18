@@ -4,8 +4,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | [**TypeEnum**](#TypeEnum) | Document type | 
-**number** | **String** | Document number | 
+**type** | [**TypeEnum**](#TypeEnum) | Document type. | 
+**number** | **String** | Document number. | 
 
 
 <a name="TypeEnum"></a>

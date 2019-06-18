@@ -9,11 +9,16 @@ public interface OrderApi {
 	OrderResponse orderInquiry(String orderId, String region, String storeId);
 	OrderResponse orderInquiry(String orderId);
 
+	/*
 	TransactionResponse orderPostAuth(String orderId, SecondaryTransaction payload, String region, String storeId);
 	TransactionResponse orderPostAuth(String orderId, SecondaryTransaction payload);
 
 	TransactionResponse orderReturnTransaction(String orderId, SecondaryTransaction payload, String region, String storeId);
 	TransactionResponse orderReturnTransaction(String orderId, SecondaryTransaction payload);
+	*/
+
+	TransactionResponse submitSecondaryTransactionFromOrder(String orderId, SecondaryTransaction payload, String region);
+	TransactionResponse submitSecondaryTransactionFromOrder(String orderId, SecondaryTransaction payload);
 }
 
 class OrderApiImpl extends ApiWrapper<com.github.GBSEcom.api.OrderApi> implements OrderApi {
@@ -38,7 +43,7 @@ class OrderApiImpl extends ApiWrapper<com.github.GBSEcom.api.OrderApi> implement
 	public OrderResponse orderInquiry(final String orderId) throws ApiException {
 		return orderInquiry(orderId, getDefaultRegion(), getDefaultStoreId());
 	}
-
+/*
 	public TransactionResponse orderPostAuth(final String orderId, final SecondaryTransaction payload, final String region, final String storeId) throws ApiException {
 		final ClientHeaders headers = genHeaders(payload);
 		return getClient().orderPostAuth(
@@ -58,9 +63,10 @@ class OrderApiImpl extends ApiWrapper<com.github.GBSEcom.api.OrderApi> implement
 		return orderPostAuth(orderId, payload, getDefaultRegion(), getDefaultStoreId());
 	}
 
-	public TransactionResponse orderReturnTransaction(final String orderId, final SecondaryTransaction payload, final String region, final String storeId) throws ApiException {
+*/	
+	public TransactionResponse submitSecondaryTransactionFromOrder(final String orderId, final SecondaryTransaction payload, final String region) throws ApiException {
 		final ClientHeaders headers = genHeaders(payload);
-		return getClient().orderReturnTransaction(
+		return getClient().submitSecondaryTransactionFromOrder(
 			headers.getContentType(),
 			headers.getClientRequestId(),
 			headers.getApiKey(),
@@ -68,12 +74,11 @@ class OrderApiImpl extends ApiWrapper<com.github.GBSEcom.api.OrderApi> implement
 			orderId,
 			payload,
 			headers.getMessageSignature(),
-			region,
-			storeId
+			region
 		);
 	}
 
-	public TransactionResponse orderReturnTransaction(final String orderId, final SecondaryTransaction payload) throws ApiException {
-		return orderReturnTransaction(orderId, payload, getDefaultRegion(), getDefaultStoreId());
+	public TransactionResponse submitSecondaryTransactionFromOrder(final String orderId, final SecondaryTransaction payload) throws ApiException {
+		return submitSecondaryTransactionFromOrder(orderId, payload, getDefaultRegion());
 	}
 }

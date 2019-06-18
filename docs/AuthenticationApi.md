@@ -1,15 +1,15 @@
 # AuthenticationApi
 
-All URIs are relative to *https://cert.api.firstdata.com/gateway*
+All URIs are relative to *https://cert.api.firstdata.com/gateway/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**v1AuthenticationAccessTokensPost**](AuthenticationApi.md#v1AuthenticationAccessTokensPost) | **POST** /v1/authentication/access-tokens | Generate an access token for user authentication.
+[**authenticationAccessTokensPost**](AuthenticationApi.md#authenticationAccessTokensPost) | **POST** /authentication/access-tokens | Generate an access token for user authentication.
 
 
-<a name="v1AuthenticationAccessTokensPost"></a>
-# **v1AuthenticationAccessTokensPost**
-> AccessTokenResponse v1AuthenticationAccessTokensPost(contentType, clientRequestId, apiKey, timestamp, messageSignature)
+<a name="authenticationAccessTokensPost"></a>
+# **authenticationAccessTokensPost**
+> AccessTokenResponse authenticationAccessTokensPost(contentType, clientRequestId, apiKey, timestamp, messageSignature)
 
 Generate an access token for user authentication.
 
@@ -18,21 +18,21 @@ This is the access token generation call for authorizing subsequent financial tr
 ### Example
 ```java
 // Import classes:
-//import com.github.GBSEcom.client.ApiException;
-//import com.github.GBSEcom.api.AuthenticationApi;
+//import com.firstdata.firstapi.client.ApiException;
+//import com.firstdata.firstapi.api.AuthenticationApi;
 
 
 AuthenticationApi apiInstance = new AuthenticationApi();
-String contentType = "application/json"; // String | content type
+String contentType = "application/json"; // String | Content type.
 String clientRequestId = "clientRequestId_example"; // String | A client-generated ID for request tracking and signature creation, unique per request.  This is also used for idempotency control. We recommend 128-bit UUID format.
-String apiKey = "apiKey_example"; // String | 
+String apiKey = "apiKey_example"; // String | Key given to merchant after boarding associating their requests with the appropriate app in Apigee.
 Long timestamp = 56L; // Long | Epoch timestamp in milliseconds in the request from a client system. Used for Message Signature generation and time limit (5 mins).
-String messageSignature = "messageSignature_example"; // String | Used to ensure the request has not been tampered with during transmission. The Message-Signature is the Base64 encoded HMAC hash (SHA256  algorithm with the API Secret as the key.) For more information, refer to the supporting documentation on the Developer Portal.
+String messageSignature = "messageSignature_example"; // String | Used to ensure the request has not been tampered with during transmission. The Message-Signature is the Base64 encoded HMAC hash (SHA256 algorithm with the API Secret as the key.) For more information, refer to the supporting documentation on the Developer Portal.
 try {
-    AccessTokenResponse result = apiInstance.v1AuthenticationAccessTokensPost(contentType, clientRequestId, apiKey, timestamp, messageSignature);
+    AccessTokenResponse result = apiInstance.authenticationAccessTokensPost(contentType, clientRequestId, apiKey, timestamp, messageSignature);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling AuthenticationApi#v1AuthenticationAccessTokensPost");
+    System.err.println("Exception when calling AuthenticationApi#authenticationAccessTokensPost");
     e.printStackTrace();
 }
 ```
@@ -41,11 +41,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **contentType** | **String**| content type | [default to application/json] [enum: application/json]
+ **contentType** | **String**| Content type. | [default to application/json] [enum: application/json]
  **clientRequestId** | **String**| A client-generated ID for request tracking and signature creation, unique per request.  This is also used for idempotency control. We recommend 128-bit UUID format. |
- **apiKey** | **String**|  |
+ **apiKey** | **String**| Key given to merchant after boarding associating their requests with the appropriate app in Apigee. |
  **timestamp** | **Long**| Epoch timestamp in milliseconds in the request from a client system. Used for Message Signature generation and time limit (5 mins). |
- **messageSignature** | **String**| Used to ensure the request has not been tampered with during transmission. The Message-Signature is the Base64 encoded HMAC hash (SHA256  algorithm with the API Secret as the key.) For more information, refer to the supporting documentation on the Developer Portal. | [optional]
+ **messageSignature** | **String**| Used to ensure the request has not been tampered with during transmission. The Message-Signature is the Base64 encoded HMAC hash (SHA256 algorithm with the API Secret as the key.) For more information, refer to the supporting documentation on the Developer Portal. | [optional]
 
 ### Return type
 

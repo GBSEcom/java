@@ -4,13 +4,15 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**referenceNumber** | **String** |  |  [optional]
-**authorizationCode** | **String** |  |  [optional]
-**responseCode** | **String** |  |  [optional]
-**associationResponseCode** | **String** |  |  [optional]
-**responseMessage** | **String** |  |  [optional]
+**referenceNumber** | **String** | Reference transaction ID. |  [optional]
+**authorizationCode** | **String** | Code returned to confirm transaction. |  [optional]
+**responseCode** | **String** | Response code from endpoints. |  [optional]
+**network** | **String** | Network used for transaction. |  [optional]
+**associationResponseCode** | **String** | Raw response code from issuer. |  [optional]
+**responseMessage** | **String** | Message returned from endpoints. |  [optional]
 **avsResponse** | [**AVSResponse**](AVSResponse.md) |  |  [optional]
-**securityCodeResponse** | [**SecurityCodeResponseEnum**](#SecurityCodeResponseEnum) |  |  [optional]
+**securityCodeResponse** | [**SecurityCodeResponseEnum**](#SecurityCodeResponseEnum) | Code returned for CVV. |  [optional]
+**merchantAdviceCodeIndicator** | **String** | Code to map merchant advice code to ISO specification. |  [optional]
 
 
 <a name="SecurityCodeResponseEnum"></a>

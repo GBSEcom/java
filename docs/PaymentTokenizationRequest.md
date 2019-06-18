@@ -4,18 +4,11 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | [**TypeEnum**](#TypeEnum) | Use this to indicate the type of tokenization source | 
-**paymentCard** | [**PaymentCard**](PaymentCard.md) |  |  [optional]
-**referencedOrder** | [**ReferencedOrder**](ReferencedOrder.md) |  |  [optional]
+**requestType** | **String** | Object name of tokenization request. | 
+**storeId** | **String** | An optional outlet ID for clients that support multiple stores in the same app. |  [optional]
 **billingAddress** | [**Address**](Address.md) |  |  [optional]
-
-
-<a name="TypeEnum"></a>
-## Enum: TypeEnum
-Name | Value
----- | -----
-PAYMENT_CARD | &quot;PAYMENT_CARD&quot;
-EXISTING_ORDER | &quot;EXISTING_ORDER&quot;
+**createToken** | [**CreatePaymentToken**](CreatePaymentToken.md) |  | 
+**accountVerification** | **Boolean** | If the account should be verified prior to token creation. |  [optional]
 
 
 

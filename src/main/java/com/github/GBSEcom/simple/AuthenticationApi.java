@@ -5,6 +5,8 @@ import com.github.GBSEcom.model.AccessTokenResponse;
 
 public interface AuthenticationApi {
 	AccessTokenResponse getAccessToken();
+
+	
 }
 
 class AuthenticationApiImpl extends ApiWrapper<com.github.GBSEcom.api.AuthenticationApi> implements AuthenticationApi {
@@ -21,7 +23,7 @@ class AuthenticationApiImpl extends ApiWrapper<com.github.GBSEcom.api.Authentica
 	 */
 	public AccessTokenResponse getAccessToken() throws ApiException {
 		final ClientHeaders headers = genHeaders();
-		return getClient().v1AuthenticationAccessTokensPost(
+		return getClient().authenticationAccessTokensPost(
 			headers.getContentType(),
 			headers.getClientRequestId(),
 			headers.getApiKey(),
