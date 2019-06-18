@@ -1,11 +1,11 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.firstdata.firstapi.client</groupId>
-    <artifactId>FirstApiClient</artifactId>
+    <groupId>com.github.GBSEcom.client</groupId>
+    <artifactId>first-data-gateway</artifactId>
     <packaging>jar</packaging>
     <name>FirstApiClient</name>
-    <version>6.6.0</version>
+    <version>1.2.0</version>
     <url></url>
     <description>Payment Gateway APIClient SDK for payment processing</description>
     <scm>

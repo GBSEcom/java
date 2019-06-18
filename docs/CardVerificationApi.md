@@ -18,8 +18,8 @@ Use this to perform card verification for a payment card.
 ### Example
 ```java
 // Import classes:
-//import com.firstdata.firstapi.client.ApiException;
-//import com.firstdata.firstapi.api.CardVerificationApi;
+//import com.github.GBSEcom.client.ApiException;
+//import com.github.GBSEcom.api.CardVerificationApi;
 
 
 CardVerificationApi apiInstance = new CardVerificationApi();

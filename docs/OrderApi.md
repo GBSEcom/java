@@ -19,8 +19,8 @@ Use this query to get the current state of an existing order.
 ### Example
 ```java
 // Import classes:
-//import com.firstdata.firstapi.client.ApiException;
-//import com.firstdata.firstapi.api.OrderApi;
+//import com.github.GBSEcom.client.ApiException;
+//import com.github.GBSEcom.api.OrderApi;
 
 
 OrderApi apiInstance = new OrderApi();
@@ -78,8 +78,8 @@ Use this to perform a postAuth or return secondary transaction using order ID. P
 ### Example
 ```java
 // Import classes:
-//import com.firstdata.firstapi.client.ApiException;
-//import com.firstdata.firstapi.api.OrderApi;
+//import com.github.GBSEcom.client.ApiException;
+//import com.github.GBSEcom.api.OrderApi;
 
 
 OrderApi apiInstance = new OrderApi();

@@ -18,8 +18,8 @@ Use this to obtain a fraud score for a transaction.
 ### Example
 ```java
 // Import classes:
-//import com.firstdata.firstapi.client.ApiException;
-//import com.firstdata.firstapi.api.FraudDetectApi;
+//import com.github.GBSEcom.client.ApiException;
+//import com.github.GBSEcom.api.FraudDetectApi;
 
 
 FraudDetectApi apiInstance = new FraudDetectApi();

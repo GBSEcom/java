@@ -18,8 +18,8 @@ Use this to generate an embedding payment link.
 ### Example
 ```java
 // Import classes:
-//import com.firstdata.firstapi.client.ApiException;
-//import com.firstdata.firstapi.api.PaymentUrlApi;
+//import com.github.GBSEcom.client.ApiException;
+//import com.github.GBSEcom.api.PaymentUrlApi;
 
 
 PaymentUrlApi apiInstance = new PaymentUrlApi();

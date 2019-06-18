@@ -21,8 +21,8 @@ Use this to cancel an existing gateway payment schedule.
 ### Example
 ```java
 // Import classes:
-//import com.firstdata.firstapi.client.ApiException;
-//import com.firstdata.firstapi.api.PaymentSchedulesApi;
+//import com.github.GBSEcom.client.ApiException;
+//import com.github.GBSEcom.api.PaymentSchedulesApi;
 
 
 PaymentSchedulesApi apiInstance = new PaymentSchedulesApi();
@@ -80,8 +80,8 @@ Use this to create a gateway payment schedule.
 ### Example
 ```java
 // Import classes:
-//import com.firstdata.firstapi.client.ApiException;
-//import com.firstdata.firstapi.api.PaymentSchedulesApi;
+//import com.github.GBSEcom.client.ApiException;
+//import com.github.GBSEcom.api.PaymentSchedulesApi;
 
 
 PaymentSchedulesApi apiInstance = new PaymentSchedulesApi();
@@ -137,8 +137,8 @@ Use this to view an existing gateway payment schedule.
 ### Example
 ```java
 // Import classes:
-//import com.firstdata.firstapi.client.ApiException;
-//import com.firstdata.firstapi.api.PaymentSchedulesApi;
+//import com.github.GBSEcom.client.ApiException;
+//import com.github.GBSEcom.api.PaymentSchedulesApi;
 
 
 PaymentSchedulesApi apiInstance = new PaymentSchedulesApi();
@@ -196,8 +196,8 @@ Use this to update a gateway payment schedule.
 ### Example
 ```java
 // Import classes:
-//import com.firstdata.firstapi.client.ApiException;
-//import com.firstdata.firstapi.api.PaymentSchedulesApi;
+//import com.github.GBSEcom.client.ApiException;
+//import com.github.GBSEcom.api.PaymentSchedulesApi;
 
 
 PaymentSchedulesApi apiInstance = new PaymentSchedulesApi();

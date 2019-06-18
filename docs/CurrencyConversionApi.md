@@ -18,8 +18,8 @@ Sale, return and lookup exchange rate with dynamic currency conversion option.
 ### Example
 ```java
 // Import classes:
-//import com.firstdata.firstapi.client.ApiException;
-//import com.firstdata.firstapi.api.CurrencyConversionApi;
+//import com.github.GBSEcom.client.ApiException;
+//import com.github.GBSEcom.api.CurrencyConversionApi;
 
 
 CurrencyConversionApi apiInstance = new CurrencyConversionApi();

@@ -19,8 +19,8 @@ Use this to create a payment token from a payment card.
 ### Example
 ```java
 // Import classes:
-//import com.firstdata.firstapi.client.ApiException;
-//import com.firstdata.firstapi.api.PaymentTokenApi;
+//import com.github.GBSEcom.client.ApiException;
+//import com.github.GBSEcom.api.PaymentTokenApi;
 
 
 PaymentTokenApi apiInstance = new PaymentTokenApi();
@@ -78,8 +78,8 @@ Use this to delete a payment token.
 ### Example
 ```java
 // Import classes:
-//import com.firstdata.firstapi.client.ApiException;
-//import com.firstdata.firstapi.api.PaymentTokenApi;
+//import com.github.GBSEcom.client.ApiException;
+//import com.github.GBSEcom.api.PaymentTokenApi;
 
 
 PaymentTokenApi apiInstance = new PaymentTokenApi();

@@ -21,8 +21,8 @@ Use this to handle a 3DSecure redirect response or UnionPay authentication, upda
 ### Example
 ```java
 // Import classes:
-//import com.firstdata.firstapi.client.ApiException;
-//import com.firstdata.firstapi.api.PaymentApi;
+//import com.github.GBSEcom.client.ApiException;
+//import com.github.GBSEcom.api.PaymentApi;
 
 
 PaymentApi apiInstance = new PaymentApi();
@@ -80,8 +80,8 @@ Use this to originate a financial transaction like a sale, preauthorization, or 
 ### Example
 ```java
 // Import classes:
-//import com.firstdata.firstapi.client.ApiException;
-//import com.firstdata.firstapi.api.PaymentApi;
+//import com.github.GBSEcom.client.ApiException;
+//import com.github.GBSEcom.api.PaymentApi;
 
 
 PaymentApi apiInstance = new PaymentApi();
@@ -137,8 +137,8 @@ Use this to perform a void, postAuth or return secondary transaction. Partial po
 ### Example
 ```java
 // Import classes:
-//import com.firstdata.firstapi.client.ApiException;
-//import com.firstdata.firstapi.api.PaymentApi;
+//import com.github.GBSEcom.client.ApiException;
+//import com.github.GBSEcom.api.PaymentApi;
 
 
 PaymentApi apiInstance = new PaymentApi();
@@ -198,8 +198,8 @@ Use this query to get the current state of an existing transaction.
 ### Example
 ```java
 // Import classes:
-//import com.firstdata.firstapi.client.ApiException;
-//import com.firstdata.firstapi.api.PaymentApi;
+//import com.github.GBSEcom.client.ApiException;
+//import com.github.GBSEcom.api.PaymentApi;
 
 
 PaymentApi apiInstance = new PaymentApi();
