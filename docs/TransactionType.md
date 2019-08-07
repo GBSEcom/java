@@ -20,5 +20,7 @@
 
 * `PAYER_AUTH` (value: `"PAYER_AUTH"`)
 
+* `DISBURSEMENT` (value: `"DISBURSEMENT"`)
+
 
 

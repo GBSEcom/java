@@ -1,9 +1,9 @@
 # First Data Gateway
 
 Payment Gateway API Specification.
-- API version: 6.6.0
+- API version: 6.7.0
 
-Payment Gateway API for payment processing. Version 6.6.0
+Payment Gateway API for payment processing. Version 6.7.0
 
 ## Requirements
 
@@ -45,7 +45,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "com.github.GBSEcom.client:first-data-gateway:1.2.0"
+compile "com.github.GBSEcom.client:first-data-gateway:1.3.0"
 ```
 
 ### Others
@@ -58,8 +58,8 @@ mvn clean package
 
 Then manually install the following JARs:
 
-* `target/first-data-gateway-1.2.0.jar`
-* `target/lib/*.jar`
+* `target/first-data-gateway-1.3.0.jar`
+* `build/libs/*.jar`
 
 ## Getting Started
 
@@ -76,7 +76,7 @@ public class AuthenticationApiExample {
 
     public static void main(String[] args) {
 
-        final String basePath = "https://cert.api.firstdata.com/gateway";
+        final String basePath = "https://cert.api.firstdata.com/gateway/v2";
         final String apiSecret = "apiSecret";
         final String apiKey = "apiKey";
 
@@ -103,27 +103,27 @@ All URIs are by default relative to *https://cert.api.firstdata.com/gateway*
 
 Interface | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*AuthenticationApi* | **getAccessToken** | **POST** /v1/authentication/access-tokens | Generate an access token for user authentication.
-*CardInfoLookupApi* | **cardInfoLookup** | **POST** /v1/card-information | Card information lookUp
-*CardVerificationApi* | **verifyCard** | **POST** /v1/card-verification | Verify a payment card.
-*CurrencyConversionApi* | **getExchangeRate** | **POST** /v1/exchange-rates | Generate dynamic currency conversion transactions
-*FraudDetectApi* | **scoreOnly** | **POST** /v1/fraud/score-only | Score a transaction for fraud.
-*OrderApi* | **orderInquiry** | **GET** /v1/orders/{order-id} | Retrieve the state of an order
-*OrderApi* | **orderPostAuth** | **POST** /v1/orders/{order-id}/postauth | Capture/complete an already existing order.
-*OrderApi* | **orderReturnTransaction** | **POST** /v1/orders/{order-id}/return | Return/refund an order.
-*PaymentApi* | **finalizeSecureTransaction** | **PATCH** /v1/payments/{transaction-id} | Update a 3DSecure or UnionPay payment and continue processing.
-*PaymentApi* | **performPaymentPostAuthorisation** | **POST** /v1/payments/{transaction-id}/postauth | Capture/complete a transaction.
-*PaymentApi* | **primaryPaymentTransaction** | **POST** /v1/payments | Generate a primary transaction.
-*PaymentApi* | **returnTransaction** | **POST** /v1/payments/{transaction-id}/return | Return/refund a transaction.
-*PaymentApi* | **transactionInquiry** | **GET** /v1/payments/{transaction-id} | Retrieve the state of a transaction.
-*PaymentApi* | **voidTransaction** | **POST** /v1/payments/{transaction-id}/void | Reverse a previous action on an existing transaction.
-*PaymentSchedulesApi* | **cancelPaymentSchedule** | **DELETE** /v1/payment-schedules/{order-id} | Cancel a gateway payment schedule.
-*PaymentSchedulesApi* | **createPaymentSchedule** | **POST** /v1/payment-schedules | Use this to create a gateway payment schedule.
-*PaymentSchedulesApi* | **inquiryPaymentSchedule** | **GET** /v1/payment-schedules/{order-id} | View a gateway payment schedule.
-*PaymentSchedulesApi* | **updatePaymentSchedule** | **PATCH** /v1/payment-schedules/{order-id} | Update a gateway payment schedule.
-*PaymentTokenApi* | **createPaymentToken** | **POST** /v1/payment-tokens | Create a payment token from a payment card.
-*PaymentTokenApi* | **deletePaymentToken** | **DELETE** /v1/payment-tokens/{token-id} | Delete a payment token.
-*PaymentUrlApi* | **createPaymentUrl** | **POST** /v1/payment-url | Create a payment URL.
+*AuthenticationApi* | **getAccessToken** | **POST** /v2/authentication/access-tokens | Generate an access token for user authentication.
+*CardInfoLookupApi* | **cardInfoLookup** | **POST** /v2/card-information | Card information lookUp
+*CardVerificationApi* | **verifyCard** | **POST** /v2/card-verification | Verify a payment card.
+*CurrencyConversionApi* | **getExchangeRate** | **POST** /v2/exchange-rates | Generate dynamic currency conversion transactions
+*FraudDetectApi* | **scoreOnly** | **POST** /v2/fraud/score-only | Score a transaction for fraud.
+*OrderApi* | **orderInquiry** | **GET** /v2/orders/{order-id} | Retrieve the state of an order
+*OrderApi* | **orderPostAuth** | **POST** /v2/orders/{order-id}/postauth | Capture/complete an already existing order.
+*OrderApi* | **orderReturnTransaction** | **POST** /v2/orders/{order-id}/return | Return/refund an order.
+*PaymentApi* | **finalizeSecureTransaction** | **PATCH** /v2/payments/{transaction-id} | Update a 3DSecure or UnionPay payment and continue processing.
+*PaymentApi* | **performPaymentPostAuthorisation** | **POST** /v2/payments/{transaction-id}/postauth | Capture/complete a transaction.
+*PaymentApi* | **primaryPaymentTransaction** | **POST** /v2/payments | Generate a primary transaction.
+*PaymentApi* | **returnTransaction** | **POST** /v2/payments/{transaction-id}/return | Return/refund a transaction.
+*PaymentApi* | **transactionInquiry** | **GET** /v2/payments/{transaction-id} | Retrieve the state of a transaction.
+*PaymentApi* | **voidTransaction** | **POST** /v2/payments/{transaction-id}/void | Reverse a previous action on an existing transaction.
+*PaymentSchedulesApi* | **cancelPaymentSchedule** | **DELETE** /v2/payment-schedules/{order-id} | Cancel a gateway payment schedule.
+*PaymentSchedulesApi* | **createPaymentSchedule** | **POST** /v2/payment-schedules | Use this to create a gateway payment schedule.
+*PaymentSchedulesApi* | **inquiryPaymentSchedule** | **GET** /v2/payment-schedules/{order-id} | View a gateway payment schedule.
+*PaymentSchedulesApi* | **updatePaymentSchedule** | **PATCH** /v2/payment-schedules/{order-id} | Update a gateway payment schedule.
+*PaymentTokenApi* | **createPaymentToken** | **POST** /v2/payment-tokens | Create a payment token from a payment card.
+*PaymentTokenApi* | **deletePaymentToken** | **DELETE** /v2/payment-tokens/{token-id} | Delete a payment token.
+*PaymentUrlApi* | **createPaymentUrl** | **POST** /v2/payment-url | Create a payment URL.
 
 
 ## Code Overview

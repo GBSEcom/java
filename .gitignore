@@ -1,5 +1,5 @@
 *.class
-
+.DS_Store
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
 
@@ -19,5 +19,3 @@ hs_err_pid*
 target
 .gradle
 build
-
-.DS_Store

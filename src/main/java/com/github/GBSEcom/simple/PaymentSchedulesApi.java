@@ -15,7 +15,7 @@ public interface PaymentSchedulesApi {
 	RecurringPaymentDetailsResponse inquiryPaymentSchedule(String orderId, String region, String storeId);
 	RecurringPaymentDetailsResponse inquiryPaymentSchedule(String orderId);
 
-	PaymentSchedulesResponse updatePaymentSchedule(String orderId, PaymentSchedulesRequest payload, String region, String storeId);
+	PaymentSchedulesResponse updatePaymentSchedule(String orderId, PaymentSchedulesRequest payload, String region);
 	PaymentSchedulesResponse updatePaymentSchedule(String orderId, PaymentSchedulesRequest payload);
 }
 
@@ -77,7 +77,7 @@ class PaymentSchedulesApiImpl extends ApiWrapper<com.github.GBSEcom.api.PaymentS
 		return inquiryPaymentSchedule(orderId, getDefaultRegion(), getDefaultStoreId());
 	}
 
-	public PaymentSchedulesResponse updatePaymentSchedule(final String orderId, final PaymentSchedulesRequest payload, final String region, final String storeId) throws ApiException {
+	public PaymentSchedulesResponse updatePaymentSchedule(final String orderId, final PaymentSchedulesRequest payload, final String region) throws ApiException {
 		final ClientHeaders headers = genHeaders(payload);
 		return getClient().updatePaymentSchedule(
 			headers.getContentType(),
@@ -87,12 +87,11 @@ class PaymentSchedulesApiImpl extends ApiWrapper<com.github.GBSEcom.api.PaymentS
 			orderId,
 			payload,
 			headers.getMessageSignature(),
-			region,
-			storeId
+			region
 		);
 	}
 
 	public PaymentSchedulesResponse updatePaymentSchedule(final String orderId, final PaymentSchedulesRequest payload) throws ApiException {
-		return updatePaymentSchedule(orderId, payload, getDefaultRegion(), getDefaultStoreId());
+		return updatePaymentSchedule(orderId, payload, getDefaultRegion());
 	}
 }

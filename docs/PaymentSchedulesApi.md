@@ -187,7 +187,7 @@ No authorization required
 
 <a name="updatePaymentSchedule"></a>
 # **updatePaymentSchedule**
-> PaymentSchedulesResponse updatePaymentSchedule(contentType, clientRequestId, apiKey, timestamp, orderId, paymentSchedulesRequest, messageSignature, region, storeId)
+> PaymentSchedulesResponse updatePaymentSchedule(contentType, clientRequestId, apiKey, timestamp, orderId, paymentSchedulesRequest, messageSignature, region)
 
 Update a gateway payment schedule.
 
@@ -209,9 +209,8 @@ String orderId = "orderId_example"; // String | Gateway order identifier as retu
 PaymentSchedulesRequest paymentSchedulesRequest = new PaymentSchedulesRequest(); // PaymentSchedulesRequest | Accepted request types: PaymentMethodPaymentSchedulesRequest and ReferencedOrderPaymentSchedulesRequest.
 String messageSignature = "messageSignature_example"; // String | Used to ensure the request has not been tampered with during transmission. The Message-Signature is the Base64 encoded HMAC hash (SHA256 algorithm with the API Secret as the key.) For more information, refer to the supporting documentation on the Developer Portal.
 String region = "region_example"; // String | Indicates the region where the client wants the transaction to be processed. This will override the default processing region identified for the client. Available options are argentina, brazil, germany, india and northamerica. Region specific store setup and APIGEE boarding is required in order to use an alternate region for processing.
-String storeId = "storeId_example"; // String | An optional outlet ID for clients that support multiple stores in the same developer app.
 try {
-    PaymentSchedulesResponse result = apiInstance.updatePaymentSchedule(contentType, clientRequestId, apiKey, timestamp, orderId, paymentSchedulesRequest, messageSignature, region, storeId);
+    PaymentSchedulesResponse result = apiInstance.updatePaymentSchedule(contentType, clientRequestId, apiKey, timestamp, orderId, paymentSchedulesRequest, messageSignature, region);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling PaymentSchedulesApi#updatePaymentSchedule");
@@ -231,7 +230,6 @@ Name | Type | Description  | Notes
  **paymentSchedulesRequest** | [**PaymentSchedulesRequest**](PaymentSchedulesRequest.md)| Accepted request types: PaymentMethodPaymentSchedulesRequest and ReferencedOrderPaymentSchedulesRequest. |
  **messageSignature** | **String**| Used to ensure the request has not been tampered with during transmission. The Message-Signature is the Base64 encoded HMAC hash (SHA256 algorithm with the API Secret as the key.) For more information, refer to the supporting documentation on the Developer Portal. | [optional]
  **region** | **String**| Indicates the region where the client wants the transaction to be processed. This will override the default processing region identified for the client. Available options are argentina, brazil, germany, india and northamerica. Region specific store setup and APIGEE boarding is required in order to use an alternate region for processing. | [optional]
- **storeId** | **String**| An optional outlet ID for clients that support multiple stores in the same developer app. | [optional]
 
 ### Return type
 

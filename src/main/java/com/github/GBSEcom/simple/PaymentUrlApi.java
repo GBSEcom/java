@@ -7,6 +7,7 @@ import com.github.GBSEcom.model.PaymentUrlResponse;
 public interface PaymentUrlApi {
 	PaymentUrlResponse createPaymentUrl(PaymentUrlRequest payload, String region);
 	PaymentUrlResponse createPaymentUrl(PaymentUrlRequest payload);
+
 }
 
 class PaymentUrlApiImpl extends ApiWrapper<com.github.GBSEcom.api.PaymentUrlApi> implements PaymentUrlApi {
