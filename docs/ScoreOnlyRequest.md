@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **merchantRef** | **String** | Merchant reference code. Used by FirstAPI and reflected in settlement records and Webhook notifications. Typically, the merchantRef field is the purchase order number or unique sequence value associated to a given transaction. |  [optional]
-**transactionType** | [**TransactionTypeEnum**](#TransactionTypeEnum) | Type of transaction merchant wants to process. | 
+**transactionType** | **String** | Type of transaction merchant wants to process. | 
 **originalTransactionType** | [**OriginalTransactionTypeEnum**](#OriginalTransactionTypeEnum) | Defines the type of the original transaction that is being evaluated for the Fraud Score. | 
 **originalTransactionId** | **String** | The unique ID of this transaction. Must be unique for the entire system (not just within a specific merchant or industry). Subsequent requests related to the same transaction must have the same transactionId (e.g. transaction/deposit or transaction/authorization-reversal). This field is used for matching transactions with settlement and chargeback information. If there is no such ID available you may wish to compose one from fields available in both systems. Consider including backend, issuer, merchant id, date and time, amount, etc. as necessary. | 
 **amount** | **String** | The amount processed for the original transaction. | 
@@ -18,13 +18,6 @@ Name | Type | Description | Notes
 **merchant** | [**Merchant**](Merchant.md) |  | 
 **order** | [**FraudOrder**](FraudOrder.md) |  |  [optional]
 **userDefined** | [**Object**](.md) | A JSON object that can carry any additional information that might be helpful for fraud detection. |  [optional]
-
-
-<a name="TransactionTypeEnum"></a>
-## Enum: TransactionTypeEnum
-Name | Value
----- | -----
-SCOREONLY | &quot;scoreOnly&quot;
 
 
 <a name="OriginalTransactionTypeEnum"></a>

@@ -25,6 +25,7 @@ Name | Value
 ---- | -----
 GOOGLE_PAY | &quot;GOOGLE_PAY&quot;
 APPLE_PAY | &quot;APPLE_PAY&quot;
+SAMSUNG_PAY | &quot;SAMSUNG_PAY&quot;
 
 
 

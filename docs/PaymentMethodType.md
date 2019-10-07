@@ -26,6 +26,8 @@
 
 * `KLARNA` (value: `"KLARNA"`)
 
+* `KPS` (value: `"KPS"`)
+
 * `NETBANKING` (value: `"NETBANKING"`)
 
 * `PAYMENT_CARD` (value: `"PAYMENT_CARD"`)

@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **stateProvince** | **String** | State or province. |  [optional]
 **city** | **String** | City. |  [optional]
 **country** | **String** | Country. |  [optional]
-**phone** | [**BillingAddressPhone**](BillingAddressPhone.md) |  |  [optional]
+**phone** | [**Phone**](Phone.md) |  |  [optional]
 **zipPostalCode** | **String** | Postal code. |  [optional]
 
 

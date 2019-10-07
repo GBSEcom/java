@@ -1,9 +1,9 @@
 # First Data Gateway
 
 Payment Gateway API Specification.
-- API version: 6.7.0
+- API version: 1.4.0
 
-Payment Gateway API for payment processing. Version 6.7.0
+Payment Gateway API for payment processing. Version 1.4.0
 
 ## Requirements
 
@@ -35,7 +35,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>com.github.GBSEcom</groupId>
   <artifactId>first-data-gateway</artifactId>
-  <version>1.2.0</version>
+  <version>1.4.0</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -45,7 +45,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "com.github.GBSEcom.client:first-data-gateway:1.3.0"
+compile "com.github.GBSEcom.client:first-data-gateway:1.4.0"
 ```
 
 ### Others
@@ -108,6 +108,8 @@ Interface | Method | HTTP request | Description
 *CardVerificationApi* | **verifyCard** | **POST** /v2/card-verification | Verify a payment card.
 *CurrencyConversionApi* | **getExchangeRate** | **POST** /v2/exchange-rates | Generate dynamic currency conversion transactions
 *FraudDetectApi* | **scoreOnly** | **POST** /v2/fraud/score-only | Score a transaction for fraud.
+*FraudDetectApi* | **clientRegistration** | **POST** /v2/fraud/client-registration | Client Registration for fraud detect.
+*FraudDetectApi* | **paymentRegistration** | **POST** /v2/fraud/payment-registration | Payment Registration for fraud detect.
 *OrderApi* | **orderInquiry** | **GET** /v2/orders/{order-id} | Retrieve the state of an order
 *OrderApi* | **orderPostAuth** | **POST** /v2/orders/{order-id}/postauth | Capture/complete an already existing order.
 *OrderApi* | **orderReturnTransaction** | **POST** /v2/orders/{order-id}/return | Return/refund an order.
@@ -124,6 +126,8 @@ Interface | Method | HTTP request | Description
 *PaymentTokenApi* | **createPaymentToken** | **POST** /v2/payment-tokens | Create a payment token from a payment card.
 *PaymentTokenApi* | **deletePaymentToken** | **DELETE** /v2/payment-tokens/{token-id} | Delete a payment token.
 *PaymentUrlApi* | **createPaymentUrl** | **POST** /v2/payment-url | Create a payment URL.
+*PaymentUrlApi* | **deletePaymentUrl** | **DELETE** /v2/payment-url | Delete a payment URL.
+*PaymentUrlApi* | **paymentUrlDetail** | **GET** /v2/payment-url | Retrive the state of a payment URL.
 
 
 ## Code Overview
@@ -252,6 +256,12 @@ import com.github.GBSEcom.model.ScoreOnlyResponse;
 public interface FraudDetectApi {
   ScoreOnlyResponse scoreOnly(ScoreOnlyRequest payload, String region);
   ScoreOnlyResponse scoreOnly(ScoreOnlyRequest payload);
+
+  FraudRegistrationResponse fraudClientRegistrationPost(ClientRegistration payload,String region);
+  FraudRegistrationResponse fraudClientRegistrationPost(ClientRegistration payload);
+
+  FraudRegistrationResponse fraudPaymentRegistrationPost(PaymentRegistration payload,String region);
+  FraudRegistrationResponse fraudPaymentRegistrationPost(PaymentRegistration payload);
 }
 ```
 
@@ -361,120 +371,18 @@ import com.github.GBSEcom.model.PaymentUrlResponse;
 public interface PaymentUrlApi {
   PaymentUrlResponse createPaymentUrl(PaymentUrlRequest payload, String region);
   PaymentUrlResponse createPaymentUrl(PaymentUrlRequest payload);
+
+  PaymentUrlResponse deletePaymentUrl(String transactionId,String orderId,String paymentUrlId,String transactionTime,String region,String storeId);
+  PaymentUrlResponse deletePaymentUrl(String transactionId,String orderId,String paymentUrlId,String transactionTime);
+
+  PaymentUrlDetailResponse paymentUrlDetail(String fromDate,String toDate,String orderId,String merchantTransactionId,String status,String region,String storeId);
+  PaymentUrlDetailResponse paymentUrlDetail(String fromDate,String toDate,String orderId,String merchantTransactionId,String status);
 }
 ```
 
 
 ## Documentation for Models
 
- - [AVSResponse](docs/AVSResponse.md)
- - [AccessTokenResponse](docs/AccessTokenResponse.md)
- - [AdditionalAmountRate](docs/AdditionalAmountRate.md)
- - [AdditionalTransactionDetails](docs/AdditionalTransactionDetails.md)
- - [Address](docs/Address.md)
- - [Airline](docs/Airline.md)
- - [AirlineAncillaryServiceCategory](docs/AirlineAncillaryServiceCategory.md)
- - [AirlineTravelRoute](docs/AirlineTravelRoute.md)
- - [AliPay](docs/AliPay.md)
- - [Amount](docs/Amount.md)
- - [AmountComponents](docs/AmountComponents.md)
- - [AuthenticationRequest](docs/AuthenticationRequest.md)
- - [AuthenticationResponseVerification](docs/AuthenticationResponseVerification.md)
- - [AuthenticationResponseVerificationRequest](docs/AuthenticationResponseVerificationRequest.md)
- - [BasicResponse](docs/BasicResponse.md)
- - [BasketItem](docs/BasketItem.md)
- - [Billing](docs/Billing.md)
- - [BillingAddress](docs/BillingAddress.md)
- - [BillingAddressPhone](docs/BillingAddressPhone.md)
- - [CarRental](docs/CarRental.md)
- - [CarRentalExtraCharges](docs/CarRentalExtraCharges.md)
- - [Card](docs/Card.md)
- - [CardInfo](docs/CardInfo.md)
- - [CardInfoLookupRequest](docs/CardInfoLookupRequest.md)
- - [CardInfoLookupResponse](docs/CardInfoLookupResponse.md)
- - [CardVerificationRequest](docs/CardVerificationRequest.md)
- - [CardVerificationsTransaction](docs/CardVerificationsTransaction.md)
- - [ChinaDomestic](docs/ChinaDomestic.md)
- - [ClientLocale](docs/ClientLocale.md)
- - [Contact](docs/Contact.md)
- - [Customer](docs/Customer.md)
- - [CustomerAddress](docs/CustomerAddress.md)
- - [CustomerAddressPhone](docs/CustomerAddressPhone.md)
- - [Dcc](docs/Dcc.md)
- - [Device](docs/Device.md)
- - [DeviceNetworks](docs/DeviceNetworks.md)
- - [Document](docs/Document.md)
- - [Error](docs/Error.md)
- - [ErrorDetails](docs/ErrorDetails.md)
- - [ErrorResponse](docs/ErrorResponse.md)
- - [ExchangeRateRequest](docs/ExchangeRateRequest.md)
- - [ExchangeRateResponse](docs/ExchangeRateResponse.md)
- - [Expiration](docs/Expiration.md)
- - [FraudOrder](docs/FraudOrder.md)
- - [FraudOrderItems](docs/FraudOrderItems.md)
- - [FraudOrderShipToAddress](docs/FraudOrderShipToAddress.md)
- - [Frequency](docs/Frequency.md)
- - [IndustrySpecificExtensions](docs/IndustrySpecificExtensions.md)
- - [InstallmentOptions](docs/InstallmentOptions.md)
- - [Lodging](docs/Lodging.md)
- - [LodgingExtraCharges](docs/LodgingExtraCharges.md)
- - [Loyalty](docs/Loyalty.md)
- - [Merchant](docs/Merchant.md)
- - [MerchantLocation](docs/MerchantLocation.md)
- - [MerchantLocationMerchantAddress](docs/MerchantLocationMerchantAddress.md)
- - [Order](docs/Order.md)
- - [OrderErrorResponse](docs/OrderErrorResponse.md)
- - [OrderResponse](docs/OrderResponse.md)
- - [PayPal](docs/PayPal.md)
- - [Payment](docs/Payment.md)
- - [PaymentCard](docs/PaymentCard.md)
- - [PaymentCardAuthenticationResult](docs/PaymentCardAuthenticationResult.md)
- - [PaymentFacilitator](docs/PaymentFacilitator.md)
- - [PaymentIssuerResponse](docs/PaymentIssuerResponse.md)
- - [PaymentMethod](docs/PaymentMethod.md)
- - [PaymentPayMethod](docs/PaymentPayMethod.md)
- - [PaymentSchedulesErrorResponse](docs/PaymentSchedulesErrorResponse.md)
- - [PaymentSchedulesRequest](docs/PaymentSchedulesRequest.md)
- - [PaymentSchedulesResponse](docs/PaymentSchedulesResponse.md)
- - [PaymentTokenization](docs/PaymentTokenization.md)
- - [PaymentTokenizationErrorResponse](docs/PaymentTokenizationErrorResponse.md)
- - [PaymentTokenizationRequest](docs/PaymentTokenizationRequest.md)
- - [PaymentTokenizationResponse](docs/PaymentTokenizationResponse.md)
- - [PaymentUrlErrorResponse](docs/PaymentUrlErrorResponse.md)
- - [PaymentUrlRequest](docs/PaymentUrlRequest.md)
- - [PaymentUrlResponse](docs/PaymentUrlResponse.md)
- - [PaymentVerification3ds](docs/PaymentVerification3ds.md)
- - [PaymentVerificationAvs](docs/PaymentVerificationAvs.md)
- - [PaymentVerificationCvv](docs/PaymentVerificationCvv.md)
- - [PrimaryTransaction](docs/PrimaryTransaction.md)
- - [PrimaryTransactionAdditionalDetails](docs/PrimaryTransactionAdditionalDetails.md)
- - [ProcessorData](docs/ProcessorData.md)
- - [PurchaseCards](docs/PurchaseCards.md)
- - [PurchaseCardsLevel2](docs/PurchaseCardsLevel2.md)
- - [PurchaseCardsLevel3](docs/PurchaseCardsLevel3.md)
- - [PurchaseCardsLevel3LineItems](docs/PurchaseCardsLevel3LineItems.md)
- - [RecurringPaymentDetails](docs/RecurringPaymentDetails.md)
- - [RecurringPaymentDetailsResponse](docs/RecurringPaymentDetailsResponse.md)
- - [ReferencedOrder](docs/ReferencedOrder.md)
- - [ResponseType](docs/ResponseType.md)
- - [ScoreOnlyRequest](docs/ScoreOnlyRequest.md)
- - [ScoreOnlyResponse](docs/ScoreOnlyResponse.md)
- - [ScoreOnlyResponseFraudScore](docs/ScoreOnlyResponseFraudScore.md)
- - [ScoreOnlyResponseFraudScoreExplanations](docs/ScoreOnlyResponseFraudScoreExplanations.md)
- - [SecondaryTransaction](docs/SecondaryTransaction.md)
- - [SecondaryTransactionAdditionalDetails](docs/SecondaryTransactionAdditionalDetails.md)
- - [Secure3dResponse](docs/Secure3dResponse.md)
- - [Sepa](docs/Sepa.md)
- - [SepaMandate](docs/SepaMandate.md)
- - [Shipping](docs/Shipping.md)
- - [SoftDescriptor](docs/SoftDescriptor.md)
- - [SplitShipment](docs/SplitShipment.md)
- - [StoredCredential](docs/StoredCredential.md)
- - [SubMerchantData](docs/SubMerchantData.md)
- - [Transaction](docs/Transaction.md)
- - [TransactionErrorResponse](docs/TransactionErrorResponse.md)
- - [TransactionOrigin](docs/TransactionOrigin.md)
- - [TransactionResponse](docs/TransactionResponse.md)
- - [TransactionType](docs/TransactionType.md)
+ Refer to the docs section. 
 
 
