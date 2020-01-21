@@ -72,7 +72,9 @@ public class ProcessorData {
     
     NOT_PRESENT("NOT_PRESENT"),
     
-    NOT_CERTIFIED("NOT_CERTIFIED");
+    NOT_CERTIFIED("NOT_CERTIFIED"),
+    
+    NOT_CHECKED("NOT_CHECKED");
 
     private String value;
 
