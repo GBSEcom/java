@@ -1,9 +1,9 @@
 # First Data Gateway
 
 Payment Gateway API Specification.
-- API version: 1.4.0
+- API version: 1.5.0
 
-Payment Gateway API for payment processing. Version 1.4.0
+Payment Gateway API for payment processing. Version 1.5.0
 
 ## Requirements
 
@@ -35,7 +35,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>com.github.GBSEcom</groupId>
   <artifactId>first-data-gateway</artifactId>
-  <version>1.4.0</version>
+  <version>1.5.0</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -58,7 +58,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-* `target/first-data-gateway-1.3.0.jar`
+* `target/first-data-gateway-1.5.0.jar`
 * `build/libs/*.jar`
 
 ## Getting Started

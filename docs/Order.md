@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **installmentOptions** | [**InstallmentOptions**](InstallmentOptions.md) |  |  [optional]
 **softDescriptor** | [**SoftDescriptor**](SoftDescriptor.md) |  |  [optional]
 **additionalDetails** | [**AdditionalDetails**](AdditionalDetails.md) |  |  [optional]
+**bancontactQR** | [**BancontactQR**](BancontactQR.md) |  |  [optional]
 
 
 

@@ -10,11 +10,11 @@ public interface PaymentUrlApi {
 	PaymentUrlResponse createPaymentUrl(PaymentUrlRequest payload, String region);
 	PaymentUrlResponse createPaymentUrl(PaymentUrlRequest payload);
 
-	PaymentUrlResponse deletePaymentUrl(String region,String storeId,String transactionId,String orderId,String paymentUrlId,String transactionTime);
-	PaymentUrlResponse deletePaymentUrl(String transactionId,String orderId,String paymentUrlId,String transactionTime);
+	PaymentUrlResponse deletePaymentUrl(String region, String storeId, String transactionId, String orderId, String paymentUrlId, String transactionTime);
+	PaymentUrlResponse deletePaymentUrl(String transactionId, String orderId, String paymentUrlId, String transactionTime);
 
-	PaymentUrlDetailResponse paymentUrlDetail(String fromDate,String toDate,String region,String storeId,String orderId,String merchantTransactionId,String status);
-	PaymentUrlDetailResponse paymentUrlDetail(String fromDate,String toDate,String orderId,String merchantTransactionId,String status);
+	PaymentUrlDetailResponse paymentUrlDetail(String fromDate, String toDate, String region, String storeId, String orderId, String merchantTransactionId, String status);
+	PaymentUrlDetailResponse paymentUrlDetail(String fromDate, String toDate, String orderId, String merchantTransactionId, String status);
 }
 
 class PaymentUrlApiImpl extends ApiWrapper<com.github.GBSEcom.api.PaymentUrlApi> implements PaymentUrlApi {
@@ -53,7 +53,7 @@ class PaymentUrlApiImpl extends ApiWrapper<com.github.GBSEcom.api.PaymentUrlApi>
 			orderId,
 			paymentUrlId,
 			transactionTime
-		);
+			);
 
 	}
 

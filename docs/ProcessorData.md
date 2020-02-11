@@ -13,6 +13,8 @@ Name | Type | Description | Notes
 **avsResponse** | [**AVSResponse**](AVSResponse.md) |  |  [optional]
 **securityCodeResponse** | [**SecurityCodeResponseEnum**](#SecurityCodeResponseEnum) | Code returned for CVV. |  [optional]
 **merchantAdviceCodeIndicator** | **String** | Code to map merchant advice code to ISO specification. |  [optional]
+**responseIndicator** | **String** | Indicates whether the transaction was routed through the payment card&#39;s own network or through a different network. |  [optional]
+**debitReceiptNumber** | **String** | Receipt number from debit network provider. |  [optional]
 
 
 <a name="SecurityCodeResponseEnum"></a>
@@ -24,6 +26,7 @@ NOT_MATCHED | &quot;NOT_MATCHED&quot;
 NOT_PROCESSED | &quot;NOT_PROCESSED&quot;
 NOT_PRESENT | &quot;NOT_PRESENT&quot;
 NOT_CERTIFIED | &quot;NOT_CERTIFIED&quot;
+NOT_CHECKED | &quot;NOT_CHECKED&quot;
 
 
 
