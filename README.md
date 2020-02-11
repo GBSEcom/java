@@ -45,7 +45,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "com.github.GBSEcom.client:first-data-gateway:1.4.0"
+compile "com.github.GBSEcom.client:first-data-gateway:1.5.0"
 ```
 
 ### Others
@@ -128,6 +128,8 @@ Interface | Method | HTTP request | Description
 *PaymentUrlApi* | **createPaymentUrl** | **POST** /v2/payment-url | Create a payment URL.
 *PaymentUrlApi* | **deletePaymentUrl** | **DELETE** /v2/payment-url | Delete a payment URL.
 *PaymentUrlApi* | **paymentUrlDetail** | **GET** /v2/payment-url | Retrive the state of a payment URL.
+for store.
+
 
 
 ## Code Overview
