@@ -30,79 +30,140 @@ import java.io.IOException;
 @ApiModel(description = "Access token generation response.")
 
 public class AccessTokenResponse {
-  public static final String SERIALIZED_NAME_ACCESS_TOKEN = "accessToken";
-  @SerializedName(SERIALIZED_NAME_ACCESS_TOKEN)
-  private String accessToken;
+  public static final String SERIALIZED_NAME_TOKEN_ID = "tokenId";
+  @SerializedName(SERIALIZED_NAME_TOKEN_ID)
+  private String tokenId;
+
+  public static final String SERIALIZED_NAME_STATUS = "status";
+  @SerializedName(SERIALIZED_NAME_STATUS)
+  private String status;
+
+  public static final String SERIALIZED_NAME_ISSUED_ON = "issuedOn";
+  @SerializedName(SERIALIZED_NAME_ISSUED_ON)
+  private String issuedOn;
+
+  public static final String SERIALIZED_NAME_EXPIRES_IN_SECONDS = "expiresInSeconds";
+  @SerializedName(SERIALIZED_NAME_EXPIRES_IN_SECONDS)
+  private String expiresInSeconds;
+
+  public static final String SERIALIZED_NAME_PUBLIC_KEY_BASE64 = "publicKeyBase64";
+  @SerializedName(SERIALIZED_NAME_PUBLIC_KEY_BASE64)
+  private String publicKeyBase64;
+
+  public static final String SERIALIZED_NAME_ALGORITHM = "algorithm";
+  @SerializedName(SERIALIZED_NAME_ALGORITHM)
+  private String algorithm;
 
   public static final String SERIALIZED_NAME_CLIENT_REQUEST_ID = "clientRequestId";
   @SerializedName(SERIALIZED_NAME_CLIENT_REQUEST_ID)
   private String clientRequestId;
 
-  /**
-   * The result of the requested operation. If this is anything other than &#39;SUCCESS&#39;, please refer to the 400s HTTP error codes. See ErrorResponse object for details.
-   */
-  @JsonAdapter(RequestStatusEnum.Adapter.class)
-  public enum RequestStatusEnum {
-    SUCCESS("SUCCESS");
-
-    private String value;
-
-    RequestStatusEnum(String value) {
-      this.value = value;
-    }
-
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    public static RequestStatusEnum fromValue(String text) {
-      for (RequestStatusEnum b : RequestStatusEnum.values()) {
-        if (String.valueOf(b.value).equals(text)) {
-          return b;
-        }
-      }
-      throw new IllegalArgumentException("Unexpected value '" + text + "'");
-    }
-
-    public static class Adapter extends TypeAdapter<RequestStatusEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final RequestStatusEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public RequestStatusEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
-        return RequestStatusEnum.fromValue(String.valueOf(value));
-      }
-    }
-  }
-
-  public static final String SERIALIZED_NAME_REQUEST_STATUS = "requestStatus";
-  @SerializedName(SERIALIZED_NAME_REQUEST_STATUS)
-  private RequestStatusEnum requestStatus;
-
-  public AccessTokenResponse accessToken(String accessToken) {
-    this.accessToken = accessToken;
+  public AccessTokenResponse tokenId(String tokenId) {
+    this.tokenId = tokenId;
     return this;
   }
 
    /**
    * Access token for authentication.
-   * @return accessToken
+   * @return tokenId
   **/
-  @ApiModelProperty(example = "Rft3dqrs56Blirls56a", value = "Access token for authentication.")
-  public String getAccessToken() {
-    return accessToken;
+  @ApiModelProperty(example = "gliF92ypj9cKRWUP8lpRIbI3bhNf", value = "Access token for authentication.")
+  public String getTokenId() {
+    return tokenId;
   }
 
-  public void setAccessToken(String accessToken) {
-    this.accessToken = accessToken;
+  public void setTokenId(String tokenId) {
+    this.tokenId = tokenId;
+  }
+
+  public AccessTokenResponse status(String status) {
+    this.status = status;
+    return this;
+  }
+
+   /**
+   * The token status.
+   * @return status
+  **/
+  @ApiModelProperty(example = "ACTIVE", value = "The token status.")
+  public String getStatus() {
+    return status;
+  }
+
+  public void setStatus(String status) {
+    this.status = status;
+  }
+
+  public AccessTokenResponse issuedOn(String issuedOn) {
+    this.issuedOn = issuedOn;
+    return this;
+  }
+
+   /**
+   * Access token issued time in milliseconds.
+   * @return issuedOn
+  **/
+  @ApiModelProperty(example = "1579021570941", value = "Access token issued time in milliseconds.")
+  public String getIssuedOn() {
+    return issuedOn;
+  }
+
+  public void setIssuedOn(String issuedOn) {
+    this.issuedOn = issuedOn;
+  }
+
+  public AccessTokenResponse expiresInSeconds(String expiresInSeconds) {
+    this.expiresInSeconds = expiresInSeconds;
+    return this;
+  }
+
+   /**
+   * Access token expiration time.
+   * @return expiresInSeconds
+  **/
+  @ApiModelProperty(example = "899", value = "Access token expiration time.")
+  public String getExpiresInSeconds() {
+    return expiresInSeconds;
+  }
+
+  public void setExpiresInSeconds(String expiresInSeconds) {
+    this.expiresInSeconds = expiresInSeconds;
+  }
+
+  public AccessTokenResponse publicKeyBase64(String publicKeyBase64) {
+    this.publicKeyBase64 = publicKeyBase64;
+    return this;
+  }
+
+   /**
+   * Public key to encrypt data.
+   * @return publicKeyBase64
+  **/
+  @ApiModelProperty(example = "LS0tLS1CRUdJTiBQLbnFSNXRnVmc4U08LS1FTkQgUFVCTElDIEtFWS0tLS0t", value = "Public key to encrypt data.")
+  public String getPublicKeyBase64() {
+    return publicKeyBase64;
+  }
+
+  public void setPublicKeyBase64(String publicKeyBase64) {
+    this.publicKeyBase64 = publicKeyBase64;
+  }
+
+  public AccessTokenResponse algorithm(String algorithm) {
+    this.algorithm = algorithm;
+    return this;
+  }
+
+   /**
+   * Encyption algorithym. One way ECDH 256 bit key.
+   * @return algorithm
+  **/
+  @ApiModelProperty(example = "RSA/NONE/PKCS1PADDING", value = "Encyption algorithym. One way ECDH 256 bit key.")
+  public String getAlgorithm() {
+    return algorithm;
+  }
+
+  public void setAlgorithm(String algorithm) {
+    this.algorithm = algorithm;
   }
 
   public AccessTokenResponse clientRequestId(String clientRequestId) {
@@ -123,24 +184,6 @@ public class AccessTokenResponse {
     this.clientRequestId = clientRequestId;
   }
 
-  public AccessTokenResponse requestStatus(RequestStatusEnum requestStatus) {
-    this.requestStatus = requestStatus;
-    return this;
-  }
-
-   /**
-   * The result of the requested operation. If this is anything other than &#39;SUCCESS&#39;, please refer to the 400s HTTP error codes. See ErrorResponse object for details.
-   * @return requestStatus
-  **/
-  @ApiModelProperty(value = "The result of the requested operation. If this is anything other than 'SUCCESS', please refer to the 400s HTTP error codes. See ErrorResponse object for details.")
-  public RequestStatusEnum getRequestStatus() {
-    return requestStatus;
-  }
-
-  public void setRequestStatus(RequestStatusEnum requestStatus) {
-    this.requestStatus = requestStatus;
-  }
-
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -151,14 +194,18 @@ public class AccessTokenResponse {
       return false;
     }
     AccessTokenResponse accessTokenResponse = (AccessTokenResponse) o;
-    return Objects.equals(this.accessToken, accessTokenResponse.accessToken) &&
-        Objects.equals(this.clientRequestId, accessTokenResponse.clientRequestId) &&
-        Objects.equals(this.requestStatus, accessTokenResponse.requestStatus);
+    return Objects.equals(this.tokenId, accessTokenResponse.tokenId) &&
+        Objects.equals(this.status, accessTokenResponse.status) &&
+        Objects.equals(this.issuedOn, accessTokenResponse.issuedOn) &&
+        Objects.equals(this.expiresInSeconds, accessTokenResponse.expiresInSeconds) &&
+        Objects.equals(this.publicKeyBase64, accessTokenResponse.publicKeyBase64) &&
+        Objects.equals(this.algorithm, accessTokenResponse.algorithm) &&
+        Objects.equals(this.clientRequestId, accessTokenResponse.clientRequestId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(accessToken, clientRequestId, requestStatus);
+    return Objects.hash(tokenId, status, issuedOn, expiresInSeconds, publicKeyBase64, algorithm, clientRequestId);
   }
 
 
@@ -167,9 +214,13 @@ public class AccessTokenResponse {
     StringBuilder sb = new StringBuilder();
     sb.append("class AccessTokenResponse {\n");
     
-    sb.append("    accessToken: ").append(toIndentedString(accessToken)).append("\n");
+    sb.append("    tokenId: ").append(toIndentedString(tokenId)).append("\n");
+    sb.append("    status: ").append(toIndentedString(status)).append("\n");
+    sb.append("    issuedOn: ").append(toIndentedString(issuedOn)).append("\n");
+    sb.append("    expiresInSeconds: ").append(toIndentedString(expiresInSeconds)).append("\n");
+    sb.append("    publicKeyBase64: ").append(toIndentedString(publicKeyBase64)).append("\n");
+    sb.append("    algorithm: ").append(toIndentedString(algorithm)).append("\n");
     sb.append("    clientRequestId: ").append(toIndentedString(clientRequestId)).append("\n");
-    sb.append("    requestStatus: ").append(toIndentedString(requestStatus)).append("\n");
     sb.append("}");
     return sb.toString();
   }

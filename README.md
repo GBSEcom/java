@@ -1,7 +1,7 @@
 # First Data Gateway
 
 Payment Gateway API Specification.
-- API version: 1.5.0
+- API version: 6.9.1
 
 Payment Gateway API for payment processing. Version 1.5.0
 
@@ -35,7 +35,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>com.github.GBSEcom</groupId>
   <artifactId>first-data-gateway</artifactId>
-  <version>1.5.0</version>
+  <version>1.5.1</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -45,7 +45,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "com.github.GBSEcom.client:first-data-gateway:1.5.0"
+compile "com.github.GBSEcom.client:first-data-gateway:1.5.1"
 ```
 
 ### Others
@@ -58,7 +58,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-* `target/first-data-gateway-1.5.0.jar`
+* `target/first-data-gateway-1.5.1.jar`
 * `build/libs/*.jar`
 
 ## Getting Started
