@@ -1,7 +1,7 @@
 # First Data Gateway
 
 Payment Gateway API Specification.
-- API version: 6.9.1
+- API version: 6.10.0
 
 Payment Gateway API for payment processing. Version 1.5.0
 
@@ -35,7 +35,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>com.github.GBSEcom</groupId>
   <artifactId>first-data-gateway</artifactId>
-  <version>1.5.1</version>
+  <version>1.6.0</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -45,7 +45,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "com.github.GBSEcom.client:first-data-gateway:1.5.1"
+compile "com.github.GBSEcom.client:first-data-gateway:1.5.0"
 ```
 
 ### Others
@@ -58,7 +58,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-* `target/first-data-gateway-1.5.1.jar`
+* `target/first-data-gateway-1.5.0.jar`
 * `build/libs/*.jar`
 
 ## Getting Started
@@ -125,6 +125,7 @@ Interface | Method | HTTP request | Description
 *PaymentSchedulesApi* | **updatePaymentSchedule** | **PATCH** /v2/payment-schedules/{order-id} | Update a gateway payment schedule.
 *PaymentTokenApi* | **createPaymentToken** | **POST** /v2/payment-tokens | Create a payment token from a payment card.
 *PaymentTokenApi* | **deletePaymentToken** | **DELETE** /v2/payment-tokens/{token-id} | Delete a payment token.
+*PaymentTokenApi* | **getPaymentTokenDetails**| **GET** /v2/payment-tokens/{token-id} | Get payment token details.
 *PaymentUrlApi* | **createPaymentUrl** | **POST** /v2/payment-url | Create a payment URL.
 *PaymentUrlApi* | **deletePaymentUrl** | **DELETE** /v2/payment-url | Delete a payment URL.
 *PaymentUrlApi* | **paymentUrlDetail** | **GET** /v2/payment-url | Retrive the state of a payment URL.
@@ -359,6 +360,10 @@ public interface PaymentTokenApi {
   PaymentTokenizationResponse deletePaymentToken(String tokenId, String authorization, String region, String storeId);
   PaymentTokenizationResponse deletePaymentToken(String tokenId, String authorization);
   PaymentTokenizationResponse deletePaymentToken(String tokenId);
+
+  PaymentTokenizationResponse getPaymentTokenDetails(String tokenId, String authorization, String region, String storeId);
+  PaymentTokenizationResponse getPaymentTokenDetails(String tokenId, String authorization);
+  PaymentTokenizationResponse getPaymentTokenDetails(String tokenId);
 }
 ```
 

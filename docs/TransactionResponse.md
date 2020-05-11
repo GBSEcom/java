@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 **transactionState** | [**TransactionStateEnum**](#TransactionStateEnum) | The state of the transaction. |  [optional]
 **secure3dResponse** | [**Secure3dResponse**](Secure3dResponse.md) |  |  [optional]
 **redirectURL** | **String** | The endpoint redirection URL. |  [optional]
-**authenticationRedirect** | [**AuthenticationRedirect**](AuthenticationRedirect.md) |  |  [optional]
+**authenticationResponse** | [**Secure3DAuthenticationResponse**](Secure3DAuthenticationResponse.md) |  |  [optional]
 **schemeTransactionId** | **String** | The transaction ID received from schemes for the initial transaction of card on file flows. |  [optional]
 **processor** | [**ProcessorData**](ProcessorData.md) |  |  [optional]
 **additionalDetails** | [**AdditionalTransactionDetails**](AdditionalTransactionDetails.md) |  |  [optional]

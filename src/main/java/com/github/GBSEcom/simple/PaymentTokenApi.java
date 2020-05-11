@@ -12,6 +12,10 @@ public interface PaymentTokenApi {
 	PaymentTokenizationResponse deletePaymentToken(String tokenId, String authorization, String region, String storeId);
 	PaymentTokenizationResponse deletePaymentToken(String tokenId, String authorization);
 	PaymentTokenizationResponse deletePaymentToken(String tokenId);
+
+	PaymentTokenizationResponse getPaymentTokenDetails(String tokenId, String authorization, String region, String storeId);
+	PaymentTokenizationResponse getPaymentTokenDetails(String tokenId, String authorization);
+	PaymentTokenizationResponse getPaymentTokenDetails(String tokenId);
 }
 
 class PaymentTokenApiImpl extends ApiWrapper<com.github.GBSEcom.api.PaymentTokenApi> implements PaymentTokenApi {
@@ -71,4 +75,32 @@ class PaymentTokenApiImpl extends ApiWrapper<com.github.GBSEcom.api.PaymentToken
 	public PaymentTokenizationResponse deletePaymentToken(final String tokenId) throws ApiException {
 		return deletePaymentToken(tokenId, null);
 	}
+
+	public PaymentTokenizationResponse getPaymentTokenDetails(final String tokenId,final String authorization,final String region,final String storeId) throws ApiException {
+		final ClientHeaders headers = genHeaders();
+		String messageSignature = null;
+		if(authorization == null) {
+			messageSignature = headers.getMessageSignature();
+		}
+		return getClient().getPaymentTokenDetails(
+			headers.getContentType(),
+			headers.getClientRequestId(),
+			headers.getApiKey(),
+			headers.getTimestamp(),
+			tokenId,
+			messageSignature,
+			authorization,
+			region,
+			storeId
+			);
+	}
+	
+	public PaymentTokenizationResponse getPaymentTokenDetails(final String tokenId,final String authorization) throws ApiException{
+		return getPaymentTokenDetails(tokenId, authorization, getDefaultRegion(), getDefaultStoreId());
+	}
+
+	public PaymentTokenizationResponse getPaymentTokenDetails(final String tokenId) throws ApiException{
+		return getPaymentTokenDetails(tokenId,null);
+	}
+
 }

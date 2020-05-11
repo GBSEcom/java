@@ -2,9 +2,10 @@ package com.github.GBSEcom.simple;
 
 import com.github.GBSEcom.client.ApiException;
 import com.github.GBSEcom.model.AccessTokenResponse;
+import com.github.GBSEcom.model.AccessTokenRequest;
 
 public interface AuthenticationApi {
-	AccessTokenResponse getAccessToken();
+	AccessTokenResponse getAccessToken(AccessTokenRequest accessTokenRequest);
 
 	
 }
@@ -21,13 +22,14 @@ class AuthenticationApiImpl extends ApiWrapper<com.github.GBSEcom.api.Authentica
 	 * @return AccessTokenResponse
 	 * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
 	 */
-	public AccessTokenResponse getAccessToken() throws ApiException {
-		final ClientHeaders headers = genHeaders();
+	public AccessTokenResponse getAccessToken(final AccessTokenRequest accessTokenRequest) throws ApiException {
+		final ClientHeaders headers = genHeaders(accessTokenRequest);
 		return getClient().authenticationAccessTokensPost(
 			headers.getContentType(),
 			headers.getClientRequestId(),
 			headers.getApiKey(),
 			headers.getTimestamp(),
+			accessTokenRequest,
 			headers.getMessageSignature()
 		);
 	}

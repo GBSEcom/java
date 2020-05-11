@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 <a name="finalizeSecureTransaction"></a>
 # **finalizeSecureTransaction**
-> TransactionResponse finalizeSecureTransaction(contentType, clientRequestId, apiKey, timestamp, transactionId, authenticationVerificationRequest, messageSignature, region)
+> TransactionResponse finalizeSecureTransaction(contentType, clientRequestId, apiKey, timestamp, transactionId, authenticationUpdateRequest, messageSignature, region)
 
 Update a 3DSecure or UnionPay payment and continue processing.
 
@@ -31,11 +31,11 @@ String clientRequestId = "clientRequestId_example"; // String | A client-generat
 String apiKey = "apiKey_example"; // String | Key given to merchant after boarding associating their requests with the appropriate app in Apigee.
 Long timestamp = 56L; // Long | Epoch timestamp in milliseconds in the request from a client system. Used for Message Signature generation and time limit (5 mins).
 String transactionId = "transactionId_example"; // String | Gateway transaction identifier as returned in the parameter ipgTransactionId.
-AuthenticationVerificationRequest authenticationVerificationRequest = new AuthenticationVerificationRequest(); // AuthenticationVerificationRequest | Accepted request types: Secure3dAuthenticationVerificationRequest and UnionPayAuthenticationVerificationRequest.
+AuthenticationUpdateRequest authenticationUpdateRequest = new AuthenticationUpdateRequest(); // AuthenticationUpdateRequest | Accepted request types: Secure3D10AuthenticationUpdateRequest, Secure3D21AuthenticationUpdateRequest, and UnionPayAuthenticationUpdateRequest.
 String messageSignature = "messageSignature_example"; // String | Used to ensure the request has not been tampered with during transmission. The Message-Signature is the Base64 encoded HMAC hash (SHA256 algorithm with the API Secret as the key.) For more information, refer to the supporting documentation on the Developer Portal.
 String region = "region_example"; // String | Indicates the region where the client wants the transaction to be processed. This will override the default processing region identified for the client. Available options are argentina, brazil, germany, india and northamerica. Region specific store setup and APIGEE boarding is required in order to use an alternate region for processing.
 try {
-    TransactionResponse result = apiInstance.finalizeSecureTransaction(contentType, clientRequestId, apiKey, timestamp, transactionId, authenticationVerificationRequest, messageSignature, region);
+    TransactionResponse result = apiInstance.finalizeSecureTransaction(contentType, clientRequestId, apiKey, timestamp, transactionId, authenticationUpdateRequest, messageSignature, region);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling PaymentApi#finalizeSecureTransaction");
@@ -52,7 +52,7 @@ Name | Type | Description  | Notes
  **apiKey** | **String**| Key given to merchant after boarding associating their requests with the appropriate app in Apigee. |
  **timestamp** | **Long**| Epoch timestamp in milliseconds in the request from a client system. Used for Message Signature generation and time limit (5 mins). |
  **transactionId** | **String**| Gateway transaction identifier as returned in the parameter ipgTransactionId. |
- **authenticationVerificationRequest** | [**AuthenticationVerificationRequest**](AuthenticationVerificationRequest.md)| Accepted request types: Secure3dAuthenticationVerificationRequest and UnionPayAuthenticationVerificationRequest. |
+ **authenticationUpdateRequest** | [**AuthenticationUpdateRequest**](AuthenticationUpdateRequest.md)| Accepted request types: Secure3D10AuthenticationUpdateRequest, Secure3D21AuthenticationUpdateRequest, and UnionPayAuthenticationUpdateRequest. |
  **messageSignature** | **String**| Used to ensure the request has not been tampered with during transmission. The Message-Signature is the Base64 encoded HMAC hash (SHA256 algorithm with the API Secret as the key.) For more information, refer to the supporting documentation on the Developer Portal. | [optional]
  **region** | **String**| Indicates the region where the client wants the transaction to be processed. This will override the default processing region identified for the client. Available options are argentina, brazil, germany, india and northamerica. Region specific store setup and APIGEE boarding is required in order to use an alternate region for processing. | [optional]
 

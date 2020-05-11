@@ -10,11 +10,11 @@ public interface PaymentUrlApi {
 	PaymentUrlResponse createPaymentUrl(PaymentUrlRequest payload, String region);
 	PaymentUrlResponse createPaymentUrl(PaymentUrlRequest payload);
 
-	PaymentUrlResponse deletePaymentUrl(String region, String storeId, String transactionId, String orderId, String paymentUrlId, String transactionTime);
-	PaymentUrlResponse deletePaymentUrl(String transactionId, String orderId, String paymentUrlId, String transactionTime);
+	PaymentUrlResponse deletePaymentUrl(String transactionId,String orderId,String paymentUrlId,String transactionTime,String region,String storeId);
+	PaymentUrlResponse deletePaymentUrl(String transactionId,String orderId,String paymentUrlId,String transactionTime);
 
-	PaymentUrlDetailResponse paymentUrlDetail(String fromDate, String toDate, String region, String storeId, String orderId, String merchantTransactionId, String status);
-	PaymentUrlDetailResponse paymentUrlDetail(String fromDate, String toDate, String orderId, String merchantTransactionId, String status);
+	PaymentUrlDetailResponse paymentUrlDetail(String fromDate,String toDate,String orderId,String merchantTransactionId,String status,String region,String storeId);
+	PaymentUrlDetailResponse paymentUrlDetail(String fromDate,String toDate,String orderId,String merchantTransactionId,String status);
 }
 
 class PaymentUrlApiImpl extends ApiWrapper<com.github.GBSEcom.api.PaymentUrlApi> implements PaymentUrlApi {
@@ -39,7 +39,7 @@ class PaymentUrlApiImpl extends ApiWrapper<com.github.GBSEcom.api.PaymentUrlApi>
 		return createPaymentUrl(payload, getDefaultRegion());
 	}
 
-	public PaymentUrlResponse deletePaymentUrl(final String region,final String storeId,final String transactionId,final String orderId,final String paymentUrlId,final String transactionTime) throws ApiException{
+	public PaymentUrlResponse deletePaymentUrl(final String transactionId,final String orderId,final String paymentUrlId,final String transactionTime,final String region,final String storeId) throws ApiException{
 		final ClientHeaders headers = genHeaders();
 		return getClient().deletePaymentUrl(
 			headers.getContentType(),
@@ -53,15 +53,15 @@ class PaymentUrlApiImpl extends ApiWrapper<com.github.GBSEcom.api.PaymentUrlApi>
 			orderId,
 			paymentUrlId,
 			transactionTime
-			);
+		);
 
 	}
 
 	public PaymentUrlResponse deletePaymentUrl(final String transactionId,final String orderId,final String paymentUrlId,final String transactionTime ) throws ApiException{
-		return deletePaymentUrl(getDefaultRegion(),getDefaultStoreId(),transactionId,orderId,paymentUrlId,transactionTime);
+		return deletePaymentUrl(transactionId,orderId,paymentUrlId,transactionTime,getDefaultRegion(),getDefaultStoreId());
 	}
 
-	public PaymentUrlDetailResponse paymentUrlDetail(final String fromDate,final String toDate,final String region,final String storeId,final String orderId,final String merchantTransactionId,final String status) throws ApiException{
+	public PaymentUrlDetailResponse paymentUrlDetail(final String fromDate,final String toDate,final String orderId,final String merchantTransactionId,final String status,final String region,final String storeId) throws ApiException{
 		final ClientHeaders headers = genHeaders();
 		return getClient().paymentUrlDetail(
 			headers.getContentType(),
@@ -80,7 +80,7 @@ class PaymentUrlApiImpl extends ApiWrapper<com.github.GBSEcom.api.PaymentUrlApi>
 	}
 
 	public PaymentUrlDetailResponse paymentUrlDetail(final String fromDate,final String toDate,final String orderId,final String merchantTransactionId,final String status) throws ApiException{
-		return paymentUrlDetail(fromDate,toDate,getDefaultRegion(),getDefaultStoreId(),orderId,merchantTransactionId,status);
+		return paymentUrlDetail(fromDate,toDate,orderId,merchantTransactionId,status,getDefaultRegion(),getDefaultStoreId());
 	}
 
 }
