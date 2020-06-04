@@ -84,9 +84,13 @@ public class AuthenticationApiExample {
         final ClientContext context = ClientContextImpl.create(creds, basePath);
         final ClientFactory factory = context.getFactory();
         final AuthenticationApi api = factory.getAuthenticationApi();
+        final AccessTokenRequest req = new AccessTokenRequest();
+        req.domain("somedomain.com");
+        req.token("gfgF92JHDJFjxcJHCQ23IbI12D");
+        req.publicKeyRequired(false);
 
         try {
-            final AccessTokenResponse result = api.getAccessToken();
+            final AccessTokenResponse result = api.getAccessToken(req);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling AuthenticationApi#getAccessToken");
