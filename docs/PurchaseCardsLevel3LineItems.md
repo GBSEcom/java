@@ -1,7 +1,9 @@
 
+
 # PurchaseCardsLevel3LineItems
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **commodityCode** | **String** | The commodity code used to classify the item purchased. |  [optional]

@@ -20,24 +20,36 @@ Use this to generate an embedding payment link.
 ### Example
 ```java
 // Import classes:
-//import com.github.GBSEcom.client.ApiException;
-//import com.github.GBSEcom.api.PaymentUrlApi;
+import com.github.GBSEcom.client.ApiClient;
+import com.github.GBSEcom.client.ApiException;
+import com.github.GBSEcom.client.Configuration;
+import com.github.GBSEcom.client.models.*;
+import com.github.GBSEcom.api.PaymentUrlApi;
 
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://cert.api.firstdata.com/gateway/v2");
 
-PaymentUrlApi apiInstance = new PaymentUrlApi();
-String contentType = "application/json"; // String | Content type.
-String clientRequestId = "clientRequestId_example"; // String | A client-generated ID for request tracking and signature creation, unique per request.  This is also used for idempotency control. We recommend 128-bit UUID format.
-String apiKey = "apiKey_example"; // String | Key given to merchant after boarding associating their requests with the appropriate app in Apigee.
-Long timestamp = 56L; // Long | Epoch timestamp in milliseconds in the request from a client system. Used for Message Signature generation and time limit (5 mins).
-PaymentUrlRequest paymentUrlRequest = new PaymentUrlRequest(); // PaymentUrlRequest | Accepted request type: PaymentUrlRequest.
-String messageSignature = "messageSignature_example"; // String | Used to ensure the request has not been tampered with during transmission. The Message-Signature is the Base64 encoded HMAC hash (SHA256 algorithm with the API Secret as the key.) For more information, refer to the supporting documentation on the Developer Portal.
-String region = "region_example"; // String | Indicates the region where the client wants the transaction to be processed. This will override the default processing region identified for the client. Available options are argentina, brazil, germany, india and northamerica. Region specific store setup and APIGEE boarding is required in order to use an alternate region for processing.
-try {
-    PaymentUrlResponse result = apiInstance.createPaymentUrl(contentType, clientRequestId, apiKey, timestamp, paymentUrlRequest, messageSignature, region);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling PaymentUrlApi#createPaymentUrl");
-    e.printStackTrace();
+    PaymentUrlApi apiInstance = new PaymentUrlApi(defaultClient);
+    String contentType = "application/json"; // String | Content type.
+    String clientRequestId = "clientRequestId_example"; // String | A client-generated ID for request tracking and signature creation, unique per request.  This is also used for idempotency control. We recommend 128-bit UUID format.
+    String apiKey = "apiKey_example"; // String | Key given to merchant after boarding associating their requests with the appropriate app in Apigee.
+    Long timestamp = 56L; // Long | Epoch timestamp in milliseconds in the request from a client system. Used for Message Signature generation and time limit (5 mins).
+    PaymentUrlRequest paymentUrlRequest = new PaymentUrlRequest(); // PaymentUrlRequest | Accepted request type: PaymentUrlRequest.
+    String messageSignature = "messageSignature_example"; // String | Used to ensure the request has not been tampered with during transmission. The Message-Signature is the Base64 encoded HMAC hash (SHA256 algorithm with the API Secret as the key.) For more information, refer to the supporting documentation on the Developer Portal.
+    String region = "region_example"; // String | Indicates the region where the client wants the transaction to be processed. This will override the default processing region identified for the client. Available options are argentina, brazil, germany, india and northamerica. Region specific store setup and APIGEE boarding is required in order to use an alternate region for processing.
+    try {
+      PaymentUrlResponse result = apiInstance.createPaymentUrl(contentType, clientRequestId, apiKey, timestamp, paymentUrlRequest, messageSignature, region);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling PaymentUrlApi#createPaymentUrl");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
 }
 ```
 
@@ -66,6 +78,17 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success response. |  -  |
+**400** | The request cannot be validated. |  -  |
+**401** | The request was unauthorized. |  -  |
+**404** | The requested resource doesn&#39;t exist. |  -  |
+**409** | There was a problem communicating with the endpoint. |  -  |
+**415** | Format that is not supported by the server for the HTTP method. |  -  |
+**500** | An unexpected internal server error occurred. |  -  |
+
 <a name="deletePaymentUrl"></a>
 # **deletePaymentUrl**
 > PaymentUrlResponse deletePaymentUrl(contentType, clientRequestId, apiKey, timestamp, messageSignature, region, storeId, transactionId, orderId, paymentUrlId, transactionTime)
@@ -77,28 +100,40 @@ Use this to delete an embedding payment link.
 ### Example
 ```java
 // Import classes:
-//import com.github.GBSEcom.client.ApiException;
-//import com.github.GBSEcom.api.PaymentUrlApi;
+import com.github.GBSEcom.client.ApiClient;
+import com.github.GBSEcom.client.ApiException;
+import com.github.GBSEcom.client.Configuration;
+import com.github.GBSEcom.client.models.*;
+import com.github.GBSEcom.api.PaymentUrlApi;
 
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://cert.api.firstdata.com/gateway/v2");
 
-PaymentUrlApi apiInstance = new PaymentUrlApi();
-String contentType = "application/json"; // String | Content type.
-String clientRequestId = "clientRequestId_example"; // String | A client-generated ID for request tracking and signature creation, unique per request.  This is also used for idempotency control. We recommend 128-bit UUID format.
-String apiKey = "apiKey_example"; // String | Key given to merchant after boarding associating their requests with the appropriate app in Apigee.
-Long timestamp = 56L; // Long | Epoch timestamp in milliseconds in the request from a client system. Used for Message Signature generation and time limit (5 mins).
-String messageSignature = "messageSignature_example"; // String | Used to ensure the request has not been tampered with during transmission. The Message-Signature is the Base64 encoded HMAC hash (SHA256 algorithm with the API Secret as the key.) For more information, refer to the supporting documentation on the Developer Portal.
-String region = "region_example"; // String | Indicates the region where the client wants the transaction to be processed. This will override the default processing region identified for the client. Available options are argentina, brazil, germany, india and northamerica. Region specific store setup and APIGEE boarding is required in order to use an alternate region for processing.
-String storeId = "storeId_example"; // String | An optional outlet ID for clients that support multiple stores in the same developer app.
-String transactionId = "transactionId_example"; // String | Gateway transaction identifier as returned in the parameter ipgTransactionId.
-String orderId = "orderId_example"; // String | Gateway order identifier as returned in the parameter orderId.
-String paymentUrlId = "paymentUrlId_example"; // String | The ID code from the payment URL.
-String transactionTime = "transactionTime_example"; // String | The transaction time in seconds since epoch.
-try {
-    PaymentUrlResponse result = apiInstance.deletePaymentUrl(contentType, clientRequestId, apiKey, timestamp, messageSignature, region, storeId, transactionId, orderId, paymentUrlId, transactionTime);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling PaymentUrlApi#deletePaymentUrl");
-    e.printStackTrace();
+    PaymentUrlApi apiInstance = new PaymentUrlApi(defaultClient);
+    String contentType = "application/json"; // String | Content type.
+    String clientRequestId = "clientRequestId_example"; // String | A client-generated ID for request tracking and signature creation, unique per request.  This is also used for idempotency control. We recommend 128-bit UUID format.
+    String apiKey = "apiKey_example"; // String | Key given to merchant after boarding associating their requests with the appropriate app in Apigee.
+    Long timestamp = 56L; // Long | Epoch timestamp in milliseconds in the request from a client system. Used for Message Signature generation and time limit (5 mins).
+    String messageSignature = "messageSignature_example"; // String | Used to ensure the request has not been tampered with during transmission. The Message-Signature is the Base64 encoded HMAC hash (SHA256 algorithm with the API Secret as the key.) For more information, refer to the supporting documentation on the Developer Portal.
+    String region = "region_example"; // String | Indicates the region where the client wants the transaction to be processed. This will override the default processing region identified for the client. Available options are argentina, brazil, germany, india and northamerica. Region specific store setup and APIGEE boarding is required in order to use an alternate region for processing.
+    String storeId = "storeId_example"; // String | An optional outlet ID for clients that support multiple stores in the same developer app.
+    String transactionId = "transactionId_example"; // String | Gateway transaction identifier as returned in the parameter ipgTransactionId.
+    String orderId = "orderId_example"; // String | Gateway order identifier as returned in the parameter orderId.
+    String paymentUrlId = "paymentUrlId_example"; // String | The ID code from the payment URL.
+    String transactionTime = "transactionTime_example"; // String | The transaction time in seconds since epoch.
+    try {
+      PaymentUrlResponse result = apiInstance.deletePaymentUrl(contentType, clientRequestId, apiKey, timestamp, messageSignature, region, storeId, transactionId, orderId, paymentUrlId, transactionTime);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling PaymentUrlApi#deletePaymentUrl");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
 }
 ```
 
@@ -131,6 +166,17 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success response. |  -  |
+**400** | The request cannot be validated. |  -  |
+**401** | The request was unauthorized. |  -  |
+**404** | The requested resource doesn&#39;t exist. |  -  |
+**409** | There was a problem communicating with the endpoint. |  -  |
+**415** | Format that is not supported by the server for the HTTP method. |  -  |
+**500** | An unexpected internal server error occurred. |  -  |
+
 <a name="paymentUrlDetail"></a>
 # **paymentUrlDetail**
 > PaymentUrlDetailResponse paymentUrlDetail(contentType, clientRequestId, apiKey, timestamp, fromDate, toDate, messageSignature, region, storeId, orderId, merchantTransactionId, status)
@@ -142,29 +188,41 @@ Use this query to get the current state of an existing paymentURL.
 ### Example
 ```java
 // Import classes:
-//import com.github.GBSEcom.client.ApiException;
-//import com.github.GBSEcom.api.PaymentUrlApi;
+import com.github.GBSEcom.client.ApiClient;
+import com.github.GBSEcom.client.ApiException;
+import com.github.GBSEcom.client.Configuration;
+import com.github.GBSEcom.client.models.*;
+import com.github.GBSEcom.api.PaymentUrlApi;
 
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://cert.api.firstdata.com/gateway/v2");
 
-PaymentUrlApi apiInstance = new PaymentUrlApi();
-String contentType = "application/json"; // String | Content type.
-String clientRequestId = "clientRequestId_example"; // String | A client-generated ID for request tracking and signature creation, unique per request.  This is also used for idempotency control. We recommend 128-bit UUID format.
-String apiKey = "apiKey_example"; // String | Key given to merchant after boarding associating their requests with the appropriate app in Apigee.
-Long timestamp = 56L; // Long | Epoch timestamp in milliseconds in the request from a client system. Used for Message Signature generation and time limit (5 mins).
-String fromDate = "fromDate_example"; // String | The start date for payment URL in seconds since epoch.
-String toDate = "toDate_example"; // String | The end date for payment URL search query in seconds since epoch.
-String messageSignature = "messageSignature_example"; // String | Used to ensure the request has not been tampered with during transmission. The Message-Signature is the Base64 encoded HMAC hash (SHA256 algorithm with the API Secret as the key.) For more information, refer to the supporting documentation on the Developer Portal.
-String region = "region_example"; // String | Indicates the region where the client wants the transaction to be processed. This will override the default processing region identified for the client. Available options are argentina, brazil, germany, india and northamerica. Region specific store setup and APIGEE boarding is required in order to use an alternate region for processing.
-String storeId = "storeId_example"; // String | An optional outlet ID for clients that support multiple stores in the same developer app.
-String orderId = "orderId_example"; // String | Gateway order identifier as returned in the parameter orderId.
-String merchantTransactionId = "merchantTransactionId_example"; // String | Gateway merchant identifier as returned in the parameter merchantTransactionId.
-String status = "status_example"; // String | The status of payment URL.
-try {
-    PaymentUrlDetailResponse result = apiInstance.paymentUrlDetail(contentType, clientRequestId, apiKey, timestamp, fromDate, toDate, messageSignature, region, storeId, orderId, merchantTransactionId, status);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling PaymentUrlApi#paymentUrlDetail");
-    e.printStackTrace();
+    PaymentUrlApi apiInstance = new PaymentUrlApi(defaultClient);
+    String contentType = "application/json"; // String | Content type.
+    String clientRequestId = "clientRequestId_example"; // String | A client-generated ID for request tracking and signature creation, unique per request.  This is also used for idempotency control. We recommend 128-bit UUID format.
+    String apiKey = "apiKey_example"; // String | Key given to merchant after boarding associating their requests with the appropriate app in Apigee.
+    Long timestamp = 56L; // Long | Epoch timestamp in milliseconds in the request from a client system. Used for Message Signature generation and time limit (5 mins).
+    String fromDate = "fromDate_example"; // String | The start date for payment URL in seconds since epoch.
+    String toDate = "toDate_example"; // String | The end date for payment URL search query in seconds since epoch.
+    String messageSignature = "messageSignature_example"; // String | Used to ensure the request has not been tampered with during transmission. The Message-Signature is the Base64 encoded HMAC hash (SHA256 algorithm with the API Secret as the key.) For more information, refer to the supporting documentation on the Developer Portal.
+    String region = "region_example"; // String | Indicates the region where the client wants the transaction to be processed. This will override the default processing region identified for the client. Available options are argentina, brazil, germany, india and northamerica. Region specific store setup and APIGEE boarding is required in order to use an alternate region for processing.
+    String storeId = "storeId_example"; // String | An optional outlet ID for clients that support multiple stores in the same developer app.
+    String orderId = "orderId_example"; // String | Gateway order identifier as returned in the parameter orderId.
+    String merchantTransactionId = "merchantTransactionId_example"; // String | Gateway merchant identifier as returned in the parameter merchantTransactionId.
+    String status = "status_example"; // String | The status of payment URL.
+    try {
+      PaymentUrlDetailResponse result = apiInstance.paymentUrlDetail(contentType, clientRequestId, apiKey, timestamp, fromDate, toDate, messageSignature, region, storeId, orderId, merchantTransactionId, status);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling PaymentUrlApi#paymentUrlDetail");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
 }
 ```
 
@@ -197,4 +255,15 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success response. |  -  |
+**400** | The request cannot be validated. |  -  |
+**401** | The request was unauthorized. |  -  |
+**404** | The requested resource doesn&#39;t exist. |  -  |
+**409** | There was a problem communicating with the endpoint. |  -  |
+**415** | Format that is not supported by the server for the HTTP method. |  -  |
+**500** | An unexpected internal server error occurred. |  -  |
 

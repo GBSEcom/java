@@ -1,7 +1,9 @@
 
+
 # Airline
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **passengerName** | **String** | The passenger name associated with the transaction. |  [optional]
@@ -20,8 +22,9 @@ Name | Type | Description | Notes
 **ticketPurchase** | **Boolean** | Identifies if the transaction is a ticket purchase. |  [optional]
 
 
-<a name="ReservationSystemEnum"></a>
+
 ## Enum: ReservationSystemEnum
+
 Name | Value
 ---- | -----
 START | &quot;START&quot;

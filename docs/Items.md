@@ -1,7 +1,9 @@
 
+
 # Items
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **networkType** | [**NetworkTypeEnum**](#NetworkTypeEnum) | Defines the type of network associated with the device. | 
@@ -20,8 +22,9 @@ Name | Type | Description | Notes
 **userDefined** | [**Object**](.md) | A JSON object that can carry any additional information about the network that might be helpful for fraud detection. |  [optional]
 
 
-<a name="NetworkTypeEnum"></a>
+
 ## Enum: NetworkTypeEnum
+
 Name | Value
 ---- | -----
 MOBILE | &quot;network/mobile&quot;

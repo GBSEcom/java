@@ -1,7 +1,9 @@
 
+
 # PaymentDevice
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **deviceType** | [**DeviceTypeEnum**](#DeviceTypeEnum) | The data format. | 
@@ -12,8 +14,9 @@ Name | Type | Description | Notes
 **brand** | **String** | The card brand. |  [optional]
 
 
-<a name="DeviceTypeEnum"></a>
+
 ## Enum: DeviceTypeEnum
+
 Name | Value
 ---- | -----
 SWIPE | &quot;SWIPE&quot;

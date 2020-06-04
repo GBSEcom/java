@@ -5,8 +5,8 @@ import lombok.NoArgsConstructor;
 
 public interface ClientFactory {
 	AuthenticationApi getAuthenticationApi();
-	CardInfoLookupApi getCardInfoLookupApi();
-	CardVerificationApi getCardVerificationApi();
+	InformationLookupApi getInformationLookupApi();
+	VerificationApi getVerificationApi();
 	CurrencyConversionApi getCurrencyConversionApi();
 	FraudDetectApi getFraudDetectApi();
 	OrderApi getOrderApi();
@@ -25,12 +25,12 @@ class ClientFactoryImpl implements ClientFactory {
 		return new AuthenticationApiImpl(context);
 	}
 
-	public CardInfoLookupApi getCardInfoLookupApi() {
-		return new CardInfoLookupApiImpl(context);
+	public InformationLookupApi getInformationLookupApi() {
+		return new InformationLookupApiImpl(context);
 	}
 
-	public CardVerificationApi getCardVerificationApi() {
-		return new CardVerificationApiImpl(context);
+	public VerificationApi getVerificationApi() {
+		return new VerificationApiImpl(context);
 	}
 
 	public CurrencyConversionApi getCurrencyConversionApi() {
@@ -65,4 +65,3 @@ class ClientFactoryImpl implements ClientFactory {
 		context = clientContext;
 	}
 }
-

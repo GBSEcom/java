@@ -1,4 +1,5 @@
 
+
 # PaymentMethodType
 
 ## Enum
@@ -43,6 +44,8 @@
 * `WALLET` (value: `"WALLET"`)
 
 * `WECHAT_DOMESTIC` (value: `"WECHAT_DOMESTIC"`)
+
+* `TELECHECK` (value: `"TELECHECK"`)
 
 
 

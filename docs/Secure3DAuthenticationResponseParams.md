@@ -1,7 +1,9 @@
 
+
 # Secure3DAuthenticationResponseParams
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **payerAuthenticationRequest** | **String** | Message sent from merchant server to authenticate the cardholder. |  [optional]

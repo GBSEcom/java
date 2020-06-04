@@ -1,7 +1,9 @@
 
+
 # CardInfo
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **brand** | **String** | The card brand. |  [optional]
@@ -12,8 +14,9 @@ Name | Type | Description | Notes
 **issuerName** | **String** | The name of the issuer. |  [optional]
 
 
-<a name="CommercialCardEnum"></a>
+
 ## Enum: CommercialCardEnum
+
 Name | Value
 ---- | -----
 CORPORATE | &quot;CORPORATE&quot;

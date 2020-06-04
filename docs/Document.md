@@ -1,15 +1,18 @@
 
+
 # Document
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **type** | [**TypeEnum**](#TypeEnum) | Document type. | 
 **number** | **String** | Document number. | 
 
 
-<a name="TypeEnum"></a>
+
 ## Enum: TypeEnum
+
 Name | Value
 ---- | -----
 NATIONAL_IDENTITY | &quot;NATIONAL_IDENTITY&quot;

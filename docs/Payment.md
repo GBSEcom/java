@@ -1,7 +1,9 @@
 
+
 # Payment
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **paymentType** | [**PaymentTypeEnum**](#PaymentTypeEnum) | Defines the type of the payment. | 
@@ -17,16 +19,18 @@ Name | Type | Description | Notes
 **userDefined** | [**Object**](.md) | A JSON object that carries any additional information that might be helpful for fraud detection. |  [optional]
 
 
-<a name="PaymentTypeEnum"></a>
+
 ## Enum: PaymentTypeEnum
+
 Name | Value
 ---- | -----
 CARD | &quot;payment/card&quot;
 WALLET | &quot;payment/wallet&quot;
 
 
-<a name="EntryMethodEnum"></a>
+
 ## Enum: EntryMethodEnum
+
 Name | Value
 ---- | -----
 MANUAL | &quot;manual&quot;

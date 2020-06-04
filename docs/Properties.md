@@ -1,7 +1,9 @@
 
+
 # Properties
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **fontFace** | [**FontFace**](FontFace.md) |  |  [optional]

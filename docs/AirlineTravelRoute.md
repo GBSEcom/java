@@ -1,7 +1,9 @@
 
+
 # AirlineTravelRoute
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **departureDate** | [**LocalDate**](LocalDate.md) | Date of departure. |  [optional]
@@ -15,8 +17,9 @@ Name | Type | Description | Notes
 **flightNumber** | **String** | The airline flight number associated with the ticket. |  [optional]
 
 
-<a name="StopoverTypeEnum"></a>
+
 ## Enum: StopoverTypeEnum
+
 Name | Value
 ---- | -----
 DIRECT | &quot;DIRECT&quot;

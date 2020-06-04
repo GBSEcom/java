@@ -1,7 +1,9 @@
 
+
 # ChinaDomestic
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **productCode** | **String** | Use this to indicate the product code according to the product category list. | 

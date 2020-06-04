@@ -1,7 +1,9 @@
 
+
 # SecondaryTransaction
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **requestType** | **String** | Object name of the secondary transaction request. | 

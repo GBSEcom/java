@@ -1,7 +1,9 @@
 
+
 # ScoreOnlyResponse
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **apiTraceId** | **String** | Unique trace ID for issue triage. |  [optional]
@@ -12,8 +14,9 @@ Name | Type | Description | Notes
 **recommendedDecision** | **String** | The action that should be taken for the request that was sent. |  [optional]
 
 
-<a name="TransactionStatusEnum"></a>
+
 ## Enum: TransactionStatusEnum
+
 Name | Value
 ---- | -----
 SCORED_SUCCESSFULLY | &quot;Scored successfully&quot;

@@ -1,7 +1,9 @@
 
+
 # SepaMandate
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **reference** | **String** | Existing mandate reference, managed by merchant. Must match [A-Za-z0-9:?/+(),. -]{1,35} and not start with two slashes (\&quot;//\&quot;). Also known as the mandate ID. | 
@@ -10,8 +12,9 @@ Name | Type | Description | Notes
 **type** | [**TypeEnum**](#TypeEnum) | Sequence type of the direct debit. This defaults to &#39;SINGLE&#39; if not provided. | 
 
 
-<a name="TypeEnum"></a>
+
 ## Enum: TypeEnum
+
 Name | Value
 ---- | -----
 SINGLE | &quot;SINGLE&quot;

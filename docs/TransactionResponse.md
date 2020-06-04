@@ -1,9 +1,14 @@
 
+
 # TransactionResponse
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**clientRequestId** | **String** | Echoes back the value in the request header for tracking. |  [optional]
+**apiTraceId** | **String** | Request identifier in API, can be used to request logs from the support team. |  [optional]
+**responseType** | [**ResponseType**](ResponseType.md) |  |  [optional]
 **ipgTransactionId** | **String** | The response transaction ID. |  [optional]
 **orderId** | **String** | Client order ID if supplied by client, otherwise the order ID. |  [optional]
 **transactionType** | [**TransactionType**](TransactionType.md) |  |  [optional]
@@ -12,6 +17,7 @@ Name | Type | Description | Notes
 **paymentMethodDetails** | [**PaymentMethodDetails**](PaymentMethodDetails.md) |  |  [optional]
 **country** | **String** | Country of the card issuer. |  [optional]
 **terminalId** | **String** | The terminal that is processing the transaction. |  [optional]
+**merchantId** | **String** | The unique (on Acquirer level) mechant ID. Usually this value has been chosen from the merchant itself and will be used in communication with the endpoint. |  [optional]
 **merchantTransactionId** | **String** | The unique merchant transaction ID from the request header, if supplied. |  [optional]
 **transactionTime** | **Long** | The transaction time in seconds since epoch. |  [optional]
 **approvedAmount** | [**Amount**](Amount.md) |  |  [optional]
@@ -24,10 +30,12 @@ Name | Type | Description | Notes
 **processor** | [**ProcessorData**](ProcessorData.md) |  |  [optional]
 **additionalDetails** | [**AdditionalTransactionDetails**](AdditionalTransactionDetails.md) |  |  [optional]
 **accountUpdaterResponse** | [**AccountUpdaterResponse**](AccountUpdaterResponse.md) |  |  [optional]
+**achResponse** | [**AchResponse**](AchResponse.md) |  |  [optional]
 
 
-<a name="TransactionStatusEnum"></a>
+
 ## Enum: TransactionStatusEnum
+
 Name | Value
 ---- | -----
 APPROVED | &quot;APPROVED&quot;
@@ -37,8 +45,9 @@ PROCESSING_FAILED | &quot;PROCESSING_FAILED&quot;
 DECLINED | &quot;DECLINED&quot;
 
 
-<a name="TransactionStateEnum"></a>
+
 ## Enum: TransactionStateEnum
+
 Name | Value
 ---- | -----
 AUTHORIZED | &quot;AUTHORIZED&quot;

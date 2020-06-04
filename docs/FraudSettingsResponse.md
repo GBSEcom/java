@@ -1,9 +1,14 @@
 
+
 # FraudSettingsResponse
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**clientRequestId** | **String** | Echoes back the value in the request header for tracking. |  [optional]
+**apiTraceId** | **String** | Request identifier in API, can be used to request logs from the support team. |  [optional]
+**responseType** | [**ResponseType**](ResponseType.md) |  |  [optional]
 **storeId** | **String** | The outlet ID. |  [optional]
 **blockedCardNumbers** | [**List&lt;BlockedCardNumber&gt;**](BlockedCardNumber.md) | List of blocked card numbers. |  [optional]
 **blockedNames** | **List&lt;String&gt;** | List of blocked fraud names. |  [optional]

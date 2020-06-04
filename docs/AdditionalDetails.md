@@ -1,7 +1,9 @@
 
+
 # AdditionalDetails
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **comments** | **String** | Comments for the payment. |  [optional]
@@ -10,6 +12,7 @@ Name | Type | Description | Notes
 **operatorId** | **String** | The operator ID. |  [optional]
 **salesSystemId** | **String** | The sales system ID. |  [optional]
 **ipgDeferredAuth** | **Boolean** | Indicates if the particular transaction is a deferred authorization. |  [optional]
+**highRiskPurchaseIndicator** | **Boolean** | this is highRiskPurchaseIndicator. |  [optional]
 
 
 

@@ -1,7 +1,9 @@
 
+
 # Location
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **locationId** | **String** | The unique ID of this location. |  [optional]

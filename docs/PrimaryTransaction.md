@@ -1,7 +1,9 @@
 
+
 # PrimaryTransaction
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **requestType** | **String** | Object name of the primary transaction request. | 

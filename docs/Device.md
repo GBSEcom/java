@@ -1,7 +1,9 @@
 
+
 # Device
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **deviceType** | [**DeviceTypeEnum**](#DeviceTypeEnum) | Defines the type of this object. | 
@@ -18,8 +20,9 @@ Name | Type | Description | Notes
 **userDefined** | [**Object**](.md) | A JSON object that can carry any additional information about the device that might be helpful for fraud detection. |  [optional]
 
 
-<a name="DeviceTypeEnum"></a>
+
 ## Enum: DeviceTypeEnum
+
 Name | Value
 ---- | -----
 POS | &quot;device/pos&quot;

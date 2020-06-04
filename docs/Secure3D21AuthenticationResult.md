@@ -1,7 +1,9 @@
 
+
 # Secure3D21AuthenticationResult
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **cavv** | **String** | The Cardholder Authentication Verification Value (CAVV) is a cryptographic value derived by the issuer during payment authentication that can provide evidence of the results of payment authentication during an online purchase. |  [optional]
@@ -11,8 +13,9 @@ Name | Type | Description | Notes
 **transactionStatus** | [**TransactionStatusEnum**](#TransactionStatusEnum) | The transaction status as returned by the 3D Secure authentication process. |  [optional]
 
 
-<a name="AuthenticationResponseEnum"></a>
+
 ## Enum: AuthenticationResponseEnum
+
 Name | Value
 ---- | -----
 A | &quot;A&quot;
@@ -23,8 +26,9 @@ C | &quot;C&quot;
 R | &quot;R&quot;
 
 
-<a name="TransactionStatusEnum"></a>
+
 ## Enum: TransactionStatusEnum
+
 Name | Value
 ---- | -----
 A | &quot;A&quot;

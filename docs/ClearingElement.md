@@ -1,7 +1,9 @@
 
+
 # ClearingElement
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **brand** | **String** | Contains the brand of the card. |  [optional]

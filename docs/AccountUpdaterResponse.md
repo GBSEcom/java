@@ -1,7 +1,9 @@
 
+
 # AccountUpdaterResponse
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **updatedCard** | **String** | Account updater replacement PAN or TransArmor token. |  [optional]

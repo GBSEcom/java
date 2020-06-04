@@ -1,7 +1,9 @@
 
+
 # SubMerchantData
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **mcc** | **String** | Merchant category code. | 

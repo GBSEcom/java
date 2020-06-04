@@ -1,7 +1,9 @@
 
+
 # Card
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **taToken** | **String** | TransArmor token value. Either the token fields or card number field must contain a value. |  [optional]

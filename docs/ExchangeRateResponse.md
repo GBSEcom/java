@@ -1,9 +1,14 @@
 
+
 # ExchangeRateResponse
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**clientRequestId** | **String** | Echoes back the value in the request header for tracking. |  [optional]
+**apiTraceId** | **String** | Request identifier in API, can be used to request logs from the support team. |  [optional]
+**responseType** | [**ResponseType**](ResponseType.md) |  |  [optional]
 **ipgTransactionId** | **String** | The response transaction ID. |  [optional]
 **requestTime** | **String** | Time of the request. |  [optional]
 **inquiryRateId** | **String** | Inquiry rate ID. |  [optional]

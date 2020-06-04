@@ -1,14 +1,17 @@
 
+
 # AirlineAncillaryServiceCategory
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **serviceCategory** | [**ServiceCategoryEnum**](#ServiceCategoryEnum) | Identifies the service purchased in the transaction if not a base ticket | 
 
 
-<a name="ServiceCategoryEnum"></a>
+
 ## Enum: ServiceCategoryEnum
+
 Name | Value
 ---- | -----
 BUNDLED_SERVICE | &quot;BUNDLED_SERVICE&quot;

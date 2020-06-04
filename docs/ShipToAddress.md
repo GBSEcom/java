@@ -1,7 +1,9 @@
 
+
 # ShipToAddress
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **phone** | **String** | Free-form phone number associated with the ship-to address. |  [optional]
