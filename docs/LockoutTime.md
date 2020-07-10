@@ -1,9 +1,7 @@
 
-
 # LockoutTime
 
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **autoLockoutTime** | **Integer** | Auto-lockout time. |  [optional]

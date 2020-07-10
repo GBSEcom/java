@@ -1,5 +1,4 @@
 
-
 # TransactionType
 
 ## Enum

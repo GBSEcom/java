@@ -1,9 +1,7 @@
 
-
 # Customer
 
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **String** | Unique ID for the customer, if registered. This field is required if the parent object is present. | 
@@ -20,9 +18,8 @@ Name | Type | Description | Notes
 **userDefined** | [**Object**](.md) | A JSON object that can carry any additional information about the customer that might be helpful for fraud detection. |  [optional]
 
 
-
+<a name="GenderEnum"></a>
 ## Enum: GenderEnum
-
 Name | Value
 ---- | -----
 MALE | &quot;male&quot;

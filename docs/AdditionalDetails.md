@@ -1,9 +1,7 @@
 
-
 # AdditionalDetails
 
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **comments** | **String** | Comments for the payment. |  [optional]

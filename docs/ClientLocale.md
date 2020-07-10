@@ -1,9 +1,7 @@
 
-
 # ClientLocale
 
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **language** | **String** | Language used by client. | 

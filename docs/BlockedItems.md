@@ -1,9 +1,7 @@
 
-
 # BlockedItems
 
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **blockCard** | [**BlockCard**](BlockCard.md) |  |  [optional]

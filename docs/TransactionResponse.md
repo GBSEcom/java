@@ -1,14 +1,9 @@
 
-
 # TransactionResponse
 
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**clientRequestId** | **String** | Echoes back the value in the request header for tracking. |  [optional]
-**apiTraceId** | **String** | Request identifier in API, can be used to request logs from the support team. |  [optional]
-**responseType** | [**ResponseType**](ResponseType.md) |  |  [optional]
 **ipgTransactionId** | **String** | The response transaction ID. |  [optional]
 **orderId** | **String** | Client order ID if supplied by client, otherwise the order ID. |  [optional]
 **transactionType** | [**TransactionType**](TransactionType.md) |  |  [optional]
@@ -21,8 +16,8 @@ Name | Type | Description | Notes
 **merchantTransactionId** | **String** | The unique merchant transaction ID from the request header, if supplied. |  [optional]
 **transactionTime** | **Long** | The transaction time in seconds since epoch. |  [optional]
 **approvedAmount** | [**Amount**](Amount.md) |  |  [optional]
-**transactionStatus** | [**TransactionStatusEnum**](#TransactionStatusEnum) | The status of the transaction. APPROVED/WAITING are returned by the endpoints.  VALIDATION_FAILED/DECLINED are errors. See ErrorResponse object for details. |  [optional]
-**transactionState** | [**TransactionStateEnum**](#TransactionStateEnum) | The state of the transaction. |  [optional]
+**transactionStatus** | [**TransactionStatusEnum**](#TransactionStatusEnum) | Represents the status of a transaction immediately following the original processing request. This value is not stored for the transaction and is only available in the response when the transaction is processed. TransactionStatus is not returned on either the transaction inquiry or on the order inquiry. |  [optional]
+**transactionState** | [**TransactionStateEnum**](#TransactionStateEnum) | Shows the state of the current transaction. |  [optional]
 **secure3dResponse** | [**Secure3dResponse**](Secure3dResponse.md) |  |  [optional]
 **redirectURL** | **String** | The endpoint redirection URL. |  [optional]
 **authenticationResponse** | [**Secure3DAuthenticationResponse**](Secure3DAuthenticationResponse.md) |  |  [optional]
@@ -33,9 +28,8 @@ Name | Type | Description | Notes
 **achResponse** | [**AchResponse**](AchResponse.md) |  |  [optional]
 
 
-
+<a name="TransactionStatusEnum"></a>
 ## Enum: TransactionStatusEnum
-
 Name | Value
 ---- | -----
 APPROVED | &quot;APPROVED&quot;
@@ -45,9 +39,8 @@ PROCESSING_FAILED | &quot;PROCESSING_FAILED&quot;
 DECLINED | &quot;DECLINED&quot;
 
 
-
+<a name="TransactionStateEnum"></a>
 ## Enum: TransactionStateEnum
-
 Name | Value
 ---- | -----
 AUTHORIZED | &quot;AUTHORIZED&quot;

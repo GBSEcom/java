@@ -1,9 +1,7 @@
 
-
 # PaymentTokenCreditTransaction
 
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **paymentMethod** | [**PaymentTokenPaymentMethod**](PaymentTokenPaymentMethod.md) |  | 

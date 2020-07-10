@@ -1,9 +1,7 @@
 
-
 # Lodging
 
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **arrivalDate** | [**LocalDate**](LocalDate.md) | Date of arrival. |  [optional]

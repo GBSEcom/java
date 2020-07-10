@@ -1,9 +1,7 @@
 
-
 # FraudAddress
 
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **street** | **String** | First line of street address. | 

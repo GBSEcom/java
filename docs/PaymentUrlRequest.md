@@ -1,9 +1,7 @@
 
-
 # PaymentUrlRequest
 
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **storeId** | **String** | An optional Outlet ID for clients that support multiple stores in the same developer app. |  [optional]

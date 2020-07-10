@@ -1,9 +1,7 @@
 
-
 # Error
 
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **code** | **String** | Uniquely identifies an error condition. Client applications need to read and handle errors based on this. |  [optional]

@@ -1,9 +1,7 @@
 
-
 # BillingAddress
 
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **firstName** | **String** | First name. |  [optional]

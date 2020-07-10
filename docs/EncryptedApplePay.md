@@ -1,9 +1,7 @@
 
-
 # EncryptedApplePay
 
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **data** | **String** | The encrypted wallet payload. | 
@@ -14,9 +12,8 @@ Name | Type | Description | Notes
 **merchantId** | **String** | The merchant ID assigned by the wallet provider. | 
 
 
-
+<a name="VersionEnum"></a>
 ## Enum: VersionEnum
-
 Name | Value
 ---- | -----
 EC_V1 | &quot;EC_v1&quot;

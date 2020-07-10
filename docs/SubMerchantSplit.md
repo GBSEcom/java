@@ -1,9 +1,7 @@
 
-
 # SubMerchantSplit
 
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **merchantID** | **String** | ID of merchant for tracking. | 

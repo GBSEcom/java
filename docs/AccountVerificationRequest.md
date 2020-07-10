@@ -1,9 +1,7 @@
 
-
 # AccountVerificationRequest
 
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **requestType** | **String** | Object name of the account verification request. | 

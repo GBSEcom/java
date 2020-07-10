@@ -1,9 +1,7 @@
 
-
 # ClearingDetails
 
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **clearingElements** | [**List&lt;ClearingElement&gt;**](ClearingElement.md) | The array contains information about the clearing elements. |  [optional]

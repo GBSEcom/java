@@ -1,9 +1,7 @@
 
-
 # Secure3D10AuthenticationUpdateRequest
 
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **payerAuthenticationResponse** | **String** | A formatted message providing results of the issuer’s cardholder authentication. | 

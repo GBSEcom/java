@@ -1,5 +1,4 @@
 
-
 # PaymentUrlStatus
 
 ## Enum

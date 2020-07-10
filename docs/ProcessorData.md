@@ -1,9 +1,7 @@
 
-
 # ProcessorData
 
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **referenceNumber** | **String** | Reference transaction ID. |  [optional]
@@ -19,9 +17,8 @@ Name | Type | Description | Notes
 **debitReceiptNumber** | **String** | Receipt number from debit network provider. |  [optional]
 
 
-
+<a name="SecurityCodeResponseEnum"></a>
 ## Enum: SecurityCodeResponseEnum
-
 Name | Value
 ---- | -----
 MATCHED | &quot;MATCHED&quot;

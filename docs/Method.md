@@ -1,9 +1,7 @@
 
-
 # Method
 
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **methodType** | [**MethodTypeEnum**](#MethodTypeEnum) | Unique ID for the payment method type. | 
@@ -14,9 +12,8 @@ Name | Type | Description | Notes
 **userDefined** | [**Object**](.md) | A JSON object that can carry any additional information about the method that might be helpful for fraud detection. |  [optional]
 
 
-
+<a name="MethodTypeEnum"></a>
 ## Enum: MethodTypeEnum
-
 Name | Value
 ---- | -----
 CARD | &quot;method/card&quot;

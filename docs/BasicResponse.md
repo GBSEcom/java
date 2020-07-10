@@ -1,9 +1,7 @@
 
-
 # BasicResponse
 
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **clientRequestId** | **String** | Echoes back the value in the request header for tracking. |  [optional]

@@ -1,9 +1,7 @@
 
-
 # FraudRegistrationCard
 
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **cardholderName** | **String** | The cardholder name as it appears on the card. |  [optional]

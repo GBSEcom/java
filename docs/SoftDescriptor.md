@@ -1,9 +1,7 @@
 
-
 # SoftDescriptor
 
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **dynamicMerchantName** | **String** | Store \&quot;doing-business-as\&quot; name. | 

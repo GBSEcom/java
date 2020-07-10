@@ -1,9 +1,7 @@
 
-
 # AdditionalAmountRate
 
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **amount** | [**BigDecimal**](BigDecimal.md) | Amount in 3 decimal 12 bytes total digit. | 

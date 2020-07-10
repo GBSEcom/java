@@ -1,9 +1,7 @@
 
-
 # Text
 
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **primary** | [**Primary**](Primary.md) |  |  [optional]

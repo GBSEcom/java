@@ -1,9 +1,7 @@
 
-
 # Disbursement
 
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **disbursementType** | **String** | The type of disbursement. | 

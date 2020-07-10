@@ -1,9 +1,7 @@
 
-
 # Mobile
 
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **headerArea** | [**MobileHeaderArea**](MobileHeaderArea.md) |  |  [optional]

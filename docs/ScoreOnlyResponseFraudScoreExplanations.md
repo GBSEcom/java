@@ -1,9 +1,7 @@
 
-
 # ScoreOnlyResponseFraudScoreExplanations
 
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **description** | **String** | Description of the fraud score explanation. |  [optional]

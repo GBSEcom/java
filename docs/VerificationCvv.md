@@ -1,9 +1,7 @@
 
-
 # VerificationCvv
 
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **code** | **String** | CVV response code. | 

@@ -1,9 +1,7 @@
 
-
 # IssuerResponse
 
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **code** | **String** | The verification response code, as sent by the verification system. | 
@@ -11,9 +9,8 @@ Name | Type | Description | Notes
 **scheme** | **String** | An identifier of the system/specification from which the code was received, and how the status was derived. | 
 
 
-
+<a name="StatusEnum"></a>
 ## Enum: StatusEnum
-
 Name | Value
 ---- | -----
 APPROVED | &quot;approved&quot;

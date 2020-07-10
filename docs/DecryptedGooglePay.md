@@ -1,9 +1,7 @@
 
-
 # DecryptedGooglePay
 
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **accountNumber** | **String** | Payment card number. | 

@@ -1,9 +1,7 @@
 
-
 # PaymentUrlDetail
 
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **paymentUrl** | **String** | URL for embedded payment link. |  [optional]

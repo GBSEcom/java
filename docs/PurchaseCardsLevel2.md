@@ -1,9 +1,7 @@
 
-
 # PurchaseCardsLevel2
 
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **customerReferenceID** | **String** | Customer code/customer reference ID. |  [optional]

@@ -1,5 +1,4 @@
 
-
 # CardFunction
 
 ## Enum

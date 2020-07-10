@@ -1,9 +1,7 @@
 
-
 # AmountComponents
 
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **subtotal** | [**BigDecimal**](BigDecimal.md) | Subtotal amount. |  [optional]

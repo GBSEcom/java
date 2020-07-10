@@ -1,9 +1,7 @@
 
-
 # RecurringPaymentDetails
 
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **storeId** | **String** | Store ID number. |  [optional]
@@ -21,9 +19,8 @@ Name | Type | Description | Notes
 **comments** | **String** | User supplied comments. |  [optional]
 
 
-
+<a name="StateEnum"></a>
 ## Enum: StateEnum
-
 Name | Value
 ---- | -----
 INSTALLED | &quot;Installed&quot;

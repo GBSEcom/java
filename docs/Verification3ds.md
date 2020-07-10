@@ -1,9 +1,7 @@
 
-
 # Verification3ds
 
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **code** | **String** | 3DS response code. | 

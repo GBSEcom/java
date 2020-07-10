@@ -1,9 +1,7 @@
 
-
 # Background
 
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **topBar** | [**TopBar**](TopBar.md) |  |  [optional]

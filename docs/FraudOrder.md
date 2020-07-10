@@ -1,9 +1,7 @@
 
-
 # FraudOrder
 
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **shipToAddress** | [**ShipToAddress**](ShipToAddress.md) |  |  [optional]

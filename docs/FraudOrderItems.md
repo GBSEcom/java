@@ -1,9 +1,7 @@
 
-
 # FraudOrderItems
 
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **String** | A unique ID associated with the product. Must be unique within the merchant&#39;s system. |  [optional]

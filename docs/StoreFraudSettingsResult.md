@@ -1,9 +1,7 @@
 
-
 # StoreFraudSettingsResult
 
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **String** | An outlet identificator. |  [optional]

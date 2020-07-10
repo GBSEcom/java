@@ -1,9 +1,7 @@
 
-
 # WalletPreAuthTransaction
 
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **walletPaymentMethod** | [**WalletPaymentMethod**](WalletPaymentMethod.md) |  | 

@@ -1,9 +1,7 @@
 
-
 # EncryptedGooglePayData
 
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **encryptedMessage** | **String** | The encrypted message containing the actual payment information as well as additional security fields. | 

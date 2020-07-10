@@ -1,17 +1,14 @@
 
-
 # CarRentalExtraCharges
 
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **chargeItem** | [**ChargeItemEnum**](#ChargeItemEnum) | Additional charge item. |  [optional]
 
 
-
+<a name="ChargeItemEnum"></a>
 ## Enum: ChargeItemEnum
-
 Name | Value
 ---- | -----
 EXTRA_MILEAGE | &quot;EXTRA_MILEAGE&quot;

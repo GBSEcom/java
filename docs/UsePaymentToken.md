@@ -1,9 +1,7 @@
 
-
 # UsePaymentToken
 
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **value** | **String** | Client-supplied payment token value. | 

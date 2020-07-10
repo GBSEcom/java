@@ -1,9 +1,7 @@
 
-
 # EmailNotificationData
 
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **enableNotification** | **Boolean** | Use this to enable/disable email notifications. |  [optional]

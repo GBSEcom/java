@@ -1,9 +1,7 @@
 
-
 # EncryptedGooglePay
 
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **data** | [**EncryptedGooglePayData**](EncryptedGooglePayData.md) |  | 

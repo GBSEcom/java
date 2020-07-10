@@ -1,9 +1,7 @@
 
-
 # TeleCheckAchPaymentMethod
 
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **achType** | **String** | ACH application type values will be one of either TeleCheckICAPaymentMethod or TeleCheckCBPPaymentMethod. | 
@@ -24,29 +22,27 @@ Name | Type | Description | Notes
 **sessionId** | **String** | Session identifier. | 
 **terminalState** | **String** | Identifies the US state or territory where the original sale transaction occurred. |  [optional]
 **terminalCity** | **String** | Identifies the city where the original sale transaction occurred. |  [optional]
+**achBillTo** | [**TeleCheckAchPaymentMethodAchBillTo**](TeleCheckAchPaymentMethodAchBillTo.md) |  | 
 
 
-
+<a name="AccountTypeEnum"></a>
 ## Enum: AccountTypeEnum
-
 Name | Value
 ---- | -----
 C | &quot;C&quot;
 S | &quot;S&quot;
 
 
-
+<a name="CheckTypeEnum"></a>
 ## Enum: CheckTypeEnum
-
 Name | Value
 ---- | -----
 P | &quot;P&quot;
 C | &quot;C&quot;
 
 
-
+<a name="ReleaseTypeEnum"></a>
 ## Enum: ReleaseTypeEnum
-
 Name | Value
 ---- | -----
 C | &quot;C&quot;
@@ -55,9 +51,8 @@ P | &quot;P&quot;
 T | &quot;T&quot;
 
 
-
+<a name="VipCustomerEnum"></a>
 ## Enum: VipCustomerEnum
-
 Name | Value
 ---- | -----
 Y | &quot;Y&quot;

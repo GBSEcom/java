@@ -1,9 +1,7 @@
 
-
 # CreatePaymentToken
 
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **value** | **String** | Client-supplied payment token value. Only applicable for DataVault tokenization scheme. |  [optional]

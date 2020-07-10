@@ -1,9 +1,7 @@
 
-
 # ScoreOnlyRequest
 
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **merchantRef** | **String** | Merchant reference code. Used by FirstAPI and reflected in settlement records and Webhook notifications. Typically, the merchantRef field is the purchase order number or unique sequence value associated to a given transaction. |  [optional]
@@ -22,9 +20,8 @@ Name | Type | Description | Notes
 **userDefined** | [**Object**](.md) | A JSON object that can carry any additional information that might be helpful for fraud detection. |  [optional]
 
 
-
+<a name="OriginalTransactionTypeEnum"></a>
 ## Enum: OriginalTransactionTypeEnum
-
 Name | Value
 ---- | -----
 AUTHORIZATION | &quot;transaction/authorization&quot;
