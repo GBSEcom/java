@@ -1,7 +1,9 @@
 
+
 # PaymentCardPaymentTokenUpdateRequest
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **requestType** | **String** | Object name of tokenization request. | 

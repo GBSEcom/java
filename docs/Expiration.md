@@ -1,7 +1,9 @@
 
+
 # Expiration
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **month** | **String** | Month of the card expiration date in MM format. | 

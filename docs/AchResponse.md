@@ -1,7 +1,9 @@
 
+
 # AchResponse
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **responseCode** | **String** | Response code for TeleCheck authentication decision in the sale response message. |  [optional]

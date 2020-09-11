@@ -1,7 +1,9 @@
 
+
 # IndustrySpecificExtensions
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **airline** | [**Airline**](Airline.md) |  |  [optional]

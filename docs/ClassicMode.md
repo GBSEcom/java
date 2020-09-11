@@ -1,7 +1,9 @@
 
+
 # ClassicMode
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **backgroundColor** | [**BackgroundColor**](BackgroundColor.md) |  |  [optional]

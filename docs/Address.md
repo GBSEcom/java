@@ -1,7 +1,9 @@
 
+
 # Address
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **company** | **String** | Company name associated with the address. |  [optional]

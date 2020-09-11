@@ -1,7 +1,9 @@
 
+
 # AliPay
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **paymentDataType** | [**PaymentDataTypeEnum**](#PaymentDataTypeEnum) | Use this to indicate the type of machine-readable payment data for scanning. | 
@@ -10,8 +12,9 @@ Name | Type | Description | Notes
 **orderDetails** | **String** | Use this to send order details that show up in the statement. | 
 
 
-<a name="PaymentDataTypeEnum"></a>
+
 ## Enum: PaymentDataTypeEnum
+
 Name | Value
 ---- | -----
 BARCODE | &quot;BARCODE&quot;

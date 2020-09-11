@@ -1,7 +1,9 @@
 
+
 # FraudRegistrationResponse
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **correlationId** | **String** | The value used to track the transaction. |  [optional]
@@ -12,11 +14,12 @@ Name | Type | Description | Notes
 **error** | [**FraudRegistrationError**](FraudRegistrationError.md) |  |  [optional]
 
 
-<a name="TransactionStatusEnum"></a>
+
 ## Enum: TransactionStatusEnum
+
 Name | Value
 ---- | -----
-SCORED_SUCCESSFULLY | &quot;Scored successfully&quot;
+SCORED_SUCCESSFULLY | &quot;Scored Successfully&quot;
 NOT_PROCESSED | &quot;Not Processed&quot;
 
 

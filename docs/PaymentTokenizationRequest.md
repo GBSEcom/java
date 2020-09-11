@@ -1,7 +1,9 @@
 
+
 # PaymentTokenizationRequest
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **requestType** | **String** | Object name of tokenization request. | 
@@ -9,6 +11,7 @@ Name | Type | Description | Notes
 **billingAddress** | [**Address**](Address.md) |  |  [optional]
 **createToken** | [**CreatePaymentToken**](CreatePaymentToken.md) |  | 
 **accountVerification** | **Boolean** | If the account should be verified prior to token creation. |  [optional]
+**merchantTransactionId** | **String** | The unique merchant transaction ID from the request, if supplied. |  [optional]
 **additionalDetails** | [**AdditionalDetails**](AdditionalDetails.md) |  |  [optional]
 
 

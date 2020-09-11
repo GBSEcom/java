@@ -1,7 +1,9 @@
 
+
 # Sepa
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **iban** | **String** | Bank account in IBAN format. | 

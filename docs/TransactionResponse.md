@@ -1,9 +1,14 @@
 
+
 # TransactionResponse
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**clientRequestId** | **String** | Echoes back the value in the request header for tracking. |  [optional]
+**apiTraceId** | **String** | Request identifier in API, can be used to request logs from the support team. |  [optional]
+**responseType** | [**ResponseType**](ResponseType.md) |  |  [optional]
 **ipgTransactionId** | **String** | The response transaction ID. |  [optional]
 **orderId** | **String** | Client order ID if supplied by client, otherwise the order ID. |  [optional]
 **transactionType** | [**TransactionType**](TransactionType.md) |  |  [optional]
@@ -26,10 +31,12 @@ Name | Type | Description | Notes
 **additionalDetails** | [**AdditionalTransactionDetails**](AdditionalTransactionDetails.md) |  |  [optional]
 **accountUpdaterResponse** | [**AccountUpdaterResponse**](AccountUpdaterResponse.md) |  |  [optional]
 **achResponse** | [**AchResponse**](AchResponse.md) |  |  [optional]
+**currencyConversionResponse** | [**CurrencyConversionResponse**](CurrencyConversionResponse.md) |  |  [optional]
 
 
-<a name="TransactionStatusEnum"></a>
+
 ## Enum: TransactionStatusEnum
+
 Name | Value
 ---- | -----
 APPROVED | &quot;APPROVED&quot;
@@ -39,8 +46,9 @@ PROCESSING_FAILED | &quot;PROCESSING_FAILED&quot;
 DECLINED | &quot;DECLINED&quot;
 
 
-<a name="TransactionStateEnum"></a>
+
 ## Enum: TransactionStateEnum
+
 Name | Value
 ---- | -----
 AUTHORIZED | &quot;AUTHORIZED&quot;

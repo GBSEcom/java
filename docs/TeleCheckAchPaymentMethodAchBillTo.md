@@ -1,7 +1,9 @@
 
+
 # TeleCheckAchPaymentMethodAchBillTo
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **firstName** | **String** | Customer billing first name. |  [optional]

@@ -1,7 +1,9 @@
 
+
 # InstallmentOptions
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **numberOfInstallments** | **Integer** | Number of installments for a sale transaction if the customer pays the total amount in multiple transactions. |  [optional]
@@ -11,8 +13,9 @@ Name | Type | Description | Notes
 **merchantAdviceCodeSupported** | **Boolean** | Indicates if the merchant supports merchant advice code (MAC) in order to receive table 55 code for a declined recurring transaction. |  [optional]
 
 
-<a name="RecurringTypeEnum"></a>
+
 ## Enum: RecurringTypeEnum
+
 Name | Value
 ---- | -----
 FIRST | &quot;FIRST&quot;

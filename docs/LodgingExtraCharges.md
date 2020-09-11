@@ -1,14 +1,17 @@
 
+
 # LodgingExtraCharges
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **chargeItem** | [**ChargeItemEnum**](#ChargeItemEnum) |  |  [optional]
 
 
-<a name="ChargeItemEnum"></a>
+
 ## Enum: ChargeItemEnum
+
 Name | Value
 ---- | -----
 GIFT_SHOP | &quot;GIFT_SHOP&quot;

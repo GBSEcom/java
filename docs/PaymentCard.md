@@ -1,7 +1,9 @@
 
+
 # PaymentCard
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **number** | **String** | Payment card number. | 

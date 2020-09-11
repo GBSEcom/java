@@ -1,7 +1,9 @@
 
+
 # EndpointResponse
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **endpointID** | **String** | Specifies the identifier of an endpoint. |  [optional]
@@ -9,8 +11,9 @@ Name | Type | Description | Notes
 **batchNumber** | **String** | Defines the batch number of an endpoint clearing process. |  [optional]
 
 
-<a name="StatusEnum"></a>
+
 ## Enum: StatusEnum
+
 Name | Value
 ---- | -----
 APPROVED | &quot;APPROVED&quot;

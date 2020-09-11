@@ -19,24 +19,36 @@ Use this to look up card related information such as issuer country, card functi
 ### Example
 ```java
 // Import classes:
-//import com.github.GBSEcom.client.ApiException;
-//import com.github.GBSEcom.api.InformationLookupApi;
+import com.github.GBSEcom.client.ApiClient;
+import com.github.GBSEcom.client.ApiException;
+import com.github.GBSEcom.client.Configuration;
+import com.github.GBSEcom.client.models.*;
+import com.github.GBSEcom.api.InformationLookupApi;
 
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://cert.api.firstdata.com/gateway/v2");
 
-InformationLookupApi apiInstance = new InformationLookupApi();
-String contentType = "application/json"; // String | Content type.
-String clientRequestId = "clientRequestId_example"; // String | A client-generated ID for request tracking and signature creation, unique per request.  This is also used for idempotency control. We recommend 128-bit UUID format.
-String apiKey = "apiKey_example"; // String | Key given to merchant after boarding associating their requests with the appropriate app in Apigee.
-Long timestamp = 56L; // Long | Epoch timestamp in milliseconds in the request from a client system. Used for Message Signature generation and time limit (5 mins).
-CardInfoLookupRequest cardInfoLookupRequest = new CardInfoLookupRequest(); // CardInfoLookupRequest | Accepted request type: CardInfoLookupRequest.
-String messageSignature = "messageSignature_example"; // String | Used to ensure the request has not been tampered with during transmission. The Message-Signature is the Base64 encoded HMAC hash (SHA256 algorithm with the API Secret as the key.) For more information, refer to the supporting documentation on the Developer Portal.
-String region = "region_example"; // String | Indicates the region where the client wants the transaction to be processed. This will override the default processing region identified for the client. Available options are argentina, brazil, germany, india and northamerica. Region specific store setup and APIGEE boarding is required in order to use an alternate region for processing.
-try {
-    CardInfoLookupResponse result = apiInstance.cardInfoLookup(contentType, clientRequestId, apiKey, timestamp, cardInfoLookupRequest, messageSignature, region);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling InformationLookupApi#cardInfoLookup");
-    e.printStackTrace();
+    InformationLookupApi apiInstance = new InformationLookupApi(defaultClient);
+    String contentType = "application/json"; // String | Content type.
+    String clientRequestId = "clientRequestId_example"; // String | A client-generated ID for request tracking and signature creation, unique per request.  This is also used for idempotency control. We recommend 128-bit UUID format.
+    String apiKey = "apiKey_example"; // String | Key given to merchant after boarding associating their requests with the appropriate app in Apigee.
+    Long timestamp = 56L; // Long | Epoch timestamp in milliseconds in the request from a client system. Used for Message Signature generation and time limit (5 mins).
+    CardInfoLookupRequest cardInfoLookupRequest = new CardInfoLookupRequest(); // CardInfoLookupRequest | Accepted request type: CardInfoLookupRequest.
+    String messageSignature = "messageSignature_example"; // String | Used to ensure the request has not been tampered with during transmission. The Message-Signature is the Base64 encoded HMAC hash (SHA256 algorithm with the API Secret as the key.) For more information, refer to the supporting documentation on the Developer Portal.
+    String region = "region_example"; // String | Indicates the region where the client wants the transaction to be processed. This will override the default processing region identified for the client. Available options are argentina, brazil, germany, india and northamerica. Region specific store setup and APIGEE boarding is required in order to use an alternate region for processing.
+    try {
+      CardInfoLookupResponse result = apiInstance.cardInfoLookup(contentType, clientRequestId, apiKey, timestamp, cardInfoLookupRequest, messageSignature, region);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling InformationLookupApi#cardInfoLookup");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
 }
 ```
 
@@ -65,6 +77,15 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success response. |  -  |
+**400** | The request cannot be validated. |  -  |
+**403** | The request was unauthorized. |  -  |
+**404** | The requested resource doesn&#39;t exist. |  -  |
+**500** | An unexpected internal server error occurred. |  -  |
+
 <a name="lookupAccount"></a>
 # **lookupAccount**
 > CardInfoLookupResponse lookupAccount(contentType, clientRequestId, apiKey, timestamp, accountInfoLookupRequest, messageSignature, region)
@@ -76,24 +97,36 @@ Use this to look up card related information associated with a payment card or p
 ### Example
 ```java
 // Import classes:
-//import com.github.GBSEcom.client.ApiException;
-//import com.github.GBSEcom.api.InformationLookupApi;
+import com.github.GBSEcom.client.ApiClient;
+import com.github.GBSEcom.client.ApiException;
+import com.github.GBSEcom.client.Configuration;
+import com.github.GBSEcom.client.models.*;
+import com.github.GBSEcom.api.InformationLookupApi;
 
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://cert.api.firstdata.com/gateway/v2");
 
-InformationLookupApi apiInstance = new InformationLookupApi();
-String contentType = "application/json"; // String | Content type.
-String clientRequestId = "clientRequestId_example"; // String | A client-generated ID for request tracking and signature creation, unique per request.  This is also used for idempotency control. We recommend 128-bit UUID format.
-String apiKey = "apiKey_example"; // String | Key given to merchant after boarding associating their requests with the appropriate app in Apigee.
-Long timestamp = 56L; // Long | Epoch timestamp in milliseconds in the request from a client system. Used for Message Signature generation and time limit (5 mins).
-AccountInfoLookupRequest accountInfoLookupRequest = new AccountInfoLookupRequest(); // AccountInfoLookupRequest | Accepted request type: PaymentCardInfoLookupRequest and PaymentTokenInfoLookupRequest
-String messageSignature = "messageSignature_example"; // String | Used to ensure the request has not been tampered with during transmission. The Message-Signature is the Base64 encoded HMAC hash (SHA256 algorithm with the API Secret as the key.) For more information, refer to the supporting documentation on the Developer Portal.
-String region = "region_example"; // String | Indicates the region where the client wants the transaction to be processed. This will override the default processing region identified for the client. Available options are argentina, brazil, germany, india and northamerica. Region specific store setup and APIGEE boarding is required in order to use an alternate region for processing.
-try {
-    CardInfoLookupResponse result = apiInstance.lookupAccount(contentType, clientRequestId, apiKey, timestamp, accountInfoLookupRequest, messageSignature, region);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling InformationLookupApi#lookupAccount");
-    e.printStackTrace();
+    InformationLookupApi apiInstance = new InformationLookupApi(defaultClient);
+    String contentType = "application/json"; // String | Content type.
+    String clientRequestId = "clientRequestId_example"; // String | A client-generated ID for request tracking and signature creation, unique per request.  This is also used for idempotency control. We recommend 128-bit UUID format.
+    String apiKey = "apiKey_example"; // String | Key given to merchant after boarding associating their requests with the appropriate app in Apigee.
+    Long timestamp = 56L; // Long | Epoch timestamp in milliseconds in the request from a client system. Used for Message Signature generation and time limit (5 mins).
+    AccountInfoLookupRequest accountInfoLookupRequest = new AccountInfoLookupRequest(); // AccountInfoLookupRequest | Accepted request type: PaymentCardInfoLookupRequest and PaymentTokenInfoLookupRequest
+    String messageSignature = "messageSignature_example"; // String | Used to ensure the request has not been tampered with during transmission. The Message-Signature is the Base64 encoded HMAC hash (SHA256 algorithm with the API Secret as the key.) For more information, refer to the supporting documentation on the Developer Portal.
+    String region = "region_example"; // String | Indicates the region where the client wants the transaction to be processed. This will override the default processing region identified for the client. Available options are argentina, brazil, germany, india and northamerica. Region specific store setup and APIGEE boarding is required in order to use an alternate region for processing.
+    try {
+      CardInfoLookupResponse result = apiInstance.lookupAccount(contentType, clientRequestId, apiKey, timestamp, accountInfoLookupRequest, messageSignature, region);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling InformationLookupApi#lookupAccount");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
 }
 ```
 
@@ -121,4 +154,13 @@ No authorization required
 
  - **Content-Type**: application/json
  - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success response. |  -  |
+**400** | The request cannot be validated. |  -  |
+**403** | The request was unauthorized. |  -  |
+**404** | The requested resource doesn&#39;t exist. |  -  |
+**500** | An unexpected internal server error occurred. |  -  |
 

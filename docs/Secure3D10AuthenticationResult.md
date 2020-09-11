@@ -1,7 +1,9 @@
 
+
 # Secure3D10AuthenticationResult
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **verificationResponse** | [**VerificationResponseEnum**](#VerificationResponseEnum) | Card enrollment result from the Verification Response (VeRes). |  [optional]
@@ -10,8 +12,9 @@ Name | Type | Description | Notes
 **xid** | **String** | The transaction identifier (XID) is a unique tracking number set by the merchant. |  [optional]
 
 
-<a name="VerificationResponseEnum"></a>
+
 ## Enum: VerificationResponseEnum
+
 Name | Value
 ---- | -----
 Y | &quot;Y&quot;
@@ -19,8 +22,9 @@ N | &quot;N&quot;
 U | &quot;U&quot;
 
 
-<a name="AuthenticationAttemptResultEnum"></a>
+
 ## Enum: AuthenticationAttemptResultEnum
+
 Name | Value
 ---- | -----
 Y | &quot;Y&quot;

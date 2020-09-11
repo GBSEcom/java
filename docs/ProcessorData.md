@@ -1,7 +1,9 @@
 
+
 # ProcessorData
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **referenceNumber** | **String** | Reference transaction ID. |  [optional]
@@ -15,10 +17,12 @@ Name | Type | Description | Notes
 **merchantAdviceCodeIndicator** | **String** | Code to map merchant advice code to ISO specification. |  [optional]
 **responseIndicator** | **String** | Indicates whether the transaction was routed through the payment card&#39;s own network or through a different network. |  [optional]
 **debitReceiptNumber** | **String** | Receipt number from debit network provider. |  [optional]
+**transactionIntegrityClass** | **String** | MasterCard provided Transaction Integrity Class for Point of Sale (POS) Purchase and Purchase with Cash Back transactions initiated on the Authorization Platform. |  [optional]
 
 
-<a name="SecurityCodeResponseEnum"></a>
+
 ## Enum: SecurityCodeResponseEnum
+
 Name | Value
 ---- | -----
 MATCHED | &quot;MATCHED&quot;

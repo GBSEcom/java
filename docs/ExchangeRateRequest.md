@@ -1,7 +1,9 @@
 
+
 # ExchangeRateRequest
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **requestType** | **String** | Object name of the exchange rate request. | 

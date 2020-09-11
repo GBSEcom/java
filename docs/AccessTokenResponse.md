@@ -1,7 +1,9 @@
 
+
 # AccessTokenResponse
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **tokenId** | **String** | Access token for authentication. |  [optional]

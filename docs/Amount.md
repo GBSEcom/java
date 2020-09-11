@@ -1,7 +1,9 @@
 
+
 # Amount
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **total** | [**BigDecimal**](BigDecimal.md) | Sub component values must add up to total amount. | 

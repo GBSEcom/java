@@ -1,7 +1,9 @@
 
+
 # PaymentCardDisbursementTransaction
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **disbursement** | [**Disbursement**](Disbursement.md) |  | 

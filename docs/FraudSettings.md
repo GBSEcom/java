@@ -1,7 +1,9 @@
 
+
 # FraudSettings
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **blockedItems** | [**BlockedItems**](BlockedItems.md) |  |  [optional]

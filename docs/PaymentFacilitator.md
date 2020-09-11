@@ -1,7 +1,9 @@
 
+
 # PaymentFacilitator
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **externalMerchantId** | **String** | External merchant ID of the payment facilitator. | 
