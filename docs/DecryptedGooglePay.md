@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **brand** | **String** | Card brand. |  [optional]
 **cryptogram** | **String** | The wallet cryptogram from the decrypted data. | 
 **eciIndicator** | **String** | The ECI indicator from the decrypted data. | 
+**storedCredentials** | [**StoredCredential**](StoredCredential.md) |  |  [optional]
 
 
 
