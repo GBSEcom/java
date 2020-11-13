@@ -1,7 +1,7 @@
 # First Data Gateway
 
 Payment Gateway API Specification.
-- API version: 6.13.0
+- API version: 6.14.0
 
 Payment Gateway API for payment processing. Version 1.9.0
 
@@ -35,7 +35,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>com.github.GBSEcom</groupId>
   <artifactId>first-data-gateway</artifactId>
-  <version>1.9.0</version>
+  <version>1.10.0</version>
   <scope>compile</scope>
 </dependency>
 ```
