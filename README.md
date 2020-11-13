@@ -3,7 +3,7 @@
 Payment Gateway API Specification.
 - API version: 6.14.0
 
-Payment Gateway API for payment processing. Version 1.9.0
+Payment Gateway API for payment processing. Version 1.10.0
 
 ## Requirements
 
@@ -45,7 +45,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "com.github.GBSEcom.client:first-data-gateway:1.9.0"
+compile "com.github.GBSEcom.client:first-data-gateway:1.10.0"
 ```
 
 ### Others
@@ -58,7 +58,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-* `target/first-data-gateway-1.9.0.jar`
+* `target/first-data-gateway-1.10.0.jar`
 * `build/libs/*.jar`
 
 ## Getting Started
