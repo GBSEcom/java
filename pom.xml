@@ -4,9 +4,10 @@
     <groupId>com.github.GBSEcom</groupId>
     <artifactId>first-data-gateway</artifactId>
     <packaging>jar</packaging>
-    <name>FirstApiClient</name>
-    <url>https://docs.firstdata.com/org/gateway</url>
-    <description>IPG API Version 6.14. Java SDK to be used with a First Data Gateway account. This SDK has been created and packaged to offer the easiest way to integrate your application into the First Data Gateway. This SDK gives you the ability to run transactions such as sales, preauthorizations, postauthorizations, credits, voids, and returns; transaction inquiries; setting up scheduled payments and much more.</description>
+    <name>first-data-gateway</name>
+    <version>1.11.0</version>
+    <url></url>
+    <description>Payment Gateway APIClient SDK for payment processing</description>
     <scm>
         <connection>scm:git:git@github.com:openapitools/openapi-generator.git</connection>
         <developerConnection>scm:git:git@github.com:openapitools/openapi-generator.git</developerConnection>
@@ -16,21 +17,10 @@
     <licenses>
         <license>
             <name>MIT</name>
-            <url>https://opensource.org/licenses/mit-license.php</url>
+            <url>http://unlicense.org</url>
             <distribution>repo</distribution>
         </license>
     </licenses>
-
-	<distributionManagement>
-		<snapshotRepository>
-	 		<id>ossrh</id>
-	  		<url>https://oss.sonatype.org/content/repositories/snapshots</url>
-	  	</snapshotRepository>
-	    <repository>
-		    <id>ossrh</id>
-		    <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
-		</repository>
-	</distributionManagement>
 
     <developers>
         <developer>
@@ -39,208 +29,145 @@
             <organization>First Data Corporation</organization>
             <organizationUrl>https://www.firstdata.com</organizationUrl>
         </developer>
-        <developer>
-            <name>Pradyoth Rao</name>
-            <email>pradyoth.rao@firstdata.com</email>
-            <organization>First Data Corporation</organization>
-            <organizationUrl>https://www.firstdata.com</organizationUrl>
-        </developer>
-        <developer>
-            <name>Eric Margules</name>
-            <email>eric.margules@fiserv.com</email>
-            <organization>Fiserv</organization>
-            <organizationUrl>https://www.firstdata.com</organizationUrl>
-        </developer>
     </developers>
 
     <build>
-    	<pluginManagement>
-		    <plugins>
-		        <plugin>
-		            <groupId>org.apache.maven.plugins</groupId>
-		            <artifactId>maven-enforcer-plugin</artifactId>
-		            <version>3.0.0-M1</version>
-		            <executions>
-		                <execution>
-		                    <id>enforce-maven</id>
-		                    <goals>
-		                        <goal>enforce</goal>
-		                    </goals>
-		                    <configuration>
-		                        <rules>
-		                            <requireMavenVersion>
-		                                <version>2.2.0</version>
-		                            </requireMavenVersion>
-		                        </rules>
-		                    </configuration>
-		                </execution>
-		            </executions>
-		        </plugin>
-		        <plugin>
-		            <groupId>org.apache.maven.plugins</groupId>
-		            <artifactId>maven-surefire-plugin</artifactId>
-		            <version>2.12</version>
-		            <configuration>
-		                <systemProperties>
-		                    <property>
-		                        <name>loggerPath</name>
-		                        <value>conf/log4j.properties</value>
-		                    </property>
-		                </systemProperties>
-		                <argLine>-Xms512m -Xmx1500m</argLine>
-		                <parallel>methods</parallel>
-		                <forkMode>pertest</forkMode>
-		            </configuration>
-		        </plugin>
-		        <plugin>
-		            <artifactId>maven-dependency-plugin</artifactId>
-		            <executions>
-		                <execution>
-		                    <phase>package</phase>
-		                    <goals>
-		                        <goal>copy-dependencies</goal>
-		                    </goals>
-		                    <configuration>
-		                        <outputDirectory>${project.build.directory}/lib</outputDirectory>
-		                    </configuration>
-		                </execution>
-		            </executions>
-		        </plugin>
-		
-		        <!-- attach test jar -->
-		         <plugin>
-		             <groupId>org.apache.maven.plugins</groupId>
-		             <artifactId>maven-jar-plugin</artifactId>
-		             <version>2.2</version>
-		             <executions>
-		                 <execution>
-		                     <goals>
-		                         <goal>jar</goal>
-		                         <goal>test-jar</goal>
-		                     </goals>
-		                 </execution>
-		             </executions>
-		             <configuration>
-		             </configuration>
-		         </plugin>
-		
-		         <plugin>
-		             <groupId>org.codehaus.mojo</groupId>
-		             <artifactId>build-helper-maven-plugin</artifactId>
-		             <version>1.10</version>
-		             <executions>
-		                 <execution>
-		                     <id>add_sources</id>
-		                     <phase>generate-sources</phase>
-		                     <goals>
-		                         <goal>add-source</goal>
-		                     </goals>
-		                     <configuration>
-		                         <sources>
-		                             <source>
-		                             src/main/java</source>
-		                         </sources>
-		                     </configuration>
-		                 </execution>
-		                 <execution>
-		                     <id>add_test_sources</id>
-		                     <phase>generate-test-sources</phase>
-		                     <goals>
-		                         <goal>add-test-source</goal>
-		                     </goals>
-		                     <configuration>
-		                         <sources>
-		                             <source>
-		                             src/test/java</source>
-		                         </sources>
-		                     </configuration>
-		                 </execution>
-		             </executions>
-		         </plugin>
-		         <plugin>
-		             <groupId>org.apache.maven.plugins</groupId>
-		             <artifactId>maven-javadoc-plugin</artifactId>
-		             <version>2.10.4</version>
-		             <executions>
-		                 <execution>
-		                     <id>attach-javadocs</id>
-		                     <goals>
-		                         <goal>jar</goal>
-		                     </goals>
-		                 </execution>
-		             </executions>
-		         </plugin>
-		         <plugin>
-		             <groupId>org.apache.maven.plugins</groupId>
-		             <artifactId>maven-source-plugin</artifactId>
-		             <version>2.2.1</version>
-		             <executions>
-		                 <execution>
-		                     <id>attach-sources</id>
-		                     <goals>
-		                         <goal>jar-no-fork</goal>
-		                     </goals>
-		                 </execution>
-		             </executions>
-		         </plugin>
-		         <plugin>
-				  <groupId>org.sonatype.plugins</groupId>
-				  <artifactId>nexus-staging-maven-plugin</artifactId>
-				  <version>1.6.7</version>
-				  <extensions>true</extensions>
-				  <configuration>
-				    <serverId>ossrh</serverId>
-				    <nexusUrl>https://oss.sonatype.org/</nexusUrl>
-				    <autoReleaseAfterClose>true</autoReleaseAfterClose>
-				  </configuration>
-				</plugin>
-	            	<plugin>
-	            		<groupId>org.apache.maven.plugins</groupId>
-	            		<artifactId>maven-shade-plugin</artifactId>
-	            		<version>2.3</version>
-	            	</plugin>
-	        </plugins>
-		</pluginManagement>
-		<plugins>
-		    <plugin>
-		      <groupId>org.apache.maven.plugins</groupId>
-		      <artifactId>maven-source-plugin</artifactId>
-		      <executions>
-		        <execution>
-		          <id>attach-sources</id>
-		          <goals>
-		            <goal>jar-no-fork</goal>
-		          </goals>
-		        </execution>
-		      </executions>
-		    </plugin>
-		    <plugin>
-		      <groupId>org.apache.maven.plugins</groupId>
-		      <artifactId>maven-javadoc-plugin</artifactId>
-		      <executions>
-		        <execution>
-		          <id>attach-javadocs</id>
-		          <goals>
-		            <goal>jar</goal>
-		          </goals>
-		        </execution>
-		      </executions>
-		    </plugin>
-		    <plugin>
-	            <groupId>org.apache.maven.plugins</groupId>
-	            <artifactId>maven-gpg-plugin</artifactId>
-	            <version>1.5</version>
-	            <executions>
-	                <execution>
-	                    <id>sign-artifacts</id>
-	                    <phase>verify</phase>
-	                    <goals>
-	                        <goal>sign</goal>
-	                    </goals>
-	                </execution>
-	            </executions>
-    		</plugin>
-		</plugins>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-enforcer-plugin</artifactId>
+                <version>3.0.0-M1</version>
+                <executions>
+                    <execution>
+                        <id>enforce-maven</id>
+                        <goals>
+                            <goal>enforce</goal>
+                        </goals>
+                        <configuration>
+                            <rules>
+                                <requireMavenVersion>
+                                    <version>2.2.0</version>
+                                </requireMavenVersion>
+                            </rules>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.12</version>
+                <configuration>
+                    <systemProperties>
+                        <property>
+                            <name>loggerPath</name>
+                            <value>conf/log4j.properties</value>
+                        </property>
+                    </systemProperties>
+                    <argLine>-Xms512m -Xmx1500m</argLine>
+                    <parallel>methods</parallel>
+                    <forkMode>pertest</forkMode>
+                </configuration>
+            </plugin>
+            <plugin>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>copy-dependencies</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>${project.build.directory}/lib</outputDirectory>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <!-- attach test jar -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>2.2</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>jar</goal>
+                            <goal>test-jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>build-helper-maven-plugin</artifactId>
+                <version>1.10</version>
+                <executions>
+                    <execution>
+                        <id>add_sources</id>
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <goal>add-source</goal>
+                        </goals>
+                        <configuration>
+                            <sources>
+                                <source>src/main/java</source>
+                            </sources>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>add_test_sources</id>
+                        <phase>generate-test-sources</phase>
+                        <goals>
+                            <goal>add-test-source</goal>
+                        </goals>
+                        <configuration>
+                            <sources>
+                                <source>src/test/java</source>
+                            </sources>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>2.10.4</version>
+                <executions>
+                    <execution>
+                        <id>attach-javadocs</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <tags>
+                        <tag>
+                            <name>http.response.details</name>
+                            <placement>a</placement>
+                            <head>Http Response Details:</head>
+                        </tag>
+                    </tags>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>2.2.1</version>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <goals>
+                            <goal>jar-no-fork</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
     </build>
 
     <profiles>
@@ -262,149 +189,6 @@
                             </execution>
                         </executions>
                     </plugin>
-                    <plugin>
-	                    <groupId>org.apache.maven.plugins</groupId>
-	                    <artifactId>maven-enforcer-plugin</artifactId>
-	                    <version>3.0.0-M1</version>
-	                    <executions>
-	                        <execution>
-	                            <id>enforce-maven</id>
-	                            <goals>
-	                                <goal>enforce</goal>
-	                            </goals>
-	                            <configuration>
-	                                <rules>
-	                                    <requireMavenVersion>
-	                                        <version>2.2.0</version>
-	                                    </requireMavenVersion>
-	                                </rules>
-	                            </configuration>
-	                        </execution>
-	                    </executions>
-	                </plugin>
-	                <plugin>
-	                    <groupId>org.apache.maven.plugins</groupId>
-	                    <artifactId>maven-surefire-plugin</artifactId>
-	                    <version>2.12</version>
-	                    <configuration>
-	                        <systemProperties>
-	                            <property>
-	                                <name>loggerPath</name>
-	                                <value>conf/log4j.properties</value>
-	                            </property>
-	                        </systemProperties>
-	                        <argLine>-Xms512m -Xmx1500m</argLine>
-	                        <parallel>methods</parallel>
-	                        <forkMode>pertest</forkMode>
-	                    </configuration>
-	                </plugin>
-	                <plugin>
-	                    <artifactId>maven-dependency-plugin</artifactId>
-	                    <executions>
-	                        <execution>
-	                            <phase>package</phase>
-	                            <goals>
-	                                <goal>copy-dependencies</goal>
-	                            </goals>
-	                            <configuration>
-	                                <outputDirectory>${project.build.directory}/lib</outputDirectory>
-	                            </configuration>
-	                        </execution>
-	                    </executions>
-	                </plugin>
-    
-	                <!-- attach test jar -->
-	                <plugin>
-	                    <groupId>org.apache.maven.plugins</groupId>
-	                    <artifactId>maven-jar-plugin</artifactId>
-	                    <version>2.2</version>
-	                    <executions>
-	                        <execution>
-	                            <goals>
-	                                <goal>jar</goal>
-	                                <goal>test-jar</goal>
-	                            </goals>
-	                        </execution>
-	                    </executions>
-	                    <configuration>
-	                    </configuration>
-	                </plugin>
-	    
-	                <plugin>
-	                    <groupId>org.codehaus.mojo</groupId>
-	                    <artifactId>build-helper-maven-plugin</artifactId>
-	                    <version>1.10</version>
-	                    <executions>
-	                        <execution>
-	                            <id>add_sources</id>
-	                            <phase>generate-sources</phase>
-	                            <goals>
-	                                <goal>add-source</goal>
-	                            </goals>
-	                            <configuration>
-	                                <sources>
-	                                    <source>
-	                                    src/main/java</source>
-	                                </sources>
-	                            </configuration>
-	                        </execution>
-	                        <execution>
-	                            <id>add_test_sources</id>
-	                            <phase>generate-test-sources</phase>
-	                            <goals>
-	                                <goal>add-test-source</goal>
-	                            </goals>
-	                            <configuration>
-	                                <sources>
-	                                    <source>
-	                                    src/test/java</source>
-	                                </sources>
-	                            </configuration>
-	                        </execution>
-	                    </executions>
-	                </plugin>
-	                <plugin>
-	                    <groupId>org.apache.maven.plugins</groupId>
-	                    <artifactId>maven-javadoc-plugin</artifactId>
-	                    <version>2.10.4</version>
-	                    <executions>
-	                        <execution>
-	                            <id>attach-javadocs</id>
-	                            <goals>
-	                                <goal>jar</goal>
-	                            </goals>
-	                        </execution>
-	                    </executions>
-	                </plugin>
-	                <plugin>
-	                    <groupId>org.apache.maven.plugins</groupId>
-	                    <artifactId>maven-source-plugin</artifactId>
-	                    <version>2.2.1</version>
-	                    <executions>
-	                        <execution>
-	                            <id>attach-sources</id>
-	                            <goals>
-	                                <goal>jar-no-fork</goal>
-	                            </goals>
-	                        </execution>
-	                    </executions>
-	                </plugin>
-	                <plugin>
-				      <groupId>org.sonatype.plugins</groupId>
-				      <artifactId>nexus-staging-maven-plugin</artifactId>
-				      <version>1.6.7</version>
-				      <extensions>true</extensions>
-				      <configuration>
-				        <serverId>ossrh</serverId>
-				        <nexusUrl>https://oss.sonatype.org/</nexusUrl>
-				        <autoReleaseAfterClose>true</autoReleaseAfterClose>
-				      </configuration>
-				    </plugin>
-		            	<plugin>
-		            		<groupId>org.apache.maven.plugins</groupId>
-		            		<artifactId>maven-shade-plugin</artifactId>
-		            		<version>2.3</version>
-		            	</plugin>
                 </plugins>
             </build>
         </profile>
@@ -482,12 +266,7 @@
         <commons-lang3-version>3.9</commons-lang3-version>
         <maven-plugin-version>1.0.0</maven-plugin-version>
         <javax-annotation-version>1.0</javax-annotation-version>
-        <junit-version>4.12</junit-version>
+        <junit-version>4.13.1</junit-version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
-    <version>1.10.0</version>
-    <organization>
-    	<name>First Data</name>
-    	<url>https://www.firstdata.com</url>
-    </organization>
 </project>

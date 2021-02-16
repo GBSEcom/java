@@ -1,9 +1,9 @@
 # First Data Gateway
 
 Payment Gateway API Specification.
-- API version: 6.14.0
+- API version: 21.1.0
 
-Payment Gateway API for payment processing. Version 1.10.0
+Payment Gateway API for payment processing. Version 1.11.0
 
 ## Requirements
 
@@ -35,7 +35,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>com.github.GBSEcom</groupId>
   <artifactId>first-data-gateway</artifactId>
-  <version>1.10.0</version>
+  <version>1.11.0</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -45,7 +45,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "com.github.GBSEcom.client:first-data-gateway:1.10.0"
+compile "com.github.GBSEcom.client:first-data-gateway:1.11.0"
 ```
 
 ### Others
@@ -58,7 +58,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-* `target/first-data-gateway-1.10.0.jar`
+* `target/first-data-gateway-1.11.0.jar`
 * `build/libs/*.jar`
 
 ## Getting Started
@@ -108,8 +108,8 @@ All URIs are by default relative to *https://cert.api.firstdata.com/gateway*
 Interface | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *AuthenticationApi* | **getAccessToken** | **POST** /v2/authentication/access-tokens | Generate an access token for user authentication.
-*CardInfoLookupApi* | **cardInfoLookup** | **POST** /v2/card-information | Card information lookUp
-*CardVerificationApi* | **verifyCard** | **POST** /v2/card-verification | Verify a payment card.
+*InformationLookupApi* | **cardInfoLookup** | **POST** /v2/card-information | Card information lookUp
+*VerificationApi* | **verifyCard** | **POST** /v2/card-verification | Verify a payment card.
 *CurrencyConversionApi* | **getExchangeRate** | **POST** /v2/exchange-rates | Generate dynamic currency conversion transactions
 *FraudDetectApi* | **scoreOnly** | **POST** /v2/fraud/score-only | Score a transaction for fraud.
 *FraudDetectApi* | **clientRegistration** | **POST** /v2/fraud/client-registration | Client Registration for fraud detect.
@@ -129,7 +129,6 @@ Interface | Method | HTTP request | Description
 *PaymentSchedulesApi* | **updatePaymentSchedule** | **PATCH** /v2/payment-schedules/{order-id} | Update a gateway payment schedule.
 *PaymentTokenApi* | **createPaymentToken** | **POST** /v2/payment-tokens | Create a payment token from a payment card.
 *PaymentTokenApi* | **deletePaymentToken** | **DELETE** /v2/payment-tokens/{token-id} | Delete a payment token.
-*PaymentTokenApi* | **getPaymentTokenDetails**| **GET** /v2/payment-tokens/{token-id} | Get payment token details.
 *PaymentUrlApi* | **createPaymentUrl** | **POST** /v2/payment-url | Create a payment URL.
 *PaymentUrlApi* | **deletePaymentUrl** | **DELETE** /v2/payment-url | Delete a payment URL.
 *PaymentUrlApi* | **paymentUrlDetail** | **GET** /v2/payment-url | Retrive the state of a payment URL.
@@ -186,8 +185,8 @@ package com.github.GBSEcom.simple;
 
 public interface ClientFactory {
   AuthenticationApi getAuthenticationApi();
-  CardInfoLookupApi getCardInfoLookupApi();
-  CardVerificationApi getCardVerificationApi();
+  InformationLookupApi getInformationLookupApi();
+  VerificationApi getVerificationApi();
   CurrencyConversionApi getCurrencyConversionApi();
   FraudDetectApi getFraudDetectApi();
   OrderApi getOrderApi();
@@ -211,28 +210,28 @@ public interface AuthenticationApi {
 ```
 
 
-### CardInfoLookupApi
+### InformationLookupApi
 
 ```java
 package com.github.GBSEcom.simple;
 import com.github.GBSEcom.model.CardInfoLookupRequest;
 import com.github.GBSEcom.model.CardInfoLookupResponse;
 
-public interface CardInfoLookupApi {
+public interface InformationLookupApi {
   CardInfoLookupResponse cardInfoLookup(CardInfoLookupRequest payload, String region);
   CardInfoLookupResponse cardInfoLookup(CardInfoLookupRequest payload);
 }
 ```
 
 
-### CardVerificationApi
+### VerificationApi
 
 ```java
 package com.github.GBSEcom.simple;
 import com.github.GBSEcom.model.CardVerificationRequest;
 import com.github.GBSEcom.model.TransactionResponse;
 
-public interface CardVerificationApi {
+public interface VerificationApi {
   TransactionResponse verifyCard(CardVerificationRequest payload, String region);
   TransactionResponse verifyCard(CardVerificationRequest payload);
 }
@@ -364,10 +363,6 @@ public interface PaymentTokenApi {
   PaymentTokenizationResponse deletePaymentToken(String tokenId, String authorization, String region, String storeId);
   PaymentTokenizationResponse deletePaymentToken(String tokenId, String authorization);
   PaymentTokenizationResponse deletePaymentToken(String tokenId);
-
-  PaymentTokenizationResponse getPaymentTokenDetails(String tokenId, String authorization, String region, String storeId);
-  PaymentTokenizationResponse getPaymentTokenDetails(String tokenId, String authorization);
-  PaymentTokenizationResponse getPaymentTokenDetails(String tokenId);
 }
 ```
 
@@ -395,5 +390,3 @@ public interface PaymentUrlApi {
 ## Documentation for Models
 
  Refer to the docs section. 
-
-

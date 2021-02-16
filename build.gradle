@@ -3,7 +3,7 @@ apply plugin: 'eclipse'
 apply plugin: 'java'
 
 group = 'com.github.GBSEcom.client'
-version = '1.10.0'
+version = '1.11.0'
 
 buildscript {
     repositories {

@@ -38,7 +38,7 @@ public class Example {
     String apiKey = "apiKey_example"; // String | Key given to merchant after boarding associating their requests with the appropriate app in Apigee.
     Long timestamp = 56L; // Long | Epoch timestamp in milliseconds in the request from a client system. Used for Message Signature generation and time limit (5 mins).
     String transactionId = "transactionId_example"; // String | Gateway transaction identifier as returned in the parameter ipgTransactionId or merchantTransactionId.
-    AuthenticationUpdateRequest authenticationUpdateRequest = new AuthenticationUpdateRequest(); // AuthenticationUpdateRequest | Accepted request types: Secure3D10AuthenticationUpdateRequest, Secure3D21AuthenticationUpdateRequest, and UnionPayAuthenticationUpdateRequest.
+    AuthenticationUpdateRequest authenticationUpdateRequest = new AuthenticationUpdateRequest(); // AuthenticationUpdateRequest | Accepted request types: Secure3DAuthenticationUpdateRequest, Secure3D10AuthenticationUpdateRequest, Secure3D21AuthenticationUpdateRequest and UnionPayAuthenticationUpdateRequest.
     String messageSignature = "messageSignature_example"; // String | Used to ensure the request has not been tampered with during transmission. The Message-Signature is the Base64 encoded HMAC hash (SHA256 algorithm with the API Secret as the key.) For more information, refer to the supporting documentation on the Developer Portal.
     String region = "region_example"; // String | Indicates the region where the client wants the transaction to be processed. This will override the default processing region identified for the client. Available options are argentina, brazil, germany, india and northamerica. Region specific store setup and APIGEE boarding is required in order to use an alternate region for processing.
     try {
@@ -64,7 +64,7 @@ Name | Type | Description  | Notes
  **apiKey** | **String**| Key given to merchant after boarding associating their requests with the appropriate app in Apigee. |
  **timestamp** | **Long**| Epoch timestamp in milliseconds in the request from a client system. Used for Message Signature generation and time limit (5 mins). |
  **transactionId** | **String**| Gateway transaction identifier as returned in the parameter ipgTransactionId or merchantTransactionId. |
- **authenticationUpdateRequest** | [**AuthenticationUpdateRequest**](AuthenticationUpdateRequest.md)| Accepted request types: Secure3D10AuthenticationUpdateRequest, Secure3D21AuthenticationUpdateRequest, and UnionPayAuthenticationUpdateRequest. |
+ **authenticationUpdateRequest** | [**AuthenticationUpdateRequest**](AuthenticationUpdateRequest.md)| Accepted request types: Secure3DAuthenticationUpdateRequest, Secure3D10AuthenticationUpdateRequest, Secure3D21AuthenticationUpdateRequest and UnionPayAuthenticationUpdateRequest. |
  **messageSignature** | **String**| Used to ensure the request has not been tampered with during transmission. The Message-Signature is the Base64 encoded HMAC hash (SHA256 algorithm with the API Secret as the key.) For more information, refer to the supporting documentation on the Developer Portal. | [optional]
  **region** | **String**| Indicates the region where the client wants the transaction to be processed. This will override the default processing region identified for the client. Available options are argentina, brazil, germany, india and northamerica. Region specific store setup and APIGEE boarding is required in order to use an alternate region for processing. | [optional]
 
