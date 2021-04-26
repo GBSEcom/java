@@ -47,5 +47,7 @@
 
 * `TELECHECK` (value: `"TELECHECK"`)
 
+* `BLIK` (value: `"BLIK"`)
+
 
 

@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **apiTraceId** | **String** | Request identifier in API, can be used to request logs from the support team. |  [optional]
 **responseType** | [**ResponseType**](ResponseType.md) |  |  [optional]
 **ipgTransactionId** | **String** | The response transaction ID. |  [optional]
-**orderId** | **String** | Client order ID if supplied by client, otherwise the order ID. |  [optional]
+**orderId** | **String** | Note - Client Order ID if supplied by client. If not supplied by client, IPG will generate. The first 12 alphanumeric digits are passed down to Fiserv Enterprise reporting tool, Clientline and Data File Manager (DFM). |  [optional]
 **transactionType** | [**TransactionType**](TransactionType.md) |  |  [optional]
 **paymentToken** | [**PaymentTokenDetails**](PaymentTokenDetails.md) |  |  [optional]
 **transactionOrigin** | [**TransactionOrigin**](TransactionOrigin.md) |  |  [optional]
@@ -32,6 +32,7 @@ Name | Type | Description | Notes
 **accountUpdaterResponse** | [**AccountUpdaterResponse**](AccountUpdaterResponse.md) |  |  [optional]
 **achResponse** | [**AchResponse**](AchResponse.md) |  |  [optional]
 **currencyConversionResponse** | [**CurrencyConversionResponse**](CurrencyConversionResponse.md) |  |  [optional]
+**steps** | [**List&lt;PaymentStepRequest&gt;**](PaymentStepRequest.md) | Steps to be performed by the payer. |  [optional]
 
 
 

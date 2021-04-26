@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **shipping** | [**BigDecimal**](BigDecimal.md) | Shipping amount. |  [optional]
 **cashback** | [**BigDecimal**](BigDecimal.md) | Cashback amount. |  [optional]
 **tip** | [**BigDecimal**](BigDecimal.md) | Tip amount. |  [optional]
+**surcharge** | [**BigDecimal**](BigDecimal.md) | Surcharge amount. |  [optional]
 
 
 
