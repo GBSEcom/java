@@ -87,7 +87,12 @@ public class ApiClient {
     private void init() {
         OkHttpClient.Builder builder = new OkHttpClient.Builder();
         builder.addNetworkInterceptor(getProgressInterceptor());
+        builder.connectTimeout(20, TimeUnit.SECONDS);
+        builder.readTimeout(20, TimeUnit.SECONDS);
         httpClient = builder.build();
+
+        httpClient.setConnectTimeout(20, TimeUnit.SECONDS);
+        httpClient.setReadTimeout(20, TimeUnit.SECONDS);
 
 
         verifyingSsl = true;
