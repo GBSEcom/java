@@ -87,20 +87,16 @@ public class ApiClient {
     private void init() {
         OkHttpClient.Builder builder = new OkHttpClient.Builder();
         builder.addNetworkInterceptor(getProgressInterceptor());
-        builder.connectTimeout(20, TimeUnit.SECONDS);
-        builder.readTimeout(20, TimeUnit.SECONDS);
+        builder.connectTimeout(30, TimeUnit.SECONDS);
+        builder.readTimeout(30, TimeUnit.SECONDS);
         httpClient = builder.build();
-
-        httpClient.setConnectTimeout(20, TimeUnit.SECONDS);
-        httpClient.setReadTimeout(20, TimeUnit.SECONDS);
-
 
         verifyingSsl = true;
 
         json = new JSON();
 
         // Set default User-Agent.
-        setUserAgent("OpenAPI-Generator/1.12.0/java");
+        setUserAgent("OpenAPI-Generator/1.12.2/java");
 
         authentications = new HashMap<String, Authentication>();
     }
