@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **merchantTransactionId** | **String** | The unique merchant transaction ID from the request header, if supplied. |  [optional]
 **transactionOrigin** | [**TransactionOrigin**](TransactionOrigin.md) |  |  [optional]
 **order** | [**Order**](Order.md) |  |  [optional]
+**allowPartialApproval** | **Boolean** | Indicates if the particular transaction is a partial approval transaction, if supplied. |  [optional]
 
 
 

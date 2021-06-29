@@ -13,6 +13,10 @@
 
 * `APM` (value: `"APM"`)
 
+* `BLIK` (value: `"BLIK"`)
+
+* `CONEKTA` (value: `"CONEKTA"`)
+
 * `CUP_DOMESTIC` (value: `"CUP_DOMESTIC"`)
 
 * `DEBITDE` (value: `"DEBITDE"`)
@@ -41,13 +45,13 @@
 
 * `SOFORT` (value: `"SOFORT"`)
 
-* `WALLET` (value: `"WALLET"`)
-
-* `WECHAT_DOMESTIC` (value: `"WECHAT_DOMESTIC"`)
-
 * `TELECHECK` (value: `"TELECHECK"`)
 
-* `BLIK` (value: `"BLIK"`)
+* `WALLET` (value: `"WALLET"`)
+
+* `WECHAT` (value: `"WECHAT"`)
+
+* `WECHAT_DOMESTIC` (value: `"WECHAT_DOMESTIC"`)
 
 
 

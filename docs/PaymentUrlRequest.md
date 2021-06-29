@@ -22,6 +22,7 @@ Name | Type | Description | Notes
 **hostedPaymentPageText** | **String** | The text to be displayed to the payer on the hosted payment page. |  [optional]
 **ip** | **String** | IPv4 or IPv6 network address. |  [optional]
 **revolvingOptions** | [**RevolvingOptions**](RevolvingOptions.md) |  |  [optional]
+**installmentOptions** | [**InstallmentOptions**](InstallmentOptions.md) |  |  [optional]
 
 
 

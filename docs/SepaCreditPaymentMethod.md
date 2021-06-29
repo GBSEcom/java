@@ -1,12 +1,12 @@
 
 
-# SepaPaymentMethodAllOf
+# SepaCreditPaymentMethod
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**sepa** | [**Sepa**](Sepa.md) |  | 
+**sepa** | [**SepaCredit**](SepaCredit.md) |  | 
 
 
 

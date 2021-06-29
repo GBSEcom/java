@@ -6,7 +6,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**paymentMethod** | [**SepaPaymentMethod**](SepaPaymentMethod.md) |  | 
+**paymentMethod** | [**SepaSalePaymentMethod**](SepaSalePaymentMethod.md) |  | 
 
 
 

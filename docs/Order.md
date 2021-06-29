@@ -13,9 +13,11 @@ Name | Type | Description | Notes
 **purchaseCard** | [**PurchaseCards**](PurchaseCards.md) |  |  [optional]
 **installmentOptions** | [**InstallmentOptions**](InstallmentOptions.md) |  |  [optional]
 **revolvingOptions** | [**RevolvingOptions**](RevolvingOptions.md) |  |  [optional]
+**standInDetails** | [**StandInDetails**](StandInDetails.md) |  |  [optional]
 **softDescriptor** | [**SoftDescriptor**](SoftDescriptor.md) |  |  [optional]
 **additionalDetails** | [**AdditionalDetails**](AdditionalDetails.md) |  |  [optional]
 **bancontactQR** | [**BancontactQR**](BancontactQR.md) |  |  [optional]
+**clientLocale** | [**ClientLocale**](ClientLocale.md) |  |  [optional]
 
 
 

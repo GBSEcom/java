@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **supplierVATRegistrationNumber** | **String** | Merchant VAT registration/single business reference number/merchant tax ID or corporation VAT number. |  [optional]
 **totalDiscountAmountAndRate** | [**AdditionalAmountRate**](AdditionalAmountRate.md) |  |  [optional]
 **vatShippingAmountAndRate** | [**AdditionalAmountRate**](AdditionalAmountRate.md) |  |  [optional]
+**dutyAmountAndRate** | [**AdditionalAmountRate**](AdditionalAmountRate.md) |  |  [optional]
 
 
 

@@ -1,12 +1,12 @@
 
 
-# SepaPaymentMethod
+# SepaSalePaymentMethod
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**sepa** | [**Sepa**](Sepa.md) |  | 
+**sepa** | [**SepaSale**](SepaSale.md) |  | 
 
 
 
