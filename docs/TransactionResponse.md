@@ -44,6 +44,7 @@ Name | Value
 ---- | -----
 APPROVED | &quot;APPROVED&quot;
 WAITING | &quot;WAITING&quot;
+PARTIAL | &quot;PARTIAL&quot;
 VALIDATION_FAILED | &quot;VALIDATION_FAILED&quot;
 PROCESSING_FAILED | &quot;PROCESSING_FAILED&quot;
 DECLINED | &quot;DECLINED&quot;

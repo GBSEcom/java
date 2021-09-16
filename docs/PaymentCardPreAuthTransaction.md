@@ -6,7 +6,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**paymentMethod** | [**PaymentCardPaymentMethod**](PaymentCardPaymentMethod.md) |  | 
+**paymentMethod** | [**PaymentCardPaymentMethod**](PaymentCardPaymentMethod.md) |  |  [optional]
 **storedCredentials** | [**StoredCredential**](StoredCredential.md) |  |  [optional]
 **createToken** | [**CreatePaymentToken**](CreatePaymentToken.md) |  |  [optional]
 **splitShipment** | [**SplitShipment**](SplitShipment.md) |  |  [optional]

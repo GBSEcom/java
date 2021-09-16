@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **stateProvince** | **String** | State or province. |  [optional]
 **city** | **String** | City. |  [optional]
 **country** | **String** | Country. | 
-**zipPostalCode** | **String** | Postal code. | 
+**zipPostalCode** | **String** | Postal code. |  [optional]
 
 
 

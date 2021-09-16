@@ -19,6 +19,7 @@ Name | Type | Description | Notes
 **orderId** | **String** | Note - Client Order ID if supplied by client. If not supplied by client, IPG will generate. The first 12 alphanumeric digits are passed down to Fiserv Enterprise reporting tool, Clientline and Data File Manager (DFM). |  [optional]
 **ipgTransactionId** | **String** | The response transaction ID. |  [optional]
 **merchantTransactionId** | **String** | The unique merchant transaction ID from the request header, if supplied. |  [optional]
+**additionalResponseData** | [**AdditionalResponseData**](AdditionalResponseData.md) |  |  [optional]
 **error** | [**Error**](Error.md) |  |  [optional]
 
 

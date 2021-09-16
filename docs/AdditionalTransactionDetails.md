@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **disbursementTransType** | [**DisbursementTransTypeEnum**](#DisbursementTransTypeEnum) | The type of debit disbursement transaction. |  [optional]
 **walletProvider** | [**WalletProviderEnum**](#WalletProviderEnum) | The wallet provider type. |  [optional]
 **receipts** | [**List&lt;Receipt&gt;**](Receipt.md) | Provides receipt response data, if it has been requested. |  [optional]
+**additionalResponseData** | [**AdditionalResponseData**](AdditionalResponseData.md) |  |  [optional]
 
 
 
