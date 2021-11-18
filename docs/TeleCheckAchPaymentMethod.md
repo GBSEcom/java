@@ -24,7 +24,7 @@ Name | Type | Description | Notes
 **sessionId** | **String** | Session identifier. | 
 **terminalState** | **String** | Identifies the US state or territory where the original sale transaction occurred. |  [optional]
 **terminalCity** | **String** | Identifies the city where the original sale transaction occurred. |  [optional]
-**achBillTo** | [**TeleCheckAchPaymentMethodAchBillTo**](TeleCheckAchPaymentMethodAchBillTo.md) |  | 
+**achBillTo** | [**TeleCheckAchPaymentMethodAchBillTo**](TeleCheckAchPaymentMethodAchBillTo.md) |  |  [optional]
 
 
 

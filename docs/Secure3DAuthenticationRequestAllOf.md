@@ -14,7 +14,9 @@ Name | Type | Description | Notes
 **browserJavaScriptEnabled** | **Boolean** | Indicates if the browser issuing the request is capable of performing JavaScript. |  [optional]
 **secure3DDeviceChannel** | [**Secure3DDeviceChannelEnum**](#Secure3DDeviceChannelEnum) | 02 &#x3D; BRW 03 &#x3D; 3RI  |  [optional]
 **secure3DThreeRIIndicator** | [**Secure3DThreeRIIndicatorEnum**](#Secure3DThreeRIIndicatorEnum) | 01 &#x3D; Recurring transaction 02 &#x3D; Instalment transaction 03 &#x3D; Add card 04 &#x3D; Maintain card information 05 &#x3D; Account verification 06 &#x3D; Split/delayed shipment 07 &#x3D; Top-up 08 &#x3D; Mail Order 09 &#x3D; Telephone Order 10 &#x3D; Whitelist status check 11 &#x3D; Other payment  |  [optional]
-**requestorAuthenticationIndicator** | [**RequestorAuthenticationIndicatorEnum**](#RequestorAuthenticationIndicatorEnum) | Indicates whether or not a challenge should be performed. 01 &#x3D; Payment transaction 02 &#x3D; Recurring transaction 03 &#x3D; Installment transaction 04 &#x3D; Add card 05 &#x3D; Maintain card 06 &#x3D; Card holder verification as part of EMV token ID and Value  |  [optional]
+**authenticationIndicator** | [**AuthenticationIndicatorEnum**](#AuthenticationIndicatorEnum) | Provides additional information to the ACS to determine the best approach for handling an authentication request. 01 &#x3D; Payment transaction 02 &#x3D; Recurring transaction 03 &#x3D; Installment transaction 04 &#x3D; Add card 05 &#x3D; Maintain card 06 &#x3D; Card holder verification as part of EMV token ID and Value  |  [optional]
+**recurringExpiry** | **String** | Date after which no further authorisations shall be performed. |  [optional]
+**recurringFrequency** | **Integer** | Indicates the minimum number of days between authorisations. |  [optional]
 
 
 
@@ -83,7 +85,7 @@ _11 | &quot;11&quot;
 
 
 
-## Enum: RequestorAuthenticationIndicatorEnum
+## Enum: AuthenticationIndicatorEnum
 
 Name | Value
 ---- | -----

@@ -23,6 +23,7 @@ Name | Type | Description | Notes
 **ip** | **String** | IPv4 or IPv6 network address. |  [optional]
 **revolvingOptions** | [**RevolvingOptions**](RevolvingOptions.md) |  |  [optional]
 **installmentOptions** | [**InstallmentOptions**](InstallmentOptions.md) |  |  [optional]
+**basket** | [**Basket**](Basket.md) |  |  [optional]
 
 
 

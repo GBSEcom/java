@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **comments** | **String** | Comments for the payment. |  [optional]
 **invoiceNumber** | **String** | Invoice number. |  [optional]
 **purchaseOrderNumber** | **String** | Purchase order number. |  [optional]
+**mrchntRefData** | **String** | Merchant Reference Data 2. |  [optional]
 **operatorId** | **String** | The operator ID. |  [optional]
 **salesSystemId** | **String** | The sales system ID. |  [optional]
 **ipgDeferredAuth** | **Boolean** | Indicates if the particular transaction is a deferred authorization. |  [optional]
@@ -29,6 +30,7 @@ TRA_EXEMPTION | &quot;TRA Exemption&quot;
 TRUSTED_MERCHANT_EXEMPTION | &quot;Trusted Merchant Exemption&quot;
 SCP_EXEMPTION | &quot;SCP Exemption&quot;
 DELEGATED_AUTHENTICATION | &quot;Delegated Authentication&quot;
+AUTHENTICATION_OUTAGE_EXCEPTION | &quot;Authentication Outage Exception&quot;
 
 
 
